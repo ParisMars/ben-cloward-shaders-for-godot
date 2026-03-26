@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://uavrshgx3kmx"
+path="res://.godot/imported/interstellar_rt.tga-9186627970c8a23839d5ffe2e9ec6d17.image"
+
+[deps]
+
+source_file="res://ep_24/cube_map_textures/interstellar_rt.tga"
+dest_files=["res://.godot/imported/interstellar_rt.tga-9186627970c8a23839d5ffe2e9ec6d17.image"]
+
+[params]
+

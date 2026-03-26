@@ -1,0 +1,52 @@
+[gd_resource type="VisualShader" format=3 uid="uid://k3bcjd8m6n8l"]
+
+[ext_resource type="Script" uid="uid://w41v0df838c6" path="res://ep_29_improved_triplanar_and_custom_node/triplanar_projection_node.gd" id="1_g4do7"]
+
+[sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_g4do7"]
+
+[sub_resource type="VisualShaderNodeCustom" id="VisualShaderNodeCustom_uy634"]
+default_input_values = [3, 16.0, 4, 2.0]
+initialized = true
+script = ExtResource("1_g4do7")
+
+[sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_e1m0u"]
+input_name = "normal"
+
+[sub_resource type="VisualShaderNodeTransformVecMult" id="VisualShaderNodeTransformVecMult_d3tv2"]
+operator = 2
+
+[sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_6rmc7"]
+input_name = "inv_view_matrix"
+
+[sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_a856s"]
+input_name = "inv_view_matrix"
+
+[sub_resource type="VisualShaderNodeTransformVecMult" id="VisualShaderNodeTransformVecMult_auchs"]
+
+[sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_tylrl"]
+input_name = "vertex"
+
+[sub_resource type="VisualShaderNodeTexture2DParameter" id="VisualShaderNodeTexture2DParameter_hc10s"]
+parameter_name = "tp"
+texture_type = 1
+
+[resource]
+nodes/fragment/2/node = SubResource("VisualShaderNodeCustom_uy634")
+nodes/fragment/2/position = Vector2(-64, 144)
+nodes/fragment/3/node = SubResource("VisualShaderNodeInput_e1m0u")
+nodes/fragment/3/position = Vector2(-1360, 192)
+nodes/fragment/4/node = SubResource("VisualShaderNodeTransformVecMult_d3tv2")
+nodes/fragment/4/position = Vector2(-1008, 64)
+nodes/fragment/5/node = SubResource("VisualShaderNodeInput_6rmc7")
+nodes/fragment/5/position = Vector2(-1328, 32)
+nodes/fragment/6/node = SubResource("VisualShaderNodeInput_a856s")
+nodes/fragment/6/position = Vector2(-1408, 496)
+nodes/fragment/7/node = SubResource("VisualShaderNodeTransformVecMult_auchs")
+nodes/fragment/7/position = Vector2(-1072, 544)
+nodes/fragment/8/node = SubResource("VisualShaderNodeInput_tylrl")
+nodes/fragment/8/position = Vector2(-1440, 656)
+nodes/fragment/9/node = SubResource("VisualShaderNodeTexture2DParameter_hc10s")
+nodes/fragment/9/position = Vector2(-832, 976)
+nodes/fragment/10/node = SubResource("VisualShaderNodeTexture_g4do7")
+nodes/fragment/10/position = Vector2(-1136, 1040)
+nodes/fragment/connections = PackedInt32Array(3, 0, 4, 1, 5, 0, 4, 0, 8, 0, 7, 1, 6, 0, 7, 0, 4, 0, 2, 0, 7, 0, 2, 1, 9, 0, 2, 2, 2, 0, 0, 0, 2, 0, 0, 5)

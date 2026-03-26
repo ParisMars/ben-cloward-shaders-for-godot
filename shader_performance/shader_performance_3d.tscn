@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://d2xqebooxjsye"]
+
+[ext_resource type="Shader" uid="uid://b1io6mnq0nj8q" path="res://shader_performance/shader_performance_3d.gdshader" id="1_xcko8"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3ws34"]
+render_priority = 0
+shader = ExtResource("1_xcko8")
+
+[sub_resource type="SphereMesh" id="SphereMesh_mk2aw"]
+material = SubResource("ShaderMaterial_3ws34")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xcko8"]
+render_priority = 0
+shader = ExtResource("1_xcko8")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_ftkkv"]
+material = SubResource("ShaderMaterial_xcko8")
+
+[node name="ShaderPerformance3D" type="Node3D" unique_id=2043572197]
+
+[node name="Sphere" type="MeshInstance3D" parent="." unique_id=31543312]
+visible = false
+mesh = SubResource("SphereMesh_mk2aw")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=334320742]
+transform = Transform3D(-1.1313341e-08, -0.9659258, 0.25881907, -4.222196e-08, 0.25881907, 0.9659258, -1, 0, -4.371139e-08, 1, 0, -1)
+
+[node name="CameraAll" type="Camera3D" parent="." unique_id=56273595]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -1, 2, 0)
+visible = false
+current = true
+fov = 65.721466
+
+[node name="CameraPlane" type="Camera3D" parent="." unique_id=1090450417]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -2, 1, 0)
+current = true
+fov = 59.088406
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=598541591]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
+mesh = SubResource("PlaneMesh_ftkkv")

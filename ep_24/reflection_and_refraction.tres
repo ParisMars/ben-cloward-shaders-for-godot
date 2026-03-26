@@ -1,0 +1,120 @@
+[gd_resource type="VisualShader" format=3 uid="uid://by0g2ih16jl3m"]
+
+[ext_resource type="Cubemap" uid="uid://nghlul6donhs" path="res://ep_24/cube_map_textures/cubemap.res" id="1_ac053"]
+
+[sub_resource type="VisualShaderNodeVectorRefract" id="VisualShaderNodeVectorRefract_ac053"]
+default_input_values = [0, Vector3(0, 0, 0), 1, Vector3(0, 0, 0), 2, 0.5]
+linked_parent_graph_frame = 15
+
+[sub_resource type="VisualShaderNodeVectorOp" id="VisualShaderNodeVectorOp_ac053"]
+linked_parent_graph_frame = 13
+operator = 2
+
+[sub_resource type="VisualShaderNodeFloatConstant" id="VisualShaderNodeFloatConstant_ywa0r"]
+linked_parent_graph_frame = 13
+constant = -1.0
+
+[sub_resource type="VisualShaderNodeFrame" id="VisualShaderNodeFrame_ac053"]
+size = Vector2(886.25024, 371.0001)
+title = "Direction is toward camera"
+tint_color_enabled = true
+tint_color = Color(0.33125, 0.17323361, 0.15320313, 1)
+attached_nodes = PackedInt32Array(2, 11, 12)
+
+[sub_resource type="VisualShaderNodeFloatParameter" id="VisualShaderNodeFloatParameter_ac053"]
+parameter_name = "eta"
+hint = 1
+max = 3.0
+default_value_enabled = true
+default_value = 1.5
+
+[sub_resource type="VisualShaderNodeFrame" id="VisualShaderNodeFrame_ywa0r"]
+size = Vector2(703, 443.00006)
+title = "Refraction uses the direction to the camera, not from it"
+tint_color_enabled = true
+tint_color = Color(0.5, 0.45517576, 0.2890625, 0.75)
+attached_nodes = PackedInt32Array(16, 10)
+
+[sub_resource type="VisualShaderNodeCubemap" id="VisualShaderNodeCubemap_ywa0r"]
+linked_parent_graph_frame = 15
+cube_map = ExtResource("1_ac053")
+
+[sub_resource type="VisualShaderNodeFresnel" id="VisualShaderNodeFresnel_ac053"]
+default_input_values = [2, false, 3, 2.0]
+
+[sub_resource type="VisualShaderNodeMix" id="VisualShaderNodeMix_ywa0r"]
+default_input_values = [0, Vector3(0, 0, 0), 1, Vector3(1, 1, 1), 2, Vector3(0.5, 0.5, 0.5)]
+op_type = 3
+
+[sub_resource type="VisualShaderNodeVectorOp" id="VisualShaderNodeVectorOp_ywa0r"]
+operator = 2
+
+[sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_t68tr"]
+linked_parent_graph_frame = 13
+input_name = "camera_direction_world"
+
+[sub_resource type="VisualShaderNodeFloatConstant" id="VisualShaderNodeFloatConstant_26rrj"]
+constant = 0.5
+
+[sub_resource type="VisualShaderNodeFloatParameter" id="VisualShaderNodeFloatParameter_ywa0r"]
+parameter_name = "power"
+hint = 1
+max = 8.0
+default_value_enabled = true
+default_value = 3.0
+
+[sub_resource type="VisualShaderNodeTransformVecMult" id="VisualShaderNodeTransformVecMult_ac053"]
+operator = 2
+
+[sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_ywa0r"]
+input_name = "normal"
+
+[sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_26rrj"]
+input_name = "inv_view_matrix"
+
+[sub_resource type="VisualShaderNodeVectorOp" id="VisualShaderNodeVectorOp_n7dq0"]
+operator = 10
+
+[sub_resource type="VisualShaderNodeCubemap" id="VisualShaderNodeCubemap_ac053"]
+cube_map = ExtResource("1_ac053")
+texture_type = 1
+
+[resource]
+nodes/fragment/0/position = Vector2(1072, 272)
+nodes/fragment/2/node = SubResource("VisualShaderNodeInput_t68tr")
+nodes/fragment/2/position = Vector2(-992, 128)
+nodes/fragment/3/node = SubResource("VisualShaderNodeTransformVecMult_ac053")
+nodes/fragment/3/position = Vector2(-608, 432)
+nodes/fragment/4/node = SubResource("VisualShaderNodeInput_ywa0r")
+nodes/fragment/4/position = Vector2(-976, 544)
+nodes/fragment/5/node = SubResource("VisualShaderNodeInput_26rrj")
+nodes/fragment/5/position = Vector2(-944, 416)
+nodes/fragment/6/node = SubResource("VisualShaderNodeVectorOp_n7dq0")
+nodes/fragment/6/position = Vector2(-192, 96)
+nodes/fragment/9/node = SubResource("VisualShaderNodeCubemap_ac053")
+nodes/fragment/9/position = Vector2(64, 96)
+nodes/fragment/10/node = SubResource("VisualShaderNodeVectorRefract_ac053")
+nodes/fragment/10/position = Vector2(-208, 496)
+nodes/fragment/11/node = SubResource("VisualShaderNodeVectorOp_ac053")
+nodes/fragment/11/position = Vector2(-512, 96)
+nodes/fragment/12/node = SubResource("VisualShaderNodeFloatConstant_ywa0r")
+nodes/fragment/12/position = Vector2(-880, 240)
+nodes/fragment/13/node = SubResource("VisualShaderNodeFrame_ac053")
+nodes/fragment/13/position = Vector2(-1024, 80)
+nodes/fragment/14/node = SubResource("VisualShaderNodeFloatParameter_ac053")
+nodes/fragment/14/position = Vector2(-672, 656)
+nodes/fragment/15/node = SubResource("VisualShaderNodeFrame_ywa0r")
+nodes/fragment/15/position = Vector2(-240, 464)
+nodes/fragment/16/node = SubResource("VisualShaderNodeCubemap_ywa0r")
+nodes/fragment/16/position = Vector2(16, 496)
+nodes/fragment/17/node = SubResource("VisualShaderNodeFresnel_ac053")
+nodes/fragment/17/position = Vector2(64, 832)
+nodes/fragment/18/node = SubResource("VisualShaderNodeMix_ywa0r")
+nodes/fragment/18/position = Vector2(512, 320)
+nodes/fragment/19/node = SubResource("VisualShaderNodeVectorOp_ywa0r")
+nodes/fragment/19/position = Vector2(784, 432)
+nodes/fragment/20/node = SubResource("VisualShaderNodeFloatConstant_26rrj")
+nodes/fragment/20/position = Vector2(528, 592)
+nodes/fragment/21/node = SubResource("VisualShaderNodeFloatParameter_ywa0r")
+nodes/fragment/21/position = Vector2(-240, 912)
+nodes/fragment/connections = PackedInt32Array(5, 0, 3, 0, 4, 0, 3, 1, 3, 0, 10, 1, 12, 0, 11, 1, 11, 0, 6, 0, 3, 0, 6, 1, 2, 0, 11, 0, 14, 0, 10, 2, 2, 0, 10, 0, 6, 0, 9, 0, 10, 0, 16, 0, 17, 0, 18, 2, 18, 0, 0, 0, 16, 0, 18, 0, 9, 0, 18, 1, 18, 0, 19, 0, 19, 0, 0, 5, 20, 0, 19, 1, 21, 0, 17, 3)

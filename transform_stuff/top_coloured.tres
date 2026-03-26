@@ -1,0 +1,86 @@
+[gd_resource type="VisualShader" format=3 uid="uid://d2y7j8ykkmg7b"]
+
+[ext_resource type="Texture2D" uid="uid://1ynui37sffd" path="res://textures/icon.svg" id="1_wrflh"]
+
+[sub_resource type="VisualShaderNodeTransformVecMult" id="VisualShaderNodeTransformVecMult_v47fl"]
+linked_parent_graph_frame = 20
+operator = 2
+
+[sub_resource type="VisualShaderNodeClamp" id="VisualShaderNodeClamp_v47fl"]
+
+[sub_resource type="VisualShaderNodeVectorOp" id="VisualShaderNodeVectorOp_v47fl"]
+operator = 2
+
+[sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_ihr13"]
+linked_parent_graph_frame = 21
+texture = ExtResource("1_wrflh")
+texture_type = 1
+
+[sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_nsyuk"]
+input_name = "uv"
+
+[sub_resource type="VisualShaderNodeUVFunc" id="VisualShaderNodeUVFunc_yl2s5"]
+function = 1
+
+[sub_resource type="VisualShaderNodeFloatConstant" id="VisualShaderNodeFloatConstant_b7nlj"]
+constant = 4.0
+
+[sub_resource type="VisualShaderNodeVectorFunc" id="VisualShaderNodeVectorFunc_vwupk"]
+expanded_output_ports = [0]
+
+[sub_resource type="VisualShaderNodeDotProduct" id="VisualShaderNodeDotProduct_vwupk"]
+
+[sub_resource type="VisualShaderNodeFrame" id="VisualShaderNodeFrame_vwupk"]
+size = Vector2(325, 275)
+title = "If it's a direction, use 3x3"
+tint_color_enabled = true
+tint_color = Color(0.49803922, 0.29803923, 0.49803922, 1)
+attached_nodes = PackedInt32Array(11)
+
+[sub_resource type="VisualShaderNodeFrame" id="VisualShaderNodeFrame_wrflh"]
+size = Vector2(469, 399)
+title = "Set to 'Color', not 'Data' (equivalent to source_color in code)"
+tint_color_enabled = true
+tint_color = Color(0.49803922, 0.29803923, 0.09803922, 1)
+attached_nodes = PackedInt32Array(15)
+
+[sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_ihr13"]
+input_name = "normal"
+
+[sub_resource type="VisualShaderNodeVectorCompose" id="VisualShaderNodeVectorCompose_yl2s5"]
+default_input_values = [0, 0.0, 1, 1.0, 2, 0.0]
+
+[sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_qccwn"]
+input_name = "inv_view_matrix"
+
+[resource]
+nodes/fragment/0/position = Vector2(460, 200)
+nodes/fragment/2/node = SubResource("VisualShaderNodeDotProduct_vwupk")
+nodes/fragment/2/position = Vector2(-320, 272)
+nodes/fragment/3/node = SubResource("VisualShaderNodeInput_ihr13")
+nodes/fragment/3/position = Vector2(-1216, 128)
+nodes/fragment/5/node = SubResource("VisualShaderNodeVectorCompose_yl2s5")
+nodes/fragment/5/position = Vector2(-560, 352)
+nodes/fragment/7/node = SubResource("VisualShaderNodeInput_qccwn")
+nodes/fragment/7/position = Vector2(-1168, 16)
+nodes/fragment/11/node = SubResource("VisualShaderNodeTransformVecMult_v47fl")
+nodes/fragment/11/position = Vector2(-832, 48)
+nodes/fragment/12/node = SubResource("VisualShaderNodeClamp_v47fl")
+nodes/fragment/12/position = Vector2(0, 192)
+nodes/fragment/14/node = SubResource("VisualShaderNodeVectorOp_v47fl")
+nodes/fragment/14/position = Vector2(240, 200)
+nodes/fragment/15/node = SubResource("VisualShaderNodeTexture_ihr13")
+nodes/fragment/15/position = Vector2(-320, 580)
+nodes/fragment/16/node = SubResource("VisualShaderNodeInput_nsyuk")
+nodes/fragment/16/position = Vector2(-940, 540)
+nodes/fragment/17/node = SubResource("VisualShaderNodeUVFunc_yl2s5")
+nodes/fragment/17/position = Vector2(-600, 540)
+nodes/fragment/18/node = SubResource("VisualShaderNodeFloatConstant_b7nlj")
+nodes/fragment/18/position = Vector2(-820, 660)
+nodes/fragment/19/node = SubResource("VisualShaderNodeVectorFunc_vwupk")
+nodes/fragment/19/position = Vector2(-544, 16)
+nodes/fragment/20/node = SubResource("VisualShaderNodeFrame_vwupk")
+nodes/fragment/20/position = Vector2(-864, 7.2)
+nodes/fragment/21/node = SubResource("VisualShaderNodeFrame_wrflh")
+nodes/fragment/21/position = Vector2(-200, 660)
+nodes/fragment/connections = PackedInt32Array(7, 0, 11, 0, 12, 0, 14, 0, 14, 0, 0, 0, 15, 0, 14, 1, 16, 0, 17, 0, 17, 0, 15, 0, 18, 0, 17, 1, 3, 0, 11, 1, 5, 0, 2, 1, 19, 0, 2, 0, 11, 0, 19, 0, 19, 2, 12, 0)

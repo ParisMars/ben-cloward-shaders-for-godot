@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://b47j4lo3uck3k"]
+
+[ext_resource type="Shader" uid="uid://k3bcjd8m6n8l" path="res://custom_shader_nodes/custom_triplanar_projection.tres" id="1_mj2bl"]
+[ext_resource type="Texture2D" uid="uid://dls3fqbvd0uhn" path="res://textures/colour_grid.png" id="2_gcjiq"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gcjiq"]
+render_priority = 0
+shader = ExtResource("1_mj2bl")
+shader_parameter/tp = ExtResource("2_gcjiq")
+
+[sub_resource type="SphereMesh" id="SphereMesh_yywwy"]
+material = SubResource("ShaderMaterial_gcjiq")
+
+[node name="CustomTriplanarProjection" type="Node3D" unique_id=1975730605]
+
+[node name="Sphere" type="MeshInstance3D" parent="." unique_id=1890581717]
+mesh = SubResource("SphereMesh_yywwy")

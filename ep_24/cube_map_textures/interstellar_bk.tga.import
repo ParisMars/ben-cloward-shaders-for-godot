@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://dtmws5fofasa2"
+path="res://.godot/imported/interstellar_bk.tga-60fc33f86b1f138b2f95973d2b844f78.image"
+
+[deps]
+
+source_file="res://ep_24/cube_map_textures/interstellar_bk.tga"
+dest_files=["res://.godot/imported/interstellar_bk.tga-60fc33f86b1f138b2f95973d2b844f78.image"]
+
+[params]
+

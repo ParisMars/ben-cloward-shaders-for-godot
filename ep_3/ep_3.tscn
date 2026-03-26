@@ -1,0 +1,31 @@
+[gd_scene load_steps=9 format=3 uid="uid://bny4ir54b6sdq"]
+
+[ext_resource type="Shader" uid="uid://d0hx5f8pyl7rm" path="res://ep_3/ep_3.tres" id="1_ad86o"]
+[ext_resource type="Texture2D" uid="uid://dqy7hv12b6vi6" path="res://textures/bacteria_bw_512_15pc.png" id="2_ju3mj"]
+[ext_resource type="Shader" uid="uid://cv5sbmjvkqd1b" path="res://ep_3/ep_3_code.gdshader" id="3_4f4fs"]
+[ext_resource type="Texture2D" uid="uid://dls3fqbvd0uhn" path="res://textures/colour_grid.png" id="4_4f4fs"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ova3e"]
+render_priority = 0
+shader = ExtResource("1_ad86o")
+shader_parameter/ColorParameter = Color(0.786073, 0.153353, 0.838264, 1)
+shader_parameter/Texture2DParameter = ExtResource("2_ju3mj")
+
+[sub_resource type="SphereMesh" id="SphereMesh_2ipsq"]
+material = SubResource("ShaderMaterial_ova3e")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_e5qrr"]
+render_priority = 0
+shader = ExtResource("3_4f4fs")
+shader_parameter/albedo_texture = ExtResource("4_4f4fs")
+shader_parameter/alpha_erosion_texture = ExtResource("2_ju3mj")
+
+[sub_resource type="SphereMesh" id="SphereMesh_ju3mj"]
+material = SubResource("ShaderMaterial_e5qrr")
+
+[node name="Ep3" type="MeshInstance3D"]
+mesh = SubResource("SphereMesh_2ipsq")
+
+[node name="ScriptedSphere" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.12247558, 0, -0.9924715, 0, 1, 0, 0.9924715, 0, 0.12247558, 0, 0, 1.0361298)
+mesh = SubResource("SphereMesh_ju3mj")

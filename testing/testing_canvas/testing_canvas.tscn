@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://clwam7eurohg2"]
+
+[ext_resource type="Texture2D" uid="uid://bw5eragxrc56t" path="res://textures/ground_cracks.png" id="1_dxjqj"]
+[ext_resource type="Shader" uid="uid://wgauvflra54a" path="res://testing/testing_canvas/testing_canvas.gdshader" id="1_ycarx"]
+[ext_resource type="Texture2D" uid="uid://1ynui37sffd" path="res://textures/icon.svg" id="2_3joek"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3joek"]
+shader = ExtResource("1_ycarx")
+shader_parameter/txt = ExtResource("2_3joek")
+
+[node name="TestingCanvas" type="Node2D" unique_id=1836048048]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1375131251]
+material = SubResource("ShaderMaterial_3joek")
+texture = ExtResource("1_dxjqj")

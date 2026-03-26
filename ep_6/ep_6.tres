@@ -1,0 +1,88 @@
+[gd_resource type="VisualShader" format=3 uid="uid://c5hcnl8v3wefb"]
+
+[sub_resource type="VisualShaderNodeVectorOp" id="VisualShaderNodeVectorOp_iu8ta"]
+output_port_for_preview = 0
+linked_parent_graph_frame = 12
+
+[sub_resource type="VisualShaderNodeFrame" id="VisualShaderNodeFrame_yxk8u"]
+size = Vector2(900, 1022)
+title = "Manual Mix/Lerp"
+tint_color_enabled = true
+tint_color = Color(0.36859474, 0.2652588, 0.4140625, 1)
+attached_nodes = PackedInt32Array(6, 11, 7, 4)
+
+[sub_resource type="VisualShaderNodeMix" id="VisualShaderNodeMix_ws4jl"]
+output_port_for_preview = 0
+default_input_values = [0, Vector3(0, 0, 0), 1, Vector3(1, 1, 1), 2, Vector3(0.5, 0.5, 0.5)]
+linked_parent_graph_frame = 14
+op_type = 3
+
+[sub_resource type="VisualShaderNodeFrame" id="VisualShaderNodeFrame_iu8ta"]
+size = Vector2(325, 523)
+title = "Lerp"
+tint_color_enabled = true
+tint_color = Color(0.2, 0.2, 0.49803922, 1)
+attached_nodes = PackedInt32Array(13)
+
+[sub_resource type="VisualShaderNodeReroute" id="VisualShaderNodeReroute_yxk8u"]
+default_input_values = [0, Vector4(0, 0, 0, 0)]
+port_type = 5
+
+[sub_resource type="VisualShaderNodeReroute" id="VisualShaderNodeReroute_ws4jl"]
+default_input_values = [0, Vector4(0, 0, 0, 0)]
+port_type = 5
+
+[sub_resource type="VisualShaderNodeColorConstant" id="VisualShaderNodeColorConstant_iu8ta"]
+constant = Color(1, 0.24963441, 0.48607188, 1)
+
+[sub_resource type="VisualShaderNodeColorConstant" id="VisualShaderNodeColorConstant_yxk8u"]
+constant = Color(0.29374927, 0.65174365, 0.99999994, 1)
+
+[sub_resource type="VisualShaderNodeVectorOp" id="VisualShaderNodeVectorOp_ws4jl"]
+output_port_for_preview = 0
+linked_parent_graph_frame = 12
+operator = 2
+
+[sub_resource type="VisualShaderNodeFloatConstant" id="VisualShaderNodeFloatConstant_0bege"]
+constant = 1.0
+
+[sub_resource type="VisualShaderNodeVectorOp" id="VisualShaderNodeVectorOp_7j8x1"]
+output_port_for_preview = 0
+linked_parent_graph_frame = 12
+operator = 2
+
+[sub_resource type="VisualShaderNodeFloatFunc" id="VisualShaderNodeFloatFunc_1bqcw"]
+linked_parent_graph_frame = 12
+function = 31
+
+[sub_resource type="VisualShaderNodeReroute" id="VisualShaderNodeReroute_ap0kk"]
+
+[resource]
+nodes/fragment/0/position = Vector2(400, 120)
+nodes/fragment/2/node = SubResource("VisualShaderNodeColorConstant_iu8ta")
+nodes/fragment/2/position = Vector2(-680, 300)
+nodes/fragment/3/node = SubResource("VisualShaderNodeColorConstant_yxk8u")
+nodes/fragment/3/position = Vector2(-740, 720)
+nodes/fragment/4/node = SubResource("VisualShaderNodeVectorOp_ws4jl")
+nodes/fragment/4/position = Vector2(-160, 620)
+nodes/fragment/5/node = SubResource("VisualShaderNodeFloatConstant_0bege")
+nodes/fragment/5/position = Vector2(-1020, 220)
+nodes/fragment/6/node = SubResource("VisualShaderNodeVectorOp_7j8x1")
+nodes/fragment/6/position = Vector2(-160, 220)
+nodes/fragment/7/node = SubResource("VisualShaderNodeFloatFunc_1bqcw")
+nodes/fragment/7/position = Vector2(-400, 420)
+nodes/fragment/8/node = SubResource("VisualShaderNodeReroute_ap0kk")
+nodes/fragment/8/position = Vector2(-540, 560)
+nodes/fragment/11/node = SubResource("VisualShaderNodeVectorOp_iu8ta")
+nodes/fragment/11/position = Vector2(60, 460)
+nodes/fragment/12/node = SubResource("VisualShaderNodeFrame_yxk8u")
+nodes/fragment/12/position = Vector2(-440, 180)
+nodes/fragment/13/node = SubResource("VisualShaderNodeMix_ws4jl")
+nodes/fragment/13/position = Vector2(60, -140)
+nodes/fragment/14/node = SubResource("VisualShaderNodeFrame_iu8ta")
+nodes/fragment/14/position = Vector2(20, -180)
+nodes/fragment/15/node = SubResource("VisualShaderNodeReroute_yxk8u")
+nodes/fragment/15/position = Vector2(-500, 260)
+nodes/fragment/16/node = SubResource("VisualShaderNodeReroute_ws4jl")
+nodes/fragment/16/position = Vector2(-540, 700)
+nodes/fragment/connections = PackedInt32Array(8, 0, 7, 0, 7, 0, 6, 1, 8, 0, 4, 0, 6, 0, 11, 0, 4, 0, 11, 1, 5, 0, 13, 2, 2, 0, 15, 0, 15, 0, 6, 0, 3, 0, 16, 0, 16, 0, 4, 1, 16, 0, 13, 1, 15, 0, 13, 0, 5, 0, 8, 0, 13, 0, 0, 0)

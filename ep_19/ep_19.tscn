@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://dsrna7knduwh"]
+
+[ext_resource type="Shader" uid="uid://cnsm632itesd3" path="res://ep_19/ep_19.tres" id="1_o2da4"]
+[ext_resource type="Texture2D" uid="uid://1ynui37sffd" path="res://textures/icon.svg" id="2_ji8hi"]
+[ext_resource type="Shader" uid="uid://b57sujsl107br" path="res://ep_19/rotate.tres" id="3_ji8hi"]
+[ext_resource type="Shader" uid="uid://d13ve3nojcawo" path="res://ep_19/code_rotate.gdshader" id="4_v10o0"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_v10o0"]
+shader = ExtResource("1_o2da4")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0yxql"]
+shader = ExtResource("3_ji8hi")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_g2ipu"]
+shader = ExtResource("4_v10o0")
+shader_parameter/tex = ExtResource("2_ji8hi")
+
+[node name="Ep19" type="Node2D" unique_id=420213769]
+
+[node name="ShittyRipples" type="Sprite2D" parent="." unique_id=1446995451]
+material = SubResource("ShaderMaterial_v10o0")
+texture = ExtResource("2_ji8hi")
+
+[node name="Rotation" type="Sprite2D" parent="." unique_id=1807314852]
+material = SubResource("ShaderMaterial_0yxql")
+texture = ExtResource("2_ji8hi")
+
+[node name="RotateCode" type="Sprite2D" parent="." unique_id=24705096]
+material = SubResource("ShaderMaterial_g2ipu")
+texture = ExtResource("2_ji8hi")

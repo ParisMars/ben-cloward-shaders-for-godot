@@ -1,0 +1,129 @@
+[gd_resource type="VisualShader" format=3 uid="uid://k6my3tp0x2s6"]
+
+[sub_resource type="VisualShaderNodeVectorCompose" id="VisualShaderNodeVectorCompose_47l61"]
+linked_parent_graph_frame = 22
+
+[sub_resource type="VisualShaderNodeVectorCompose" id="VisualShaderNodeVectorCompose_nigsd"]
+linked_parent_graph_frame = 22
+
+[sub_resource type="VisualShaderNodeVectorDecompose" id="VisualShaderNodeVectorDecompose_qtntj"]
+linked_parent_graph_frame = 22
+
+[sub_resource type="VisualShaderNodeVectorDecompose" id="VisualShaderNodeVectorDecompose_a4vr2"]
+linked_parent_graph_frame = 22
+
+[sub_resource type="VisualShaderNodeFloatOp" id="VisualShaderNodeFloatOp_k5slk"]
+linked_parent_graph_frame = 22
+operator = 2
+
+[sub_resource type="VisualShaderNodeFloatOp" id="VisualShaderNodeFloatOp_wrnka"]
+linked_parent_graph_frame = 22
+
+[sub_resource type="VisualShaderNodeFloatOp" id="VisualShaderNodeFloatOp_q0r0l"]
+linked_parent_graph_frame = 22
+operator = 2
+
+[sub_resource type="VisualShaderNodeFloatOp" id="VisualShaderNodeFloatOp_px25f"]
+linked_parent_graph_frame = 22
+operator = 2
+
+[sub_resource type="VisualShaderNodeFloatOp" id="VisualShaderNodeFloatOp_y68km"]
+linked_parent_graph_frame = 22
+
+[sub_resource type="VisualShaderNodeFrame" id="VisualShaderNodeFrame_d1v4j"]
+size = Vector2(1675.0001, 875)
+title = "Manual Dot Product"
+tint_color_enabled = true
+tint_color = Color(0.19999999, 0.33039212, 0.4980392, 1)
+attached_nodes = PackedInt32Array(21, 10, 18, 19, 17, 20, 14, 15, 11)
+
+[sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_47l61"]
+input_name = "camera_position_world"
+
+[sub_resource type="VisualShaderNodeDotProduct" id="VisualShaderNodeDotProduct_qtntj"]
+
+[sub_resource type="VisualShaderNodeFloatFunc" id="VisualShaderNodeFloatFunc_k5slk"]
+function = 31
+
+[sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_wrnka"]
+input_name = "normal"
+
+[sub_resource type="VisualShaderNodeTransformVecMult" id="VisualShaderNodeTransformVecMult_47l61"]
+operator = 2
+
+[sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_nigsd"]
+input_name = "inv_view_matrix"
+
+[sub_resource type="VisualShaderNodeFresnel" id="VisualShaderNodeFresnel_47l61"]
+default_input_values = [2, true, 3, 6.0]
+
+[sub_resource type="VisualShaderNodeColorConstant" id="VisualShaderNodeColorConstant_47l61"]
+constant = Color(0.881775, 0, 0.043056056, 1)
+
+[sub_resource type="VisualShaderNodeVectorOp" id="VisualShaderNodeVectorOp_nigsd"]
+operator = 2
+
+[sub_resource type="VisualShaderNodeFloatFunc" id="VisualShaderNodeFloatFunc_47l61"]
+function = 31
+
+[sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_qtntj"]
+input_name = "light"
+
+[sub_resource type="VisualShaderNodeDotProduct" id="VisualShaderNodeDotProduct_a4vr2"]
+
+[sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_k5slk"]
+input_name = "normal"
+
+[resource]
+modes/diffuse = 3
+flags/unshaded = true
+nodes/fragment/0/position = Vector2(420, -100)
+nodes/fragment/10/node = SubResource("VisualShaderNodeVectorCompose_47l61")
+nodes/fragment/10/position = Vector2(-940, 380)
+nodes/fragment/11/node = SubResource("VisualShaderNodeVectorCompose_nigsd")
+nodes/fragment/11/position = Vector2(-960, 700)
+nodes/fragment/14/node = SubResource("VisualShaderNodeVectorDecompose_qtntj")
+nodes/fragment/14/position = Vector2(-680, 700)
+nodes/fragment/15/node = SubResource("VisualShaderNodeVectorDecompose_a4vr2")
+nodes/fragment/15/position = Vector2(-660, 380)
+nodes/fragment/17/node = SubResource("VisualShaderNodeFloatOp_k5slk")
+nodes/fragment/17/position = Vector2(-380, 360)
+nodes/fragment/18/node = SubResource("VisualShaderNodeFloatOp_wrnka")
+nodes/fragment/18/position = Vector2(-140, 500)
+nodes/fragment/19/node = SubResource("VisualShaderNodeFloatOp_q0r0l")
+nodes/fragment/19/position = Vector2(-380, 620)
+nodes/fragment/20/node = SubResource("VisualShaderNodeFloatOp_px25f")
+nodes/fragment/20/position = Vector2(-380, 840)
+nodes/fragment/21/node = SubResource("VisualShaderNodeFloatOp_y68km")
+nodes/fragment/21/position = Vector2(120, 640)
+nodes/fragment/22/node = SubResource("VisualShaderNodeFrame_d1v4j")
+nodes/fragment/22/position = Vector2(-1000, 320)
+nodes/fragment/23/node = SubResource("VisualShaderNodeInput_47l61")
+nodes/fragment/23/position = Vector2(-440, 140)
+nodes/fragment/25/node = SubResource("VisualShaderNodeDotProduct_qtntj")
+nodes/fragment/25/position = Vector2(-80, 0)
+nodes/fragment/27/node = SubResource("VisualShaderNodeFloatFunc_k5slk")
+nodes/fragment/27/position = Vector2(120, 0)
+nodes/fragment/28/node = SubResource("VisualShaderNodeInput_wrnka")
+nodes/fragment/28/position = Vector2(-680, -40)
+nodes/fragment/29/node = SubResource("VisualShaderNodeTransformVecMult_47l61")
+nodes/fragment/29/position = Vector2(-320, -140)
+nodes/fragment/30/node = SubResource("VisualShaderNodeInput_nigsd")
+nodes/fragment/30/position = Vector2(-640, -160)
+nodes/fragment/31/node = SubResource("VisualShaderNodeFresnel_47l61")
+nodes/fragment/31/position = Vector2(-340, -380)
+nodes/fragment/32/node = SubResource("VisualShaderNodeColorConstant_47l61")
+nodes/fragment/32/position = Vector2(-280, -500)
+nodes/fragment/33/node = SubResource("VisualShaderNodeVectorOp_nigsd")
+nodes/fragment/33/position = Vector2(180, -220)
+nodes/fragment/connections = PackedInt32Array(11, 0, 14, 0, 10, 0, 15, 0, 15, 0, 17, 0, 14, 0, 17, 1, 15, 1, 19, 0, 14, 1, 19, 1, 15, 2, 20, 0, 14, 2, 20, 1, 20, 0, 21, 1, 17, 0, 18, 0, 19, 0, 18, 1, 18, 0, 21, 0, 23, 0, 25, 1, 25, 0, 27, 0, 28, 0, 29, 1, 30, 0, 29, 0, 32, 0, 33, 0, 31, 0, 33, 1, 29, 0, 25, 0, 33, 0, 0, 0)
+nodes/light/0/position = Vector2(400, 240)
+nodes/light/2/node = SubResource("VisualShaderNodeInput_qtntj")
+nodes/light/2/position = Vector2(-400, 180)
+nodes/light/3/node = SubResource("VisualShaderNodeDotProduct_a4vr2")
+nodes/light/3/position = Vector2(-40, 240)
+nodes/light/4/node = SubResource("VisualShaderNodeInput_k5slk")
+nodes/light/4/position = Vector2(-400, 320)
+nodes/light/11/node = SubResource("VisualShaderNodeFloatFunc_47l61")
+nodes/light/11/position = Vector2(180, 240)
+nodes/light/connections = PackedInt32Array(4, 0, 3, 1, 2, 0, 3, 0, 3, 0, 11, 0)

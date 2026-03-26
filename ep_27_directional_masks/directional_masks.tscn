@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://d2txf57mxhcqw"]
+
+[ext_resource type="Shader" uid="uid://bgphwam0nge2p" path="res://ep_27_directional_masks/directional_masks.tres" id="1_b83dy"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jwnva"]
+render_priority = 0
+shader = ExtResource("1_b83dy")
+shader_parameter/FloatParameter = 8.0
+
+[sub_resource type="SphereMesh" id="SphereMesh_my8ka"]
+material = SubResource("ShaderMaterial_jwnva")
+
+[node name="DirectionalMasks" type="Node3D" unique_id=210566640]
+
+[node name="Sphere" type="MeshInstance3D" parent="." unique_id=137428127]
+mesh = SubResource("SphereMesh_my8ka")

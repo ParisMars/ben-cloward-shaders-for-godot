@@ -1,0 +1,178 @@
+[gd_resource type="VisualShader" format=3 uid="uid://c1nqbroi4pnge"]
+
+[sub_resource type="VisualShaderNodeReroute" id="VisualShaderNodeReroute_mdu7y"]
+linked_parent_graph_frame = 38
+
+[sub_resource type="VisualShaderNodeReroute" id="VisualShaderNodeReroute_244xd"]
+default_input_values = [0, Vector4(0, 0, 0, 0)]
+linked_parent_graph_frame = 38
+port_type = 5
+
+[sub_resource type="VisualShaderNodeFloatOp" id="VisualShaderNodeFloatOp_mdu7y"]
+output_port_for_preview = 0
+linked_parent_graph_frame = 38
+operator = 1
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_u47eq"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_n7gf1"]
+noise = SubResource("FastNoiseLite_u47eq")
+
+[sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_nk0oa"]
+linked_parent_graph_frame = 38
+texture = SubResource("NoiseTexture2D_n7gf1")
+
+[sub_resource type="VisualShaderNodeSmoothStep" id="VisualShaderNodeSmoothStep_u47eq"]
+output_port_for_preview = 0
+linked_parent_graph_frame = 38
+
+[sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_n7gf1"]
+linked_parent_graph_frame = 32
+input_name = "time"
+
+[sub_resource type="VisualShaderNodeFloatFunc" id="VisualShaderNodeFloatFunc_r7b44"]
+linked_parent_graph_frame = 32
+function = 0
+
+[sub_resource type="VisualShaderNodeFloatOp" id="VisualShaderNodeFloatOp_p54n7"]
+output_port_for_preview = 0
+linked_parent_graph_frame = 32
+operator = 1
+
+[sub_resource type="VisualShaderNodeStep" id="VisualShaderNodeStep_1vt2r"]
+output_port_for_preview = 0
+linked_parent_graph_frame = 32
+
+[sub_resource type="VisualShaderNodeStep" id="VisualShaderNodeStep_ep6y3"]
+output_port_for_preview = 0
+linked_parent_graph_frame = 32
+
+[sub_resource type="VisualShaderNodeFloatOp" id="VisualShaderNodeFloatOp_mduv3"]
+default_input_values = [0, 0.0, 1, 0.025]
+linked_parent_graph_frame = 32
+
+[sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_ccxf6"]
+linked_parent_graph_frame = 32
+texture = SubResource("NoiseTexture2D_n7gf1")
+
+[sub_resource type="VisualShaderNodeReroute" id="VisualShaderNodeReroute_f80je"]
+default_input_values = [0, Vector4(0, 0, 0, 0)]
+linked_parent_graph_frame = 32
+port_type = 5
+
+[sub_resource type="VisualShaderNodeMultiplyAdd" id="VisualShaderNodeMultiplyAdd_pw1dq"]
+default_input_values = [0, 0.0, 1, 0.5, 2, 0.5]
+linked_parent_graph_frame = 32
+
+[sub_resource type="VisualShaderNodeReroute" id="VisualShaderNodeReroute_jrpkv"]
+linked_parent_graph_frame = 32
+
+[sub_resource type="VisualShaderNodeFrame" id="VisualShaderNodeFrame_aibkp"]
+size = Vector2(2185, 1061)
+title = "Regular Step"
+tint_color_enabled = true
+tint_color = Color(0.25506166, 0.23197268, 0.69375, 0.45882353)
+attached_nodes = PackedInt32Array(24, 25, 26, 31, 29, 30, 28, 27, 23, 22)
+
+[sub_resource type="VisualShaderNodeSmoothStep" id="VisualShaderNodeSmoothStep_086j7"]
+output_port_for_preview = 0
+default_input_values = [0, 0.0, 1, 0.52, 2, 0.5]
+linked_parent_graph_frame = 38
+
+[sub_resource type="VisualShaderNodeFloatOp" id="VisualShaderNodeFloatOp_1spsy"]
+default_input_values = [0, 0.0, 1, 0.03]
+linked_parent_graph_frame = 38
+
+[sub_resource type="VisualShaderNodeFloatOp" id="VisualShaderNodeFloatOp_wnbif"]
+linked_parent_graph_frame = 38
+
+[sub_resource type="VisualShaderNodeFloatOp" id="VisualShaderNodeFloatOp_k8pvp"]
+default_input_values = [0, 0.0, 1, 0.07]
+linked_parent_graph_frame = 38
+
+[sub_resource type="VisualShaderNodeFloatOp" id="VisualShaderNodeFloatOp_m34l6"]
+default_input_values = [0, 0.0, 1, 0.04]
+linked_parent_graph_frame = 38
+
+[sub_resource type="VisualShaderNodeFrame" id="VisualShaderNodeFrame_44td5"]
+size = Vector2(2165, 1303)
+title = "Smoothstep"
+tint_color_enabled = true
+tint_color = Color(0.878125, 0.5942951, 0.20032224, 0.5686275)
+attached_nodes = PackedInt32Array(19, 36, 37, 35, 34, 33, 21, 16, 11, 8, 5, 4, 2)
+
+[sub_resource type="VisualShaderNodeFrame" id="VisualShaderNodeFrame_244xd"]
+size = Vector2(400, 225)
+title = "You want to subtract a greater mask, not a smaller one."
+tint_color_enabled = true
+tint_color = Color(0.17651367, 0.56933004, 0.753125, 0.75)
+
+[sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_p54n7"]
+linked_parent_graph_frame = 38
+input_name = "time"
+
+[sub_resource type="VisualShaderNodeFloatFunc" id="VisualShaderNodeFloatFunc_1vt2r"]
+linked_parent_graph_frame = 38
+function = 0
+
+[sub_resource type="VisualShaderNodeMultiplyAdd" id="VisualShaderNodeMultiplyAdd_ep6y3"]
+default_input_values = [0, 0.0, 1, 0.5, 2, 0.5]
+linked_parent_graph_frame = 38
+
+[resource]
+mode = 1
+flags/light_only = false
+nodes/fragment/0/position = Vector2(848, 928)
+nodes/fragment/2/node = SubResource("VisualShaderNodeTexture_nk0oa")
+nodes/fragment/2/position = Vector2(-1024, 528)
+nodes/fragment/4/node = SubResource("VisualShaderNodeInput_p54n7")
+nodes/fragment/4/position = Vector2(-1344, 128)
+nodes/fragment/5/node = SubResource("VisualShaderNodeFloatFunc_1vt2r")
+nodes/fragment/5/position = Vector2(-1056, 128)
+nodes/fragment/8/node = SubResource("VisualShaderNodeMultiplyAdd_ep6y3")
+nodes/fragment/8/position = Vector2(-880, 128)
+nodes/fragment/11/node = SubResource("VisualShaderNodeReroute_mdu7y")
+nodes/fragment/11/position = Vector2(-688, 176)
+nodes/fragment/16/node = SubResource("VisualShaderNodeReroute_244xd")
+nodes/fragment/16/position = Vector2(-784, 672)
+nodes/fragment/19/node = SubResource("VisualShaderNodeFloatOp_mdu7y")
+nodes/fragment/19/position = Vector2(128, 352)
+nodes/fragment/21/node = SubResource("VisualShaderNodeSmoothStep_u47eq")
+nodes/fragment/21/position = Vector2(-192, 64)
+nodes/fragment/22/node = SubResource("VisualShaderNodeInput_n7gf1")
+nodes/fragment/22/position = Vector2(-1296, 1344)
+nodes/fragment/23/node = SubResource("VisualShaderNodeFloatFunc_r7b44")
+nodes/fragment/23/position = Vector2(-1008, 1344)
+nodes/fragment/24/node = SubResource("VisualShaderNodeFloatOp_p54n7")
+nodes/fragment/24/position = Vector2(192, 1536)
+nodes/fragment/25/node = SubResource("VisualShaderNodeStep_1vt2r")
+nodes/fragment/25/position = Vector2(-96, 1344)
+nodes/fragment/26/node = SubResource("VisualShaderNodeStep_ep6y3")
+nodes/fragment/26/position = Vector2(-96, 1808)
+nodes/fragment/27/node = SubResource("VisualShaderNodeFloatOp_mduv3")
+nodes/fragment/27/position = Vector2(-320, 1760)
+nodes/fragment/28/node = SubResource("VisualShaderNodeTexture_ccxf6")
+nodes/fragment/28/position = Vector2(-864, 1744)
+nodes/fragment/29/node = SubResource("VisualShaderNodeReroute_f80je")
+nodes/fragment/29/position = Vector2(-624, 1888)
+nodes/fragment/30/node = SubResource("VisualShaderNodeMultiplyAdd_pw1dq")
+nodes/fragment/30/position = Vector2(-832, 1344)
+nodes/fragment/31/node = SubResource("VisualShaderNodeReroute_jrpkv")
+nodes/fragment/31/position = Vector2(-656, 1376)
+nodes/fragment/32/node = SubResource("VisualShaderNodeFrame_aibkp")
+nodes/fragment/32/position = Vector2(-1328, 1312)
+nodes/fragment/33/node = SubResource("VisualShaderNodeSmoothStep_086j7")
+nodes/fragment/33/position = Vector2(-192, 544)
+nodes/fragment/34/node = SubResource("VisualShaderNodeFloatOp_1spsy")
+nodes/fragment/34/position = Vector2(-432, 80)
+nodes/fragment/35/node = SubResource("VisualShaderNodeFloatOp_wnbif")
+nodes/fragment/35/position = Vector2(-432, -80)
+nodes/fragment/36/node = SubResource("VisualShaderNodeFloatOp_k8pvp")
+nodes/fragment/36/position = Vector2(-432, 528)
+nodes/fragment/37/node = SubResource("VisualShaderNodeFloatOp_m34l6")
+nodes/fragment/37/position = Vector2(-432, 368)
+nodes/fragment/38/node = SubResource("VisualShaderNodeFrame_44td5")
+nodes/fragment/38/position = Vector2(-1376, -120.8)
+nodes/fragment/39/node = SubResource("VisualShaderNodeFrame_244xd")
+nodes/fragment/39/position = Vector2(592, 496)
+nodes/fragment/connections = PackedInt32Array(4, 0, 5, 0, 5, 0, 8, 0, 8, 0, 11, 0, 2, 0, 16, 0, 22, 0, 23, 0, 23, 0, 30, 0, 30, 0, 31, 0, 28, 0, 29, 0, 31, 0, 25, 0, 29, 0, 25, 1, 29, 0, 26, 1, 25, 0, 24, 0, 26, 0, 24, 1, 31, 0, 27, 0, 27, 0, 26, 0, 16, 0, 21, 2, 16, 0, 33, 2, 33, 0, 19, 1, 21, 0, 19, 0, 11, 0, 34, 0, 34, 0, 21, 1, 11, 0, 36, 0, 36, 0, 33, 1, 11, 0, 35, 0, 35, 0, 21, 0, 11, 0, 37, 0, 37, 0, 33, 0, 19, 0, 0, 0, 25, 0, 0, 1)

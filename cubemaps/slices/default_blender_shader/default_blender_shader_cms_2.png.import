@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://byfo76wroy13o"
+path="res://.godot/imported/default_blender_shader_cms_2.png-458d25dbc9598975d6d50881a6653630.image"
+
+[deps]
+
+source_file="res://cubemaps/slices/default_blender_shader/default_blender_shader_cms_2.png"
+dest_files=["res://.godot/imported/default_blender_shader_cms_2.png-458d25dbc9598975d6d50881a6653630.image"]
+
+[params]
+

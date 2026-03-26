@@ -1,0 +1,74 @@
+[gd_scene format=3 uid="uid://fa44t42b6431"]
+
+[ext_resource type="Script" uid="uid://cd5bphjd2huib" path="res://cubemaps/cube_map_creator.gd" id="1_asjk7"]
+[ext_resource type="Shader" uid="uid://by0g2ih16jl3m" path="res://ep_24/reflection_and_refraction.tres" id="1_pwp7v"]
+[ext_resource type="Image" uid="uid://cr78whf8ftp77" path="res://cubemaps/slices/cm_farm_road/right.png" id="2_i4a5v"]
+[ext_resource type="Shader" uid="uid://brcpmswxpv4yc" path="res://ep_24/cobble_stone.tres" id="3_s5n4n"]
+[ext_resource type="Image" uid="uid://d013ww530bvbc" path="res://cubemaps/slices/cm_farm_road/left.png" id="3_yfluy"]
+[ext_resource type="Image" uid="uid://bu5f6xkpeub5y" path="res://cubemaps/slices/cm_farm_road/up.png" id="4_x6d08"]
+[ext_resource type="Image" uid="uid://bgxbvph2sq6si" path="res://cubemaps/slices/cm_farm_road/down.png" id="5_b6vaa"]
+[ext_resource type="Image" uid="uid://bka48dqede7n1" path="res://cubemaps/slices/cm_farm_road/front.png" id="6_1q6h0"]
+[ext_resource type="Image" uid="uid://btn2soq0i7pt3" path="res://cubemaps/slices/cm_farm_road/back.png" id="7_oi2eg"]
+[ext_resource type="Texture2D" uid="uid://b8behhw4ynm7r" path="res://ep_24/non_shit_textures/muddy_tracks_2k_7zip/textures/muddy_tracks_nor_dx_2k.jpg" id="9_ehuua"]
+[ext_resource type="Texture2D" uid="uid://5ohbl2jxo1tw" path="res://ep_24/sky_textures/farm_road_4k.exr" id="10_ehuua"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i4a5v"]
+albedo_color = Color(0.1994726, 0.42912927, 0.46184272, 1)
+albedo_texture = ExtResource("10_ehuua")
+metallic = 0.72
+metallic_specular = 1.0
+roughness = 0.17
+normal_enabled = true
+normal_texture = ExtResource("9_ehuua")
+
+[sub_resource type="SphereMesh" id="SphereMesh_oh1c5"]
+material = SubResource("StandardMaterial3D_i4a5v")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ehuua"]
+render_priority = 0
+shader = ExtResource("1_pwp7v")
+shader_parameter/eta = 1.4330000680675
+shader_parameter/power = 3.0000001425
+
+[sub_resource type="SphereMesh" id="SphereMesh_i4a5v"]
+material = SubResource("ShaderMaterial_ehuua")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_oh1c5"]
+render_priority = 0
+shader = ExtResource("3_s5n4n")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_s5n4n"]
+material = SubResource("ShaderMaterial_oh1c5")
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_i4a5v"]
+panorama = ExtResource("10_ehuua")
+
+[sub_resource type="Sky" id="Sky_20qow"]
+sky_material = SubResource("PanoramaSkyMaterial_i4a5v")
+
+[sub_resource type="Environment" id="Environment_ehuua"]
+background_mode = 2
+sky = SubResource("Sky_20qow")
+ambient_light_sky_contribution = 0.1
+
+[node name="ReflectionAndRefraction" type="Node3D" unique_id=915778516]
+script = ExtResource("1_asjk7")
+cubemap_name = "farm_road"
+images = Array[Image]([ExtResource("2_i4a5v"), ExtResource("3_yfluy"), ExtResource("4_x6d08"), ExtResource("5_b6vaa"), ExtResource("7_oi2eg"), ExtResource("6_1q6h0")])
+
+[node name="Sphere" type="MeshInstance3D" parent="." unique_id=1171594393]
+mesh = SubResource("SphereMesh_oh1c5")
+
+[node name="ReflectionSphere" type="MeshInstance3D" parent="." unique_id=1228506239]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 1)
+mesh = SubResource("SphereMesh_i4a5v")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=524017506]
+transform = Transform3D(1, 0, 0, 0, 0.9478797, 0.31862846, 0, -0.31862846, 0.9478797, 0, 0.6964413, 1.2510103)
+
+[node name="CobbleStonePlane" type="MeshInstance3D" parent="." unique_id=345145019]
+transform = Transform3D(0.99999416, 0.0029204371, 0.0017717357, -0.002911142, 0.9999821, -0.0052344687, -0.0017869677, 0.0052292887, 0.99998474, 0, 0, 2)
+mesh = SubResource("PlaneMesh_s5n4n")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1598357905]
+environment = SubResource("Environment_ehuua")

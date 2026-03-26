@@ -1,0 +1,111 @@
+[gd_scene format=3 uid="uid://cpdxdtiowgwqb"]
+
+[ext_resource type="Shader" uid="uid://dfnwcw7v4ufec" path="res://ep_28_triplanar_projection/directional_masks.tres" id="1_ofh3v"]
+[ext_resource type="Shader" uid="uid://cuit1n0iitevi" path="res://ep_28_triplanar_projection/cheap_triplanar_projection.tres" id="2_efq1a"]
+[ext_resource type="Shader" uid="uid://c2iampndshc5q" path="res://ep_28_triplanar_projection/rocky_terrain.tres" id="2_hepqx"]
+[ext_resource type="Shader" uid="uid://bohjv2fxf1nlr" path="res://ep_28_triplanar_projection/expensive_triplanar_projection_with_normals_and_stuff.tres" id="4_7hj76"]
+[ext_resource type="Shader" uid="uid://dhae3rn02byb3" path="res://ep_28_triplanar_projection/expensive_tp_no_normals.tres" id="5_10vaa"]
+[ext_resource type="Shader" uid="uid://tmtaaujlms6b" path="res://ep_28_triplanar_projection/built_in_expensive_tp.tres" id="5_51ifu"]
+[ext_resource type="Texture2D" uid="uid://dtxjpsckdwvsf" path="res://ep_28_triplanar_projection/rocky_terrain/rocky_terrain_diff_2k.png" id="6_tvoc6"]
+[ext_resource type="Shader" uid="uid://ev0b0vsoworg" path="res://ep_28_triplanar_projection/cheap_tp_code.gdshader" id="8_1wcc8"]
+[ext_resource type="Texture2D" uid="uid://dls3fqbvd0uhn" path="res://textures/colour_grid.png" id="9_4yuls"]
+[ext_resource type="Shader" uid="uid://bj6ff4h0wecfb" path="res://ep_28_triplanar_projection/expensive_tp_code.gdshader" id="10_7yn10"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_efq1a"]
+render_priority = 0
+shader = ExtResource("2_hepqx")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_7hj76"]
+material = SubResource("ShaderMaterial_efq1a")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wn8v3"]
+render_priority = 0
+shader = ExtResource("1_ofh3v")
+
+[sub_resource type="SphereMesh" id="SphereMesh_ofh3v"]
+material = SubResource("ShaderMaterial_wn8v3")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hepqx"]
+render_priority = 0
+shader = ExtResource("2_efq1a")
+
+[sub_resource type="SphereMesh" id="SphereMesh_efq1a"]
+material = SubResource("ShaderMaterial_hepqx")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_51ifu"]
+render_priority = 0
+shader = ExtResource("5_10vaa")
+
+[sub_resource type="SphereMesh" id="SphereMesh_tvoc6"]
+material = SubResource("ShaderMaterial_51ifu")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tvoc6"]
+render_priority = 0
+shader = ExtResource("5_51ifu")
+shader_parameter/TextureParameterTriplanar = ExtResource("6_tvoc6")
+shader_parameter/triplanar_scale = Vector3(1, 1, 1)
+shader_parameter/triplanar_offset = Vector3(0, 0, 0)
+shader_parameter/triplanar_sharpness = 0.5
+
+[sub_resource type="SphereMesh" id="SphereMesh_1wcc8"]
+material = SubResource("ShaderMaterial_tvoc6")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_10vaa"]
+render_priority = 0
+shader = ExtResource("4_7hj76")
+
+[sub_resource type="SphereMesh" id="SphereMesh_51ifu"]
+material = SubResource("ShaderMaterial_10vaa")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4yuls"]
+render_priority = 0
+shader = ExtResource("8_1wcc8")
+shader_parameter/triplanar_tex = ExtResource("9_4yuls")
+
+[sub_resource type="SphereMesh" id="SphereMesh_7yn10"]
+material = SubResource("ShaderMaterial_4yuls")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_newik"]
+render_priority = 0
+shader = ExtResource("10_7yn10")
+shader_parameter/tex = ExtResource("6_tvoc6")
+
+[sub_resource type="SphereMesh" id="SphereMesh_kjsiw"]
+material = SubResource("ShaderMaterial_newik")
+
+[node name="TriplanarProjection" type="Node3D" unique_id=693486204]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1140296104]
+transform = Transform3D(1, 0, 0, 0, 0.8414072, 0.5404017, 0, -0.5404017, 0.8414072, 0, 0.64569056, 1)
+
+[node name="Plane" type="MeshInstance3D" parent="." unique_id=743044249]
+transform = Transform3D(1, 0, 0, 0, 0.94845647, 0.3169074, 0, -0.3169074, 0.94845647, 0, -0.45507532, 0)
+visible = false
+mesh = SubResource("PlaneMesh_7hj76")
+
+[node name="JustDirectionalMasks" type="MeshInstance3D" parent="." unique_id=1716280359]
+visible = false
+mesh = SubResource("SphereMesh_ofh3v")
+
+[node name="CheapTriplanarProjection" type="MeshInstance3D" parent="." unique_id=1312155322]
+visible = false
+mesh = SubResource("SphereMesh_efq1a")
+
+[node name="ExpensiveTpNoNormals" type="MeshInstance3D" parent="." unique_id=11635196]
+visible = false
+mesh = SubResource("SphereMesh_tvoc6")
+
+[node name="BuiltInExpensiveTp" type="MeshInstance3D" parent="." unique_id=1566380149]
+mesh = SubResource("SphereMesh_1wcc8")
+
+[node name="ExpensiveTriplanarProjectionWithNormalsEtc" type="MeshInstance3D" parent="." unique_id=1535660782]
+visible = false
+mesh = SubResource("SphereMesh_51ifu")
+
+[node name="CheapTpCode" type="MeshInstance3D" parent="." unique_id=1825254900]
+visible = false
+mesh = SubResource("SphereMesh_7yn10")
+
+[node name="ExpensiveTpCode" type="MeshInstance3D" parent="." unique_id=715550761]
+visible = false
+mesh = SubResource("SphereMesh_kjsiw")

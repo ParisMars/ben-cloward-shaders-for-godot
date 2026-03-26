@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://cjj6em3vgc0r6"]
+
+[ext_resource type="Shader" uid="uid://cfe7v77j1j7qj" path="res://ep_16_length_and_distance/ep_16.tres" id="1_5bktd"]
+[ext_resource type="Shader" uid="uid://bqru6rww0yxs" path="res://ep_16_length_and_distance/distance_vfx.tres" id="2_r8ukr"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_r8ukr"]
+render_priority = 0
+shader = ExtResource("1_5bktd")
+
+[sub_resource type="SphereMesh" id="SphereMesh_umcjq"]
+material = SubResource("ShaderMaterial_r8ukr")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_umcjq"]
+render_priority = 0
+shader = ExtResource("2_r8ukr")
+shader_parameter/dissolve_begin_distance = 2.7200001292
+shader_parameter/dissolve_end_distance = 1.0
+shader_parameter/time_scalar = 0.1
+
+[sub_resource type="TorusMesh" id="TorusMesh_f4kjy"]
+material = SubResource("ShaderMaterial_umcjq")
+
+[node name="Ep16" type="Node3D" unique_id=1897428283]
+
+[node name="DistanceColouring" type="MeshInstance3D" parent="." unique_id=1637612850]
+mesh = SubResource("SphereMesh_umcjq")
+
+[node name="DistanceVfx" type="MeshInstance3D" parent="." unique_id=30611793]
+mesh = SubResource("TorusMesh_f4kjy")

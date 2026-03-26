@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://bflenlasf77a4"
+path="res://.godot/imported/glass_house_cms_2.png-de3d0cc3e3836919b405cc3e4dc0ad30.image"
+
+[deps]
+
+source_file="res://cubemaps/slices/glass_house/glass_house_cms_2.png"
+dest_files=["res://.godot/imported/glass_house_cms_2.png-de3d0cc3e3836919b405cc3e4dc0ad30.image"]
+
+[params]
+

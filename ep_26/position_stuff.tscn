@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://dpfdn4j2x1igv"]
+
+[ext_resource type="Shader" uid="uid://3fgufhdcesx1" path="res://ep_26/position_stuff.tres" id="1_i3750"]
+[ext_resource type="Script" uid="uid://b5lctwwm7tkip" path="res://ep_26/position_stuff.gd" id="1_u0yy4"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_o27jf"]
+render_priority = 0
+shader = ExtResource("1_i3750")
+
+[sub_resource type="SphereMesh" id="SphereMesh_xkytv"]
+material = SubResource("ShaderMaterial_o27jf")
+
+[node name="PositionStuff" type="Node3D" unique_id=530907588]
+script = ExtResource("1_u0yy4")
+
+[node name="Sphere" type="MeshInstance3D" parent="." unique_id=19185513]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5463785, -2.9802322e-08, 0.1358065)
+mesh = SubResource("SphereMesh_xkytv")

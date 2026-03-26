@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://btn2soq0i7pt3"
+path="res://.godot/imported/back.png-ca591f0b5f1fb0cf6db551b5db8cdac0.image"
+
+[deps]
+
+source_file="res://cubemaps/slices/cm_farm_road/back.png"
+dest_files=["res://.godot/imported/back.png-ca591f0b5f1fb0cf6db551b5db8cdac0.image"]
+
+[params]
+

@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://bgxbvph2sq6si"
+path="res://.godot/imported/down.png-84768e8d39ba7ad1481e2b5841a00da0.image"
+
+[deps]
+
+source_file="res://cubemaps/slices/cm_farm_road/down.png"
+dest_files=["res://.godot/imported/down.png-84768e8d39ba7ad1481e2b5841a00da0.image"]
+
+[params]
+

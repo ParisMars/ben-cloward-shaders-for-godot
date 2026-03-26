@@ -1,0 +1,53 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[animation]
+
+compatibility/default_parent_skeleton_in_mesh_instance_3d=true
+
+[application]
+
+config/name="Shaders"
+config/features=PackedStringArray("4.6", "Forward Plus")
+config/icon="res://textures/icon.svg"
+
+[file_customization]
+
+folder_colors={
+"res://cubemaps/": "gray",
+"res://custom_shader_nodes/": "gray",
+"res://ep_15_smoothstep/": "pink",
+"res://ep_16_length_and_distance/": "red",
+"res://ep_17_floor_ceil_round/": "orange",
+"res://ep_18/": "yellow",
+"res://ep_19/": "green",
+"res://ep_2/": "red",
+"res://ep_24/": "teal",
+"res://ep_26/": "blue",
+"res://ep_27_directional_masks/": "purple",
+"res://ep_28_triplanar_projection/": "pink",
+"res://ep_29_improved_triplanar_and_custom_node/": "red",
+"res://ep_3/": "orange",
+"res://ep_4/": "yellow",
+"res://ep_6/": "green",
+"res://ep_7/": "teal",
+"res://ep_8/": "blue",
+"res://ep_9/": "purple",
+"res://reflection_and_refraction_code/": "gray",
+"res://shader_performance/": "gray",
+"res://testing/": "gray",
+"res://textures/": "gray",
+"res://transform_stuff/": "gray",
+"res://vfx_shield/": "gray"
+}
+
+[rendering]
+
+anti_aliasing/quality/msaa_3d=2

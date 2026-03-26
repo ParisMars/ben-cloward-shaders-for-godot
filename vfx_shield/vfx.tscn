@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://cbxtic2o34bte"]
+
+[ext_resource type="Shader" uid="uid://cw4ekkvvlngh7" path="res://vfx_shield/vfx_shield.tres" id="1_8k440"]
+[ext_resource type="Shader" uid="uid://cbfcarujopaha" path="res://vfx_shield/vfx_shield_code.gdshader" id="2_fr305"]
+[ext_resource type="Texture2D" uid="uid://bw5eragxrc56t" path="res://textures/ground_cracks.png" id="3_e5r23"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fr305"]
+render_priority = 0
+shader = ExtResource("1_8k440")
+shader_parameter/colour = Color(0.9220973, 0.4893424, 0.5184403, 1)
+shader_parameter/shield_coverage = 0.19900000619262
+shader_parameter/float_parameter = -1.0
+shader_parameter/time_scalar = 1.0
+shader_parameter/shield_intensity = 1.2470000592325
+
+[sub_resource type="SphereMesh" id="SphereMesh_owedt"]
+material = SubResource("ShaderMaterial_fr305")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_4tbll"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_rl4go"]
+noise = SubResource("FastNoiseLite_4tbll")
+seamless = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_e5r23"]
+render_priority = 0
+shader = ExtResource("2_fr305")
+shader_parameter/noise_sampler = SubResource("NoiseTexture2D_rl4go")
+shader_parameter/pattern_sampler = ExtResource("3_e5r23")
+shader_parameter/colour = Color(0.5742282, 0.91818535, 0.53923255, 1)
+shader_parameter/shield_coverage = 0.30000000447036
+shader_parameter/shield_intensity = 6.10000009089732
+
+[sub_resource type="SphereMesh" id="SphereMesh_8k440"]
+material = SubResource("ShaderMaterial_e5r23")
+
+[node name="Vfx" type="Node3D" unique_id=780683419]
+
+[node name="BubbleShield" type="MeshInstance3D" parent="." unique_id=403886322]
+mesh = SubResource("SphereMesh_owedt")
+
+[node name="BubbleShieldCode" type="MeshInstance3D" parent="." unique_id=1625487095]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+mesh = SubResource("SphereMesh_8k440")

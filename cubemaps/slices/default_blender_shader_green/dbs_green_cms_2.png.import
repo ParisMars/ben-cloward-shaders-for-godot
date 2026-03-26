@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://b1b4trxcukeuy"
+path="res://.godot/imported/dbs_green_cms_2.png-1ab8f4134ecb6112b83db273086861de.image"
+
+[deps]
+
+source_file="res://cubemaps/slices/default_blender_shader_green/dbs_green_cms_2.png"
+dest_files=["res://.godot/imported/dbs_green_cms_2.png-1ab8f4134ecb6112b83db273086861de.image"]
+
+[params]
+

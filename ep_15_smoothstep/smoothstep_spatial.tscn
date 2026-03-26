@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://cbbexp5ymda0d"]
+
+[ext_resource type="Shader" uid="uid://dsqjw8u6mdn6t" path="res://ep_15_smoothstep/smoothstep_spatial.tres" id="1_ns110"]
+[ext_resource type="Shader" uid="uid://bjnor455d6ftw" path="res://ep_15_smoothstep/code_dissolve.gdshader" id="2_mnev2"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mnev2"]
+render_priority = 0
+shader = ExtResource("1_ns110")
+shader_parameter/shield_colour = Color(0.636491, 0.905201, 0.751704, 1)
+shader_parameter/time = 1.80800008262012
+shader_parameter/invert_fresnel = true
+shader_parameter/shield_outline_strength = 0.3750000178125
+shader_parameter/shield_emission = 0.90800004313
+
+[sub_resource type="SphereMesh" id="SphereMesh_7cn4f"]
+material = SubResource("ShaderMaterial_mnev2")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ns110"]
+render_priority = 0
+shader = ExtResource("1_ns110")
+shader_parameter/shield_colour = Color(0.636491, 0.905201, 0.751704, 1)
+shader_parameter/time = 1.91800008784512
+shader_parameter/invert_fresnel = true
+shader_parameter/shield_outline_strength = 0.3330000158175
+shader_parameter/shield_emission = 0.4750000225625
+
+[sub_resource type="BoxMesh" id="BoxMesh_mnev2"]
+material = SubResource("ShaderMaterial_ns110")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_7cn4f"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ne35j"]
+noise = SubResource("FastNoiseLite_7cn4f")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_chiaq"]
+render_priority = 0
+shader = ExtResource("2_mnev2")
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_ne35j")
+shader_parameter/colour = Color(7.70092e-07, 0.6028995, 0.68361336, 1)
+shader_parameter/time_scalar = 1.9030000903925
+shader_parameter/sizzle_width = 0.03999999910592
+shader_parameter/shield_coverage = 0.2310000109725
+shader_parameter/invert_coverage = false
+shader_parameter/sizzle_strength = 0.5750000273125
+shader_parameter/emission = 0.1230000058425
+
+[sub_resource type="SphereMesh" id="SphereMesh_o3yxb"]
+material = SubResource("ShaderMaterial_chiaq")
+
+[node name="SmoothstepSpatial" type="Node3D" unique_id=1215321977]
+
+[node name="Sphere" type="MeshInstance3D" parent="." unique_id=848966719]
+visible = false
+mesh = SubResource("SphereMesh_7cn4f")
+
+[node name="Box" type="MeshInstance3D" parent="." unique_id=1402496020]
+visible = false
+mesh = SubResource("BoxMesh_mnev2")
+
+[node name="CodeSphere" type="MeshInstance3D" parent="." unique_id=278334018]
+mesh = SubResource("SphereMesh_o3yxb")

@@ -1,0 +1,37 @@
+[gd_scene load_steps=10 format=3 uid="uid://b8ningn2ddgwa"]
+
+[ext_resource type="Shader" uid="uid://d2x440rq7mswi" path="res://testing/texture_param.tres" id="1_1gs8v"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_h64yq"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ijpqw"]
+noise = SubResource("FastNoiseLite_h64yq")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tabh1"]
+render_priority = 0
+shader = ExtResource("1_1gs8v")
+shader_parameter/Texture2DParameter = SubResource("NoiseTexture2D_ijpqw")
+
+[sub_resource type="SphereMesh" id="SphereMesh_vma8a"]
+material = SubResource("ShaderMaterial_tabh1")
+
+[sub_resource type="Gradient" id="Gradient_bvw55"]
+colors = PackedColorArray(0, 0, 0, 1, 0, 0.34052518, 0.55453527, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_uo0gn"]
+gradient = SubResource("Gradient_bvw55")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8lqcd"]
+render_priority = 0
+shader = ExtResource("1_1gs8v")
+shader_parameter/Texture2DParameter = SubResource("GradientTexture1D_uo0gn")
+
+[sub_resource type="BoxMesh" id="BoxMesh_u3xkt"]
+material = SubResource("ShaderMaterial_8lqcd")
+
+[node name="MeshInstance3D" type="MeshInstance3D"]
+mesh = SubResource("SphereMesh_vma8a")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.9851997, 0.030276552, -0.16871709, 0.0014153272, -0.98280704, -0.18463142, -0.17140613, -0.18213785, 0.9682181, -2, 0, 1)
+mesh = SubResource("BoxMesh_u3xkt")

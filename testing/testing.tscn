@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://r4xdmqkfvl2n"]
+
+[ext_resource type="Shader" uid="uid://buagykl2cnhjn" path="res://testing/testing.tres" id="1_qrja6"]
+[ext_resource type="Shader" uid="uid://cwp6qpoumm0no" path="res://testing/testing_differences.tres" id="2_eape4"]
+[ext_resource type="Shader" uid="uid://c60jlee6vqb5n" path="res://testing/testing_differences.gdshader" id="3_uns7a"]
+[ext_resource type="Texture2D" uid="uid://1ynui37sffd" path="res://textures/icon.svg" id="4_ejoc4"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_co24e"]
+render_priority = 0
+shader = ExtResource("1_qrja6")
+
+[sub_resource type="SphereMesh" id="SphereMesh_feb8i"]
+material = SubResource("ShaderMaterial_co24e")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qrja6"]
+render_priority = 0
+shader = ExtResource("1_qrja6")
+
+[sub_resource type="BoxMesh" id="BoxMesh_qrja6"]
+material = SubResource("ShaderMaterial_qrja6")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_sgbpx"]
+render_priority = 0
+shader = ExtResource("2_eape4")
+
+[sub_resource type="SphereMesh" id="SphereMesh_sgbpx"]
+material = SubResource("ShaderMaterial_sgbpx")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_akd04"]
+render_priority = 0
+shader = ExtResource("3_uns7a")
+shader_parameter/tex = ExtResource("4_ejoc4")
+
+[sub_resource type="SphereMesh" id="SphereMesh_x2m0a"]
+material = SubResource("ShaderMaterial_akd04")
+
+[node name="MeshInstance3D" type="MeshInstance3D" unique_id=414104978]
+mesh = SubResource("SphereMesh_feb8i")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=932262699]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 1)
+mesh = SubResource("BoxMesh_qrja6")
+
+[node name="PlainTextureVs" type="MeshInstance3D" parent="." unique_id=1382225232]
+transform = Transform3D(-0.70710677, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, -0.70710677, 1, 0, 0)
+mesh = SubResource("SphereMesh_sgbpx")
+
+[node name="PlainTextureCode" type="MeshInstance3D" parent="." unique_id=851254981]
+transform = Transform3D(-0.50000006, 0, -0.8660254, 0, 1, 0, 0.8660254, 0, -0.50000006, 2, 0, 0)
+mesh = SubResource("SphereMesh_x2m0a")

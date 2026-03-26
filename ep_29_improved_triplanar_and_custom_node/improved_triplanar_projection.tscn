@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://l6nknu6hut43"]
+
+[ext_resource type="Shader" uid="uid://4uf8hp6cr7h1" path="res://ep_29_improved_triplanar_and_custom_node/improved_triplanar_projection.tres" id="1_t0cm7"]
+[ext_resource type="Texture2D" uid="uid://dls3fqbvd0uhn" path="res://textures/colour_grid.png" id="2_bn2vs"]
+[ext_resource type="Shader" uid="uid://dbokgbgp045jf" path="res://ep_29_improved_triplanar_and_custom_node/improved_triplanar_projection_code.gdshader" id="2_jxjsx"]
+[ext_resource type="Shader" uid="uid://c5ygt8l1rbraw" path="res://ep_29_improved_triplanar_and_custom_node/custom_triplanar_projection_node.tres" id="4_cjee5"]
+[ext_resource type="Texture2D" uid="uid://dtxjpsckdwvsf" path="res://ep_28_triplanar_projection/rocky_terrain/rocky_terrain_diff_2k.png" id="5_oresl"]
+[ext_resource type="Texture2D" uid="uid://b7rtoymh7wq2q" path="res://ep_28_triplanar_projection/rocky_terrain/rocky_terrain_arm_2k.png" id="6_sdhy6"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bn2vs"]
+render_priority = 0
+shader = ExtResource("1_t0cm7")
+
+[sub_resource type="SphereMesh" id="SphereMesh_j7coo"]
+material = SubResource("ShaderMaterial_bn2vs")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_towhc"]
+render_priority = 0
+shader = ExtResource("2_jxjsx")
+shader_parameter/tp_texture = ExtResource("2_bn2vs")
+shader_parameter/sharpness = 16.0
+shader_parameter/tiling_fac = 4.0000000596048
+
+[sub_resource type="SphereMesh" id="SphereMesh_x45mj"]
+material = SubResource("ShaderMaterial_towhc")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_oresl"]
+render_priority = 0
+shader = ExtResource("4_cjee5")
+shader_parameter/triplanar_proj_texture = ExtResource("5_oresl")
+shader_parameter/sharpness_parameter = 16.0
+shader_parameter/tiling_fac_parameter = 2.00000009174012
+shader_parameter/triplanar_proj_texture_arm = ExtResource("6_sdhy6")
+
+[sub_resource type="SphereMesh" id="SphereMesh_sdhy6"]
+material = SubResource("ShaderMaterial_oresl")
+
+[node name="ImprovedTriplanarProjection" type="Node3D" unique_id=1324548190]
+
+[node name="VsSphere" type="MeshInstance3D" parent="." unique_id=1875351082]
+visible = false
+mesh = SubResource("SphereMesh_j7coo")
+
+[node name="CodeSphere" type="MeshInstance3D" parent="." unique_id=770568145]
+visible = false
+mesh = SubResource("SphereMesh_x45mj")
+
+[node name="CustomTriplanarNode" type="MeshInstance3D" parent="." unique_id=1121026928]
+mesh = SubResource("SphereMesh_sdhy6")

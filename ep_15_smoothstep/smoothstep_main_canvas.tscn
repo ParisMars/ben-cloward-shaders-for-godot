@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://d2ff2kps44tya"]
+
+[ext_resource type="Shader" uid="uid://c1nqbroi4pnge" path="res://ep_15_smoothstep/dissolve_canvas.tres" id="1_g5erc"]
+[ext_resource type="Texture2D" uid="uid://1ynui37sffd" path="res://textures/icon.svg" id="2_o36te"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0wghx"]
+shader = ExtResource("1_g5erc")
+
+[node name="SmoothstepMain" type="Node2D" unique_id=671758914]
+
+[node name="Dissolve" type="Sprite2D" parent="." unique_id=1489782412]
+material = SubResource("ShaderMaterial_0wghx")
+texture = ExtResource("2_o36te")

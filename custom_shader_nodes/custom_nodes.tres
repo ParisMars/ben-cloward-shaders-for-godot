@@ -1,0 +1,63 @@
+[gd_resource type="VisualShader" format=3 uid="uid://cx1rl02wmfd4q"]
+
+[ext_resource type="Texture2D" uid="uid://1ynui37sffd" path="res://textures/icon.svg" id="1_qeacw"]
+[ext_resource type="Script" uid="uid://b4aa7jcxuntv7" path="res://custom_shader_nodes/custom_pixelation_node.gd" id="2_g6htc"]
+
+[sub_resource type="VisualShaderNodeGlobalExpression" id="VisualShaderNodeGlobalExpression_8ctfg"]
+size = Vector2(660, 380)
+expression = "vec2 pixelate(vec2 st, float amnt) {
+	return floor(st * amnt) / amnt;
+}"
+
+[sub_resource type="VisualShaderNodeExpression" id="VisualShaderNodeExpression_qeacw"]
+size = Vector2(540.00006, 300)
+expression = "out_uv = pixelate(in_uv, pix_amount);"
+
+[sub_resource type="VisualShaderNodeFloatConstant" id="VisualShaderNodeFloatConstant_g6htc"]
+constant = 32.0
+
+[sub_resource type="VisualShaderNodeVectorOp" id="VisualShaderNodeVectorOp_qeacw"]
+default_input_values = [0, Vector2(0, 0), 1, Vector2(0, 0)]
+op_type = 0
+
+[sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_u2rnd"]
+texture = ExtResource("1_qeacw")
+texture_type = 1
+
+[sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_xp3xo"]
+input_name = "uv"
+
+[sub_resource type="VisualShaderNodeCustom" id="VisualShaderNodeCustom_u2rnd"]
+default_input_values = [1, 22.21]
+initialized = true
+script = ExtResource("2_g6htc")
+
+[resource]
+mode = 1
+flags/light_only = false
+nodes/fragment/0/position = Vector2(704, 192)
+nodes/fragment/2/node = SubResource("VisualShaderNodeTexture_u2rnd")
+nodes/fragment/2/position = Vector2(464, 208)
+nodes/fragment/7/node = SubResource("VisualShaderNodeInput_xp3xo")
+nodes/fragment/7/position = Vector2(-768, 144)
+nodes/fragment/9/node = SubResource("VisualShaderNodeCustom_u2rnd")
+nodes/fragment/9/position = Vector2(-256, 192)
+nodes/fragment/10/node = SubResource("VisualShaderNodeGlobalExpression_8ctfg")
+nodes/fragment/10/position = Vector2(-1200, 384)
+nodes/fragment/10/size = Vector2(660, 380)
+nodes/fragment/10/input_ports = ""
+nodes/fragment/10/output_ports = ""
+nodes/fragment/10/expression = "vec2 pixelate(vec2 st, float amnt) {
+	return floor(st * amnt) / amnt;
+}"
+nodes/fragment/11/node = SubResource("VisualShaderNodeExpression_qeacw")
+nodes/fragment/11/position = Vector2(-384, 384)
+nodes/fragment/11/size = Vector2(540.00006, 300)
+nodes/fragment/11/input_ports = "0,3,in_uv;1,0,pix_amount;"
+nodes/fragment/11/output_ports = "0,3,out_uv;"
+nodes/fragment/11/expression = "out_uv = pixelate(in_uv, pix_amount);"
+nodes/fragment/12/node = SubResource("VisualShaderNodeFloatConstant_g6htc")
+nodes/fragment/12/position = Vector2(-608, 576)
+nodes/fragment/13/node = SubResource("VisualShaderNodeVectorOp_qeacw")
+nodes/fragment/13/position = Vector2(208, 288)
+nodes/fragment/connections = PackedInt32Array(2, 0, 0, 0, 7, 0, 9, 0, 12, 0, 11, 1, 7, 0, 11, 0, 9, 0, 13, 0, 11, 0, 13, 1, 13, 0, 2, 0)

@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://43c17n7rdthx"]
+
+[ext_resource type="Shader" uid="uid://bbxsyv8x388jo" path="res://reflection_and_refraction_code/reflection_and_refraction_code.gdshader" id="1_5ao2q"]
+[ext_resource type="Cubemap" uid="uid://nghlul6donhs" path="res://ep_24/cube_map_textures/cubemap.res" id="2_15iqr"]
+[ext_resource type="Shader" uid="uid://bxm730pgcsenx" path="res://cubemaps/sky_shader_code.gdshader" id="3_nt8ko"]
+[ext_resource type="Cubemap" uid="uid://c1d6xwmtljfth" path="res://cubemaps/assembled/farm_road.res" id="4_e3uvv"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_15iqr"]
+render_priority = 0
+shader = ExtResource("1_5ao2q")
+shader_parameter/cubemap = ExtResource("2_15iqr")
+shader_parameter/power = 2.0
+shader_parameter/eta = 1.35
+
+[sub_resource type="SphereMesh" id="SphereMesh_67p6j"]
+material = SubResource("ShaderMaterial_15iqr")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nt8ko"]
+shader = ExtResource("3_nt8ko")
+shader_parameter/sky_cubemap = ExtResource("4_e3uvv")
+
+[sub_resource type="Sky" id="Sky_e3uvv"]
+sky_material = SubResource("ShaderMaterial_nt8ko")
+
+[sub_resource type="Environment" id="Environment_bkfne"]
+background_mode = 2
+sky = SubResource("Sky_e3uvv")
+
+[node name="ReflectionAndRefractionCode" type="Node3D" unique_id=1041331433]
+
+[node name="Sphere" type="MeshInstance3D" parent="." unique_id=1466104337]
+mesh = SubResource("SphereMesh_67p6j")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=887017485]
+environment = SubResource("Environment_bkfne")

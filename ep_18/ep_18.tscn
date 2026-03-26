@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://duin4xrmaogdx"]
+
+[ext_resource type="Shader" uid="uid://rummm3vpcd81" path="res://ep_18/distance_fade.tres" id="1_u5v45"]
+[ext_resource type="Shader" uid="uid://dienjbyl8eumg" path="res://ep_18/derivative_normals.tres" id="2_lcbqh"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lcbqh"]
+render_priority = 0
+shader = ExtResource("1_u5v45")
+
+[sub_resource type="SphereMesh" id="SphereMesh_gg83p"]
+material = SubResource("ShaderMaterial_lcbqh")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gg83p"]
+render_priority = 0
+shader = ExtResource("2_lcbqh")
+
+[sub_resource type="TextMesh" id="TextMesh_kfw4k"]
+material = SubResource("ShaderMaterial_gg83p")
+text = "Hello, world"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kfw4k"]
+render_priority = 0
+shader = ExtResource("2_lcbqh")
+
+[sub_resource type="SphereMesh" id="SphereMesh_nod0o"]
+material = SubResource("ShaderMaterial_kfw4k")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nod0o"]
+render_priority = 0
+shader = ExtResource("2_lcbqh")
+
+[sub_resource type="TorusMesh" id="TorusMesh_h737t"]
+material = SubResource("ShaderMaterial_nod0o")
+inner_radius = 0.835
+outer_radius = 1.105
+
+[node name="Ep18" type="Node3D" unique_id=1893895556]
+
+[node name="DistanceFade" type="MeshInstance3D" parent="." unique_id=2016664432]
+visible = false
+mesh = SubResource("SphereMesh_gg83p")
+
+[node name="DerivativesText" type="MeshInstance3D" parent="." unique_id=345907083]
+mesh = SubResource("TextMesh_kfw4k")
+
+[node name="DSphere" type="MeshInstance3D" parent="." unique_id=1711611389]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0027137, 0, 0)
+mesh = SubResource("SphereMesh_nod0o")
+skeleton = NodePath("../DerivativesText")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1896511553]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.33407885, 0.30835184, 0)
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="." unique_id=1208113934]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4751052, 0.62880695, 0)
+
+[node name="DTorus" type="MeshInstance3D" parent="." unique_id=1008981499]
+transform = Transform3D(0.41681764, -0.27615768, 0, 0.27615768, 0.41681764, 0, 0, 0, 0.5, 0, 0, 0)
+mesh = SubResource("TorusMesh_h737t")

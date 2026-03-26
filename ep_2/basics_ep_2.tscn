@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://dvhhdd8ihj5ls"]
+
+[ext_resource type="Shader" uid="uid://cbodvvs7uptsw" path="res://ep_2/basics_ep_2_visual.tres" id="1_4umtq"]
+[ext_resource type="Shader" uid="uid://conxfr6a48qxn" path="res://ep_2/ep_2_script.gdshader" id="2_liba0"]
+[ext_resource type="Texture2D" uid="uid://1ynui37sffd" path="res://textures/icon.svg" id="3_518d2"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mxjg1"]
+render_priority = 0
+shader = ExtResource("1_4umtq")
+shader_parameter/FloatParameter = 1.0
+
+[sub_resource type="SphereMesh" id="SphereMesh_k5mk0"]
+material = SubResource("ShaderMaterial_mxjg1")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_518d2"]
+render_priority = 0
+shader = ExtResource("2_liba0")
+shader_parameter/godot_icon = ExtResource("3_518d2")
+
+[sub_resource type="SphereMesh" id="SphereMesh_3vtcv"]
+material = SubResource("ShaderMaterial_518d2")
+
+[node name="BasicsEp2" type="MeshInstance3D" unique_id=1508443707]
+mesh = SubResource("SphereMesh_k5mk0")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=176195217]
+visible = false
+mesh = SubResource("SphereMesh_3vtcv")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=1143439255]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.9752475)
+mesh = SubResource("SphereMesh_3vtcv")

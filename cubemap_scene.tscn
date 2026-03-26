@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://hq44y4mk0jsx"]
+
+[ext_resource type="Shader" uid="uid://bxm730pgcsenx" path="res://cubemaps/sky_shader_code.gdshader" id="1_uwdjk"]
+[ext_resource type="Cubemap" uid="uid://nghlul6donhs" path="res://ep_24/cube_map_textures/cubemap.res" id="2_obsgy"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_k0qa6"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_rvq2p"]
+material = SubResource("ShaderMaterial_k0qa6")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_c4cbg"]
+shader = ExtResource("1_uwdjk")
+shader_parameter/sky_cubemap = ExtResource("2_obsgy")
+
+[sub_resource type="Sky" id="Sky_0uiw2"]
+sky_material = SubResource("ShaderMaterial_c4cbg")
+
+[sub_resource type="Environment" id="Environment_7coap"]
+background_mode = 2
+sky = SubResource("Sky_0uiw2")
+
+[node name="CubemapScene" type="Node3D" unique_id=431447332]
+
+[node name="Sphere" type="MeshInstance3D" parent="." unique_id=1223830516]
+mesh = SubResource("SphereMesh_rvq2p")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=876204415]
+environment = SubResource("Environment_7coap")

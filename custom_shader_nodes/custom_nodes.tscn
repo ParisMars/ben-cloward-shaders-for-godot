@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://bbkkukynasatk"]
+
+[ext_resource type="Texture2D" uid="uid://1ynui37sffd" path="res://textures/icon.svg" id="1_whxb6"]
+[ext_resource type="Shader" uid="uid://cx1rl02wmfd4q" path="res://custom_shader_nodes/custom_nodes.tres" id="1_wvrgw"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_embuf"]
+shader = ExtResource("1_wvrgw")
+
+[node name="CustomNodes" type="Node2D" unique_id=1272123501]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=645630674]
+material = SubResource("ShaderMaterial_embuf")
+texture = ExtResource("1_whxb6")
