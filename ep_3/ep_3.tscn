@@ -1,31 +1,28 @@
-[gd_scene load_steps=9 format=3 uid="uid://bny4ir54b6sdq"]
+[gd_scene format=3 uid="uid://bny4ir54b6sdq"]
 
-[ext_resource type="Shader" uid="uid://d0hx5f8pyl7rm" path="res://ep_3/ep_3.tres" id="1_ad86o"]
-[ext_resource type="Texture2D" uid="uid://dqy7hv12b6vi6" path="res://textures/bacteria_bw_512_15pc.png" id="2_ju3mj"]
+[ext_resource type="Shader" uid="uid://d0hx5f8pyl7rm" path="res://ep_3/ep_3_vs.tres" id="1_ad86o"]
 [ext_resource type="Shader" uid="uid://cv5sbmjvkqd1b" path="res://ep_3/ep_3_code.gdshader" id="3_4f4fs"]
-[ext_resource type="Texture2D" uid="uid://dls3fqbvd0uhn" path="res://textures/colour_grid.png" id="4_4f4fs"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_ova3e"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ad86o"]
 render_priority = 0
 shader = ExtResource("1_ad86o")
-shader_parameter/ColorParameter = Color(0.786073, 0.153353, 0.838264, 1)
-shader_parameter/Texture2DParameter = ExtResource("2_ju3mj")
-
-[sub_resource type="SphereMesh" id="SphereMesh_2ipsq"]
-material = SubResource("ShaderMaterial_ova3e")
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_e5qrr"]
-render_priority = 0
-shader = ExtResource("3_4f4fs")
-shader_parameter/albedo_texture = ExtResource("4_4f4fs")
-shader_parameter/alpha_erosion_texture = ExtResource("2_ju3mj")
 
 [sub_resource type="SphereMesh" id="SphereMesh_ju3mj"]
-material = SubResource("ShaderMaterial_e5qrr")
+material = SubResource("ShaderMaterial_ad86o")
 
-[node name="Ep3" type="MeshInstance3D"]
-mesh = SubResource("SphereMesh_2ipsq")
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ju3mj"]
+render_priority = 0
+shader = ExtResource("3_4f4fs")
+shader_parameter/colour = Color(0.7, 0.2, 0.3, 1)
 
-[node name="ScriptedSphere" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.12247558, 0, -0.9924715, 0, 1, 0, 0.9924715, 0, 0.12247558, 0, 0, 1.0361298)
+[sub_resource type="SphereMesh" id="SphereMesh_cyqw4"]
+material = SubResource("ShaderMaterial_ju3mj")
+
+[node name="Ep3" type="Node3D" unique_id=1087350306]
+
+[node name="VsSphere" type="MeshInstance3D" parent="." unique_id=299977357]
 mesh = SubResource("SphereMesh_ju3mj")
+
+[node name="CodeSphere" type="MeshInstance3D" parent="." unique_id=998059126]
+visible = false
+mesh = SubResource("SphereMesh_cyqw4")

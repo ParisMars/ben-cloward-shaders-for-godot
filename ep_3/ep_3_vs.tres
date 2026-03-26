@@ -1,0 +1,41 @@
+[gd_resource type="VisualShader" format=3 uid="uid://d0hx5f8pyl7rm"]
+
+[sub_resource type="VisualShaderNodeColorConstant" id="VisualShaderNodeColorConstant_c8amj"]
+constant = Color(0.035036493, 0.34458992, 0.99999994, 1)
+
+[sub_resource type="VisualShaderNodeFrame" id="VisualShaderNodeFrame_hlpgl"]
+size = Vector2(889.9996, 727.0005)
+title = "This node exposes the colour value to the inspector"
+tint_color_enabled = true
+tint_color = Color(0.12407053, 0.11058594, 0.23750001, 0.75)
+attached_nodes = PackedInt32Array(3, 18)
+
+[sub_resource type="VisualShaderNodeFrame" id="VisualShaderNodeFrame_rk521"]
+linked_parent_graph_frame = 17
+size = Vector2(810, 316)
+title = "Look for 'Shader Parameters' just below the shader property"
+attached_nodes = PackedInt32Array(19)
+
+[sub_resource type="VisualShaderNodeFrame" id="VisualShaderNodeFrame_3reo5"]
+linked_parent_graph_frame = 18
+size = Vector2(400, 225)
+title = "The node must be connected for that section to show up"
+
+[sub_resource type="VisualShaderNodeColorParameter" id="VisualShaderNodeColorParameter_c8amj"]
+linked_parent_graph_frame = 17
+parameter_name = "ColorParameter"
+default_value_enabled = true
+default_value = Color(0.73851323, 0.3863404, 0.28533667, 1)
+
+[resource]
+nodes/fragment/3/node = SubResource("VisualShaderNodeColorParameter_c8amj")
+nodes/fragment/3/position = Vector2(-208, 320)
+nodes/fragment/16/node = SubResource("VisualShaderNodeColorConstant_c8amj")
+nodes/fragment/16/position = Vector2(48, 112)
+nodes/fragment/17/node = SubResource("VisualShaderNodeFrame_hlpgl")
+nodes/fragment/17/position = Vector2(-432, 272)
+nodes/fragment/18/node = SubResource("VisualShaderNodeFrame_rk521")
+nodes/fragment/18/position = Vector2(-400, 576)
+nodes/fragment/19/node = SubResource("VisualShaderNodeFrame_3reo5")
+nodes/fragment/19/position = Vector2(-368, 624)
+nodes/fragment/connections = PackedInt32Array(16, 0, 0, 0)

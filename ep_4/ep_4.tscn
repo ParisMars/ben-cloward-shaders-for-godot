@@ -1,0 +1,91 @@
+[gd_scene format=3 uid="uid://d3bicphacikq"]
+
+[ext_resource type="Shader" uid="uid://dwavfkya2cmje" path="res://ep_4/ep_4_vs_math.tres" id="1_aluxu"]
+[ext_resource type="Shader" uid="uid://bk2fl1ekqm1am" path="res://ep_4/ep_4_code_math.gdshader" id="2_po336"]
+[ext_resource type="Shader" uid="uid://ymidys6gujxq" path="res://ep_4/ep_4_vs_scroll.tres" id="3_ftunq"]
+[ext_resource type="Shader" uid="uid://dp1t7q1j011g5" path="res://ep_4/ep_4_code_scroll.gdshader" id="4_rlrqp"]
+[ext_resource type="Shader" uid="uid://cd3mwkx8gwc1r" path="res://ep_4/ep_4_vs_scale.tres" id="5_qxk7e"]
+[ext_resource type="Shader" uid="uid://cah4iqqy3dxb1" path="res://ep_4/ep_4_code_scale.gdshader" id="6_pi3fy"]
+[ext_resource type="Texture2D" uid="uid://1ynui37sffd" path="res://textures/icon.svg" id="7_kdoh6"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_po336"]
+render_priority = 0
+shader = ExtResource("1_aluxu")
+
+[sub_resource type="BoxMesh" id="BoxMesh_ftunq"]
+material = SubResource("ShaderMaterial_po336")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_rlrqp"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_qxk7e"]
+noise = SubResource("FastNoiseLite_rlrqp")
+seamless = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ftunq"]
+render_priority = 0
+shader = ExtResource("2_po336")
+shader_parameter/noise_sampler = SubResource("NoiseTexture2D_qxk7e")
+
+[sub_resource type="BoxMesh" id="BoxMesh_rlrqp"]
+material = SubResource("ShaderMaterial_ftunq")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rlrqp"]
+render_priority = 0
+shader = ExtResource("3_ftunq")
+
+[sub_resource type="BoxMesh" id="BoxMesh_qxk7e"]
+material = SubResource("ShaderMaterial_rlrqp")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_qxk7e"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_rlrqp"]
+noise = SubResource("FastNoiseLite_qxk7e")
+seamless = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qxk7e"]
+render_priority = 0
+shader = ExtResource("4_rlrqp")
+shader_parameter/noise_sampler = SubResource("NoiseTexture2D_rlrqp")
+
+[sub_resource type="BoxMesh" id="BoxMesh_pi3fy"]
+material = SubResource("ShaderMaterial_qxk7e")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pi3fy"]
+render_priority = 0
+shader = ExtResource("5_qxk7e")
+
+[sub_resource type="BoxMesh" id="BoxMesh_kdoh6"]
+material = SubResource("ShaderMaterial_pi3fy")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kdoh6"]
+render_priority = 0
+shader = ExtResource("6_pi3fy")
+shader_parameter/texture_sampler = ExtResource("7_kdoh6")
+
+[sub_resource type="BoxMesh" id="BoxMesh_mycmi"]
+material = SubResource("ShaderMaterial_kdoh6")
+
+[node name="Ep4" type="Node3D" unique_id=216198226]
+
+[node name="VsMathCube" type="MeshInstance3D" parent="." unique_id=1100364643]
+mesh = SubResource("BoxMesh_ftunq")
+
+[node name="CodeMathCube" type="MeshInstance3D" parent="." unique_id=553139592]
+visible = false
+mesh = SubResource("BoxMesh_rlrqp")
+
+[node name="VsScrollCube" type="MeshInstance3D" parent="." unique_id=1927045915]
+visible = false
+mesh = SubResource("BoxMesh_qxk7e")
+
+[node name="CodeScrollCube" type="MeshInstance3D" parent="." unique_id=1352368533]
+visible = false
+mesh = SubResource("BoxMesh_pi3fy")
+
+[node name="VsScaleCube" type="MeshInstance3D" parent="." unique_id=361562067]
+visible = false
+mesh = SubResource("BoxMesh_kdoh6")
+
+[node name="CodeScaleCube" type="MeshInstance3D" parent="." unique_id=1153042200]
+visible = false
+mesh = SubResource("BoxMesh_mycmi")

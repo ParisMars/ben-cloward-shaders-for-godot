@@ -59,3 +59,5 @@ environment = SubResource("Environment_xv8mp")
 [node name="Sphere" type="MeshInstance3D" parent="." unique_id=1397826040]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
 mesh = SubResource("SphereMesh_a0uc4")
+
+[node name="Cube" type="MeshInstance3D" parent="." unique_id=1064828850]

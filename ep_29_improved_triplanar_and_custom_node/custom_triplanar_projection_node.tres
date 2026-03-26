@@ -25,7 +25,7 @@ default_value_enabled = true
 default_value = 16.0
 
 [sub_resource type="VisualShaderNodeFrame" id="VisualShaderNodeFrame_h08ka"]
-size = Vector2(793, 1198.0002)
+size = Vector2(793.00006, 1198.0001)
 title = "Make sure these don't have the same name as the input ports"
 tint_color_enabled = true
 tint_color = Color(0.65625, 0.46347657, 0.46347657, 0.75)

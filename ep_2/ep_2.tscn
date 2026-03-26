@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://dvhhdd8ihj5ls"]
+
+[ext_resource type="Shader" uid="uid://cbodvvs7uptsw" path="res://ep_2/ep_2_vs.tres" id="1_qyxe2"]
+[ext_resource type="Shader" uid="uid://conxfr6a48qxn" path="res://ep_2/ep_2_code.gdshader" id="2_2chpv"]
+[ext_resource type="Texture2D" uid="uid://1ynui37sffd" path="res://textures/icon.svg" id="3_j4xye"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vc3fw"]
+render_priority = 0
+shader = ExtResource("1_qyxe2")
+
+[sub_resource type="SphereMesh" id="SphereMesh_liba0"]
+material = SubResource("ShaderMaterial_vc3fw")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_518d2"]
+render_priority = 0
+shader = ExtResource("2_2chpv")
+shader_parameter/texture_parameter = ExtResource("3_j4xye")
+
+[sub_resource type="SphereMesh" id="SphereMesh_3vtcv"]
+material = SubResource("ShaderMaterial_518d2")
+
+[node name="Ep2" type="Node3D" unique_id=1482078150]
+
+[node name="VsSphere" type="MeshInstance3D" parent="." unique_id=804390668]
+mesh = SubResource("SphereMesh_liba0")
+
+[node name="CodeSphere" type="MeshInstance3D" parent="." unique_id=929700054]
+visible = false
+mesh = SubResource("SphereMesh_3vtcv")

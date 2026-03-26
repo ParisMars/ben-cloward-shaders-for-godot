@@ -1,0 +1,130 @@
+[gd_resource type="VisualShader" format=3 uid="uid://dwavfkya2cmje"]
+
+[sub_resource type="VisualShaderNodeFloatConstant" id="VisualShaderNodeFloatConstant_vlcoi"]
+constant = 0.5
+
+[sub_resource type="VisualShaderNodeVectorCompose" id="VisualShaderNodeVectorCompose_vlcoi"]
+linked_parent_graph_frame = 16
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_fkbp7"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_xmqop"]
+noise = SubResource("FastNoiseLite_fkbp7")
+seamless = true
+
+[sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_fkbp7"]
+expanded_output_ports = [0]
+linked_parent_graph_frame = 16
+texture = SubResource("NoiseTexture2D_xmqop")
+
+[sub_resource type="VisualShaderNodeUVFunc" id="VisualShaderNodeUVFunc_xmqop"]
+default_input_values = [1, Vector2(1, 1), 2, Vector2(1.725, 0.475)]
+linked_parent_graph_frame = 16
+
+[sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_hs6mp"]
+expanded_output_ports = [0]
+linked_parent_graph_frame = 16
+texture = SubResource("NoiseTexture2D_xmqop")
+
+[sub_resource type="VisualShaderNodeUVFunc" id="VisualShaderNodeUVFunc_1iyg4"]
+default_input_values = [1, Vector2(1, 1), 2, Vector2(0.375, 0.89)]
+linked_parent_graph_frame = 16
+
+[sub_resource type="VisualShaderNodeFrame" id="VisualShaderNodeFrame_vlcoi"]
+size = Vector2(1046.2501, 1598.0001)
+title = "Multi-coloured noise"
+tint_color_enabled = true
+tint_color = Color(0.2390625, 0.425, 0.404082, 0.75)
+attached_nodes = PackedInt32Array(14, 15, 13, 12, 11, 19)
+
+[sub_resource type="VisualShaderNodeVectorOp" id="VisualShaderNodeVectorOp_fkbp7"]
+operator = 1
+
+[sub_resource type="VisualShaderNodeFrame" id="VisualShaderNodeFrame_fkbp7"]
+size = Vector2(379, 317.00012)
+title = "Multiply and add in one node"
+attached_nodes = PackedInt32Array(9)
+
+[sub_resource type="VisualShaderNodeFrame" id="VisualShaderNodeFrame_xmqop"]
+linked_parent_graph_frame = 16
+size = Vector2(351.00012, 527.0001)
+title = "Built-in noise"
+tint_color_enabled = true
+tint_color = Color(0.46875, 0.27539063, 0.27539063, 0.75)
+attached_nodes = PackedInt32Array(3)
+
+[sub_resource type="VisualShaderNodeFloatFunc" id="VisualShaderNodeFloatFunc_vlcoi"]
+function = 31
+
+[sub_resource type="VisualShaderNodeFrame" id="VisualShaderNodeFrame_4v25c"]
+size = Vector2(400, 225)
+title = "Play around with these as you like. There are vector versions of each operation, too"
+
+[sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_vlcoi"]
+output_port_for_preview = 0
+input_name = "uv"
+
+[sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_4v25c"]
+expanded_output_ports = [0]
+linked_parent_graph_frame = 19
+texture = SubResource("NoiseTexture2D_xmqop")
+
+[sub_resource type="VisualShaderNodeFloatOp" id="VisualShaderNodeFloatOp_hs6mp"]
+default_input_values = [0, 0.0, 1, 0.5]
+
+[sub_resource type="VisualShaderNodeFloatOp" id="VisualShaderNodeFloatOp_1iyg4"]
+operator = 1
+
+[sub_resource type="VisualShaderNodeFloatOp" id="VisualShaderNodeFloatOp_mdany"]
+default_input_values = [0, 0.0, 1, 0.1]
+operator = 2
+
+[sub_resource type="VisualShaderNodeFloatOp" id="VisualShaderNodeFloatOp_sgjn7"]
+default_input_values = [0, 0.0, 1, 2.0]
+operator = 3
+
+[sub_resource type="VisualShaderNodeMultiplyAdd" id="VisualShaderNodeMultiplyAdd_fkbp7"]
+linked_parent_graph_frame = 18
+
+[resource]
+nodes/fragment/-1/position = Vector2(0, 0)
+nodes/fragment/0/position = Vector2(1024, 288)
+nodes/fragment/3/node = SubResource("VisualShaderNodeTexture_4v25c")
+nodes/fragment/3/position = Vector2(-576, 240)
+nodes/fragment/4/node = SubResource("VisualShaderNodeFloatOp_hs6mp")
+nodes/fragment/4/position = Vector2(336, 432)
+nodes/fragment/5/node = SubResource("VisualShaderNodeFloatOp_1iyg4")
+nodes/fragment/5/position = Vector2(336, 592)
+nodes/fragment/6/node = SubResource("VisualShaderNodeFloatOp_mdany")
+nodes/fragment/6/position = Vector2(336, 256)
+nodes/fragment/7/node = SubResource("VisualShaderNodeFloatOp_sgjn7")
+nodes/fragment/7/position = Vector2(336, 80)
+nodes/fragment/9/node = SubResource("VisualShaderNodeMultiplyAdd_fkbp7")
+nodes/fragment/9/position = Vector2(576, 336)
+nodes/fragment/10/node = SubResource("VisualShaderNodeFloatConstant_vlcoi")
+nodes/fragment/10/position = Vector2(32, 736)
+nodes/fragment/11/node = SubResource("VisualShaderNodeVectorCompose_vlcoi")
+nodes/fragment/11/position = Vector2(-224, 752)
+nodes/fragment/12/node = SubResource("VisualShaderNodeTexture_fkbp7")
+nodes/fragment/12/position = Vector2(-560, 656)
+nodes/fragment/13/node = SubResource("VisualShaderNodeUVFunc_xmqop")
+nodes/fragment/13/position = Vector2(-832, 656)
+nodes/fragment/14/node = SubResource("VisualShaderNodeTexture_hs6mp")
+nodes/fragment/14/position = Vector2(-560, 1056)
+nodes/fragment/15/node = SubResource("VisualShaderNodeUVFunc_1iyg4")
+nodes/fragment/15/position = Vector2(-832, 1056)
+nodes/fragment/16/node = SubResource("VisualShaderNodeFrame_vlcoi")
+nodes/fragment/16/position = Vector2(-899.9084, 548.7761)
+nodes/fragment/17/node = SubResource("VisualShaderNodeVectorOp_fkbp7")
+nodes/fragment/17/position = Vector2(336, 880)
+nodes/fragment/18/node = SubResource("VisualShaderNodeFrame_fkbp7")
+nodes/fragment/18/position = Vector2(782.67413, 192.62366)
+nodes/fragment/19/node = SubResource("VisualShaderNodeFrame_xmqop")
+nodes/fragment/19/position = Vector2(-608, 208)
+nodes/fragment/20/node = SubResource("VisualShaderNodeFloatFunc_vlcoi")
+nodes/fragment/20/position = Vector2(336, -32)
+nodes/fragment/21/node = SubResource("VisualShaderNodeFrame_4v25c")
+nodes/fragment/21/position = Vector2(560, 64)
+nodes/fragment/22/node = SubResource("VisualShaderNodeInput_vlcoi")
+nodes/fragment/22/position = Vector2(48, 1152)
+nodes/fragment/connections = PackedInt32Array(3, 1, 6, 0, 3, 1, 4, 0, 10, 0, 4, 1, 3, 1, 5, 0, 10, 0, 5, 1, 13, 0, 12, 0, 15, 0, 14, 0, 3, 1, 11, 0, 12, 2, 11, 1, 14, 3, 11, 2, 11, 0, 17, 0, 10, 0, 17, 1, 3, 1, 20, 0, 3, 1, 7, 0, 17, 0, 0, 0)

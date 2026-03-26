@@ -1,0 +1,39 @@
+[gd_resource type="VisualShader" format=3 uid="uid://cd3mwkx8gwc1r"]
+
+[ext_resource type="Texture2D" uid="uid://1ynui37sffd" path="res://textures/icon.svg" id="1_wcd25"]
+
+[sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_1b2q2"]
+texture = ExtResource("1_wcd25")
+texture_type = 1
+
+[sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_kmwk2"]
+input_name = "uv"
+
+[sub_resource type="VisualShaderNodeVectorOp" id="VisualShaderNodeVectorOp_wcd25"]
+default_input_values = [0, Vector2(0, 0), 1, Vector2(0, 0)]
+op_type = 0
+operator = 2
+
+[sub_resource type="VisualShaderNodeFloatConstant" id="VisualShaderNodeFloatConstant_1b2q2"]
+constant = 6.0
+
+[sub_resource type="VisualShaderNodeVectorOp" id="VisualShaderNodeVectorOp_bi3dm"]
+operator = 3
+
+[sub_resource type="VisualShaderNodeFloatConstant" id="VisualShaderNodeFloatConstant_a3hqc"]
+constant = 4.0
+
+[resource]
+nodes/fragment/2/node = SubResource("VisualShaderNodeTexture_1b2q2")
+nodes/fragment/2/position = Vector2(-128, 144)
+nodes/fragment/3/node = SubResource("VisualShaderNodeInput_kmwk2")
+nodes/fragment/3/position = Vector2(-672, 144)
+nodes/fragment/4/node = SubResource("VisualShaderNodeVectorOp_wcd25")
+nodes/fragment/4/position = Vector2(-352, 144)
+nodes/fragment/5/node = SubResource("VisualShaderNodeFloatConstant_1b2q2")
+nodes/fragment/5/position = Vector2(-576, 272)
+nodes/fragment/6/node = SubResource("VisualShaderNodeVectorOp_bi3dm")
+nodes/fragment/6/position = Vector2(128, 256)
+nodes/fragment/7/node = SubResource("VisualShaderNodeFloatConstant_a3hqc")
+nodes/fragment/7/position = Vector2(-128, 464)
+nodes/fragment/connections = PackedInt32Array(3, 0, 4, 0, 5, 0, 4, 1, 2, 0, 6, 0, 7, 0, 6, 1, 4, 0, 2, 0, 6, 0, 0, 0)
