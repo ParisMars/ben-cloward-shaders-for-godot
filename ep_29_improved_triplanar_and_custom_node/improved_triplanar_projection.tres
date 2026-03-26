@@ -118,7 +118,7 @@ default_input_values = [0, Vector3(0, 0, 0)]
 port_type = 4
 
 [sub_resource type="VisualShaderNodeFrame" id="VisualShaderNodeFrame_oqdid"]
-size = Vector2(286.25, 275.00003)
+size = Vector2(325, 275)
 title = "Swap x and y"
 tint_color_enabled = true
 tint_color = Color(0.1690371, 0.12218748, 0.21249998, 0.75)

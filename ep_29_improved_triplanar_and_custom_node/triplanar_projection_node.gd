@@ -10,6 +10,7 @@ func _get_name() -> String:
 func _get_category() -> String:
     return "Projection"
 
+
 func _get_description() -> String:
     return "Triplanar projection ('box projection')"
 
