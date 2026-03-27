@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b71kvlv3b02c8"]
 
-[ext_resource type="Shader" uid="uid://k6my3tp0x2s6" path="res://ep_7/ep_7.tres" id="1_cmh2a"]
-[ext_resource type="Shader" uid="uid://3bdgpmidlhby" path="res://ep_7/ep_7.gdshader" id="2_pt6ll"]
+[ext_resource type="Shader" uid="uid://k6my3tp0x2s6" path="res://ep_7/ep_7_vs.tres" id="1_cmh2a"]
+[ext_resource type="Shader" uid="uid://3bdgpmidlhby" path="res://ep_7/ep_7_code.gdshader" id="2_pt6ll"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_pt6ll"]
 render_priority = 0
@@ -10,16 +10,30 @@ shader = ExtResource("1_cmh2a")
 [sub_resource type="SphereMesh" id="SphereMesh_jvydd"]
 material = SubResource("ShaderMaterial_pt6ll")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_cmh2a"]
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_pt6ll"]
+noise_type = 2
+fractal_octaves = 1
+cellular_distance_function = 1
+cellular_jitter = 0.63
+cellular_return_type = 4
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_jvydd"]
+noise = SubResource("FastNoiseLite_pt6ll")
+seamless = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jvydd"]
 render_priority = 0
 shader = ExtResource("2_pt6ll")
+shader_parameter/noise_sampler = SubResource("NoiseTexture2D_jvydd")
 
-[sub_resource type="SphereMesh" id="SphereMesh_pt6ll"]
-material = SubResource("ShaderMaterial_cmh2a")
+[sub_resource type="SphereMesh" id="SphereMesh_kv6vg"]
+material = SubResource("ShaderMaterial_jvydd")
 
-[node name="Ep7" type="MeshInstance3D" unique_id=227258671]
+[node name="Ep7" type="Node3D" unique_id=1912055748]
+
+[node name="VsSphere" type="MeshInstance3D" parent="." unique_id=1034226759]
 mesh = SubResource("SphereMesh_jvydd")
 
-[node name="CodeSphere" type="MeshInstance3D" parent="." unique_id=1268346796]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
-mesh = SubResource("SphereMesh_pt6ll")
+[node name="CodeSphere" type="MeshInstance3D" parent="." unique_id=1763561105]
+visible = false
+mesh = SubResource("SphereMesh_kv6vg")

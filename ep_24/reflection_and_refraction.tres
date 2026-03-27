@@ -15,7 +15,7 @@ linked_parent_graph_frame = 13
 constant = -1.0
 
 [sub_resource type="VisualShaderNodeFrame" id="VisualShaderNodeFrame_ac053"]
-size = Vector2(886.25024, 371.0001)
+size = Vector2(886.25, 371)
 title = "Direction is toward camera"
 tint_color_enabled = true
 tint_color = Color(0.33125, 0.17323361, 0.15320313, 1)
@@ -29,7 +29,7 @@ default_value_enabled = true
 default_value = 1.5
 
 [sub_resource type="VisualShaderNodeFrame" id="VisualShaderNodeFrame_ywa0r"]
-size = Vector2(703, 443.00006)
+size = Vector2(703, 443)
 title = "Refraction uses the direction to the camera, not from it"
 tint_color_enabled = true
 tint_color = Color(0.5, 0.45517576, 0.2890625, 0.75)

@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://dep6yfjrl5hsn"]
+
+[ext_resource type="Shader" uid="uid://ep87ck6vw06w" path="res://ep_8/ep_8_vs.tres" id="1_q0ffw"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_882bd"]
+render_priority = 0
+shader = ExtResource("1_q0ffw")
+
+[sub_resource type="SphereMesh" id="SphereMesh_5oth2"]
+material = SubResource("ShaderMaterial_882bd")
+
+[node name="Ep8" type="Node3D" unique_id=781380462]
+
+[node name="VsSphere" type="MeshInstance3D" parent="." unique_id=1512962882]
+mesh = SubResource("SphereMesh_5oth2")

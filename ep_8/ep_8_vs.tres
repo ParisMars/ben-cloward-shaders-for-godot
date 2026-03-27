@@ -1,0 +1,4 @@
+[gd_resource type="VisualShader" format=3 uid="uid://ep87ck6vw06w"]
+
+[resource]
+nodes/fragment/0/position = Vector2(400, 144)
