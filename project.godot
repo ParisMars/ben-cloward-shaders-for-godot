@@ -21,7 +21,6 @@ config/icon="res://textures/icon.svg"
 [file_customization]
 
 folder_colors={
-"res://cubemaps/": "gray",
 "res://custom_shader_nodes/": "gray",
 "res://ep_15_smoothstep/": "pink",
 "res://ep_16_length_and_distance/": "red",
@@ -44,6 +43,7 @@ folder_colors={
 "res://shader_performance/": "gray",
 "res://testing/": "gray",
 "res://textures/": "gray",
+"res://textures/cubemaps/": "gray",
 "res://transform_stuff/": "gray",
 "res://vfx_shield/": "gray"
 }

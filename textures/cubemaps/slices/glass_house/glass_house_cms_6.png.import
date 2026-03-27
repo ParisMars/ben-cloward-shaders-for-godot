@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://2pbw4bh3kby8"
+path="res://.godot/imported/glass_house_cms_6.png-1ac2594ce8e152a60bdb4ad8b5777562.image"
+
+[deps]
+
+source_file="res://textures/cubemaps/slices/glass_house/glass_house_cms_6.png"
+dest_files=["res://.godot/imported/glass_house_cms_6.png-1ac2594ce8e152a60bdb4ad8b5777562.image"]
+
+[params]
+

@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://dtg4881g4iwbr"
+path="res://.godot/imported/farm_road_cms_2.png-a78857f80582910eb04d737e3e5a97b3.image"
+
+[deps]
+
+source_file="res://textures/cubemaps/slices/cm_farm_road/farm_road_cms_2.png"
+dest_files=["res://.godot/imported/farm_road_cms_2.png-a78857f80582910eb04d737e3e5a97b3.image"]
+
+[params]
+
