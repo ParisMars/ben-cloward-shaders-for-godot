@@ -31,7 +31,7 @@ default_input_values = [1, Vector2(1, 1), 2, Vector2(0.375, 0.89)]
 linked_parent_graph_frame = 16
 
 [sub_resource type="VisualShaderNodeFrame" id="VisualShaderNodeFrame_vlcoi"]
-size = Vector2(1046.2501, 1598.0001)
+size = Vector2(1085, 1553.9999)
 title = "Multi-coloured noise"
 tint_color_enabled = true
 tint_color = Color(0.2390625, 0.425, 0.404082, 0.75)
@@ -41,13 +41,13 @@ attached_nodes = PackedInt32Array(14, 15, 13, 12, 11, 19)
 operator = 1
 
 [sub_resource type="VisualShaderNodeFrame" id="VisualShaderNodeFrame_fkbp7"]
-size = Vector2(379, 317.00012)
+size = Vector2(379, 317)
 title = "Multiply and add in one node"
 attached_nodes = PackedInt32Array(9)
 
 [sub_resource type="VisualShaderNodeFrame" id="VisualShaderNodeFrame_xmqop"]
 linked_parent_graph_frame = 16
-size = Vector2(351.00012, 527.0001)
+size = Vector2(351.00003, 482.99997)
 title = "Built-in noise"
 tint_color_enabled = true
 tint_color = Color(0.46875, 0.27539063, 0.27539063, 0.75)
@@ -87,7 +87,6 @@ operator = 3
 linked_parent_graph_frame = 18
 
 [resource]
-nodes/fragment/-1/position = Vector2(0, 0)
 nodes/fragment/0/position = Vector2(1024, 288)
 nodes/fragment/3/node = SubResource("VisualShaderNodeTexture_4v25c")
 nodes/fragment/3/position = Vector2(-576, 240)

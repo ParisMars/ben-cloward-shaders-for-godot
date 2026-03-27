@@ -61,9 +61,9 @@ func _get_output_port_type(_port: int) -> PortType:
 
 func _get_global_code(_mode: Shader.Mode) -> String:
     return """
-    vec2 quantise(vec2 st, float quantise_amount) {
-        return floor(st * quantise_amount) / quantise_amount;
-    }
+        vec2 quantise(vec2 st, float quantise_amount) {
+            return floor(st * quantise_amount) / quantise_amount;
+        }
     """
 
 func _get_code(input_vars: Array[String], output_vars: Array[String],

@@ -70,33 +70,33 @@ func _get_output_port_type(_port: int) -> PortType:
 
 func _get_global_code(_mode: Shader.Mode) -> String:
     return """
-vec3 tri_planar_project(
-        vec3 world_normal,
-        vec3 world_vertex,
-        sampler2D tp_texture,
-        float sharpness,
-        float tiling_fac) {
+        vec3 tri_planar_project(
+                vec3 world_normal,
+                vec3 world_vertex,
+                sampler2D tp_texture,
+                float sharpness,
+                float tiling_fac) {
 
-    vec3 adjusted_normals = pow(abs(world_normal), vec3(sharpness));
-    vec3 dir_masks = adjusted_normals / dot(adjusted_normals, vec3(1.0));
-    vec3 sign_stuff = sign(world_normal) * vec3(-1.0, 1.0, 1.0);
+            vec3 adjusted_normals = pow(abs(world_normal), vec3(sharpness));
+            vec3 dir_masks = adjusted_normals / dot(adjusted_normals, vec3(1.0));
+            vec3 sign_stuff = sign(world_normal) * vec3(-1.0, 1.0, 1.0);
 
-    world_vertex *= vec3(1.0, -1.0, 1.0) * tiling_fac;
-    vec2 x_proj = world_vertex.zy * vec2(sign_stuff.x, 1.0);  // Swap yz, else projection is sideways
-    vec2 y_proj = world_vertex.xz * vec2(sign_stuff.y, 1.0);
-    vec2 z_proj = world_vertex.xy * vec2(sign_stuff.z, 1.0);
-    vec3 combined_projected_textures = mix(
-        mix(
-            texture(tp_texture, x_proj).rgb,
-            texture(tp_texture, y_proj).rgb,
-            dir_masks.y
-        ),
-        texture(tp_texture, z_proj).rgb,
-        dir_masks.z
-    );
+            world_vertex *= vec3(1.0, -1.0, 1.0) * tiling_fac;
+            vec2 x_proj = world_vertex.zy * vec2(sign_stuff.x, 1.0);  // Swap yz, else projection is sideways
+            vec2 y_proj = world_vertex.xz * vec2(sign_stuff.y, 1.0);
+            vec2 z_proj = world_vertex.xy * vec2(sign_stuff.z, 1.0);
+            vec3 combined_projected_textures = mix(
+                mix(
+                    texture(tp_texture, x_proj).rgb,
+                    texture(tp_texture, y_proj).rgb,
+                    dir_masks.y
+                ),
+                texture(tp_texture, z_proj).rgb,
+                dir_masks.z
+            );
 
-    return combined_projected_textures;
-}
+            return combined_projected_textures;
+        }
     """
 
 

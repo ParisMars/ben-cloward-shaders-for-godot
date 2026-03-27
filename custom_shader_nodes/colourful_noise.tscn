@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://djfgudtotekpd"]
+
+[ext_resource type="Shader" uid="uid://deb41yg3pmq7x" path="res://custom_shader_nodes/colourful_noise.tres" id="1_xk5uy"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_xk5uy"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_hx46k"]
+noise = SubResource("FastNoiseLite_xk5uy")
+seamless = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jbhxb"]
+render_priority = 0
+shader = ExtResource("1_xk5uy")
+shader_parameter/Texture2DParameter = SubResource("NoiseTexture2D_hx46k")
+
+[sub_resource type="BoxMesh" id="BoxMesh_xk5uy"]
+material = SubResource("ShaderMaterial_jbhxb")
+
+[node name="ColourfulNoise" type="Node3D" unique_id=1020694440]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=163954120]
+mesh = SubResource("BoxMesh_xk5uy")
