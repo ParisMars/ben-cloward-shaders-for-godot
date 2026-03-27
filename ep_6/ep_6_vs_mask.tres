@@ -1,0 +1,32 @@
+[gd_resource type="VisualShader" format=3 uid="uid://b8lk14ox6ysx5"]
+
+[ext_resource type="Texture2D" uid="uid://dls3fqbvd0uhn" path="res://textures/colour_grid.png" id="1_oy3d5"]
+[ext_resource type="Texture2D" uid="uid://y81xayptvxv6" path="res://textures/rock_wall/rock_wall_12_diff_2k.png" id="2_4x0ki"]
+[ext_resource type="Texture2D" uid="uid://d4c434da726q3" path="res://textures/masks/exaggerated_droplets.png" id="3_xrf7k"]
+
+[sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_vcoog"]
+texture = ExtResource("1_oy3d5")
+texture_type = 1
+
+[sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_pfu7m"]
+texture = ExtResource("2_4x0ki")
+texture_type = 1
+
+[sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_fxgqp"]
+expanded_output_ports = [0]
+texture = ExtResource("3_xrf7k")
+
+[sub_resource type="VisualShaderNodeMix" id="VisualShaderNodeMix_oy3d5"]
+default_input_values = [0, Vector3(0, 0, 0), 1, Vector3(1, 1, 1), 2, Vector3(0.5, 0.5, 0.5)]
+op_type = 3
+
+[resource]
+nodes/fragment/2/node = SubResource("VisualShaderNodeTexture_vcoog")
+nodes/fragment/2/position = Vector2(-320, 32)
+nodes/fragment/3/node = SubResource("VisualShaderNodeTexture_pfu7m")
+nodes/fragment/3/position = Vector2(-320, 384)
+nodes/fragment/4/node = SubResource("VisualShaderNodeTexture_fxgqp")
+nodes/fragment/4/position = Vector2(-320, 736)
+nodes/fragment/5/node = SubResource("VisualShaderNodeMix_oy3d5")
+nodes/fragment/5/position = Vector2(48, 368)
+nodes/fragment/connections = PackedInt32Array(2, 0, 5, 0, 3, 0, 5, 1, 4, 1, 5, 2, 5, 0, 0, 0)

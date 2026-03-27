@@ -2,7 +2,7 @@
 
 [ext_resource type="Shader" uid="uid://d2y7j8ykkmg7b" path="res://transform_stuff/top_coloured.tres" id="1_t1x0x"]
 [ext_resource type="Shader" uid="uid://b44jbigrex047" path="res://transform_stuff/simple_textured_sphere.gdshader" id="2_4fuo5"]
-[ext_resource type="Texture2D" uid="uid://bw5eragxrc56t" path="res://textures/ground_cracks.png" id="3_4fuo5"]
+[ext_resource type="Texture2D" uid="uid://bw5eragxrc56t" path="res://textures/masks/ground_cracks.png" id="3_4fuo5"]
 [ext_resource type="Texture2D" uid="uid://1ynui37sffd" path="res://textures/icon.svg" id="3_fih44"]
 [ext_resource type="Shader" uid="uid://c8jtp3jtjjeyu" path="res://transform_stuff/top_coloured_code.gdshader" id="4_5ei4t"]
 

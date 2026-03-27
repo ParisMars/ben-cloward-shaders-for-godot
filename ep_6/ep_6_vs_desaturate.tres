@@ -1,0 +1,42 @@
+[gd_resource type="VisualShader" format=3 uid="uid://c6nr5dpcanw3d"]
+
+[ext_resource type="Texture2D" uid="uid://dls3fqbvd0uhn" path="res://textures/colour_grid.png" id="1_o0aag"]
+
+[sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_o0aag"]
+texture = ExtResource("1_o0aag")
+texture_type = 1
+
+[sub_resource type="VisualShaderNodeVec3Constant" id="VisualShaderNodeVec3Constant_10u7w"]
+linked_parent_graph_frame = 18
+constant = Vector3(0.22, 0.72, 0.06)
+
+[sub_resource type="VisualShaderNodeDotProduct" id="VisualShaderNodeDotProduct_3q4wd"]
+
+[sub_resource type="VisualShaderNodeMix" id="VisualShaderNodeMix_6fbr7"]
+default_input_values = [0, Vector3(0, 0, 0), 1, Vector3(1, 1, 1), 2, Vector3(0.5, 0.5, 0.5)]
+op_type = 3
+
+[sub_resource type="VisualShaderNodeFloatConstant" id="VisualShaderNodeFloatConstant_2tdrm"]
+constant = 1.0
+
+[sub_resource type="VisualShaderNodeFrame" id="VisualShaderNodeFrame_o0aag"]
+size = Vector2(862, 227)
+title = "Some magic numbers from GIMP's documentation on desaturation"
+tint_color_enabled = true
+tint_color = Color(0.17500001, 0.17423439, 0.16734377, 0.75)
+attached_nodes = PackedInt32Array(13)
+
+[resource]
+nodes/fragment/12/node = SubResource("VisualShaderNodeTexture_o0aag")
+nodes/fragment/12/position = Vector2(-880, 32)
+nodes/fragment/13/node = SubResource("VisualShaderNodeVec3Constant_10u7w")
+nodes/fragment/13/position = Vector2(-1008, 512)
+nodes/fragment/14/node = SubResource("VisualShaderNodeDotProduct_3q4wd")
+nodes/fragment/14/position = Vector2(-400, 288)
+nodes/fragment/16/node = SubResource("VisualShaderNodeMix_6fbr7")
+nodes/fragment/16/position = Vector2(32, 144)
+nodes/fragment/17/node = SubResource("VisualShaderNodeFloatConstant_2tdrm")
+nodes/fragment/17/position = Vector2(-224, 496)
+nodes/fragment/18/node = SubResource("VisualShaderNodeFrame_o0aag")
+nodes/fragment/18/position = Vector2(-1040, 480)
+nodes/fragment/connections = PackedInt32Array(12, 0, 16, 0, 12, 0, 14, 0, 13, 0, 14, 1, 17, 0, 16, 2, 16, 0, 0, 0, 14, 0, 16, 1)

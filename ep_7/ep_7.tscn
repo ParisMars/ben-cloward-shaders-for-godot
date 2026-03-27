@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://b71kvlv3b02c8"]
+[gd_scene format=3 uid="uid://b71kvlv3b02c8"]
 
 [ext_resource type="Shader" uid="uid://k6my3tp0x2s6" path="res://ep_7/ep_7.tres" id="1_cmh2a"]
 [ext_resource type="Shader" uid="uid://3bdgpmidlhby" path="res://ep_7/ep_7.gdshader" id="2_pt6ll"]
@@ -17,9 +17,9 @@ shader = ExtResource("2_pt6ll")
 [sub_resource type="SphereMesh" id="SphereMesh_pt6ll"]
 material = SubResource("ShaderMaterial_cmh2a")
 
-[node name="Ep7" type="MeshInstance3D"]
+[node name="Ep7" type="MeshInstance3D" unique_id=227258671]
 mesh = SubResource("SphereMesh_jvydd")
 
-[node name="CodeSphere" type="MeshInstance3D" parent="."]
+[node name="CodeSphere" type="MeshInstance3D" parent="." unique_id=1268346796]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
 mesh = SubResource("SphereMesh_pt6ll")

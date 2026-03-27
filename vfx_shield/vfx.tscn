@@ -2,7 +2,7 @@
 
 [ext_resource type="Shader" uid="uid://cw4ekkvvlngh7" path="res://vfx_shield/vfx_shield.tres" id="1_8k440"]
 [ext_resource type="Shader" uid="uid://cbfcarujopaha" path="res://vfx_shield/vfx_shield_code.gdshader" id="2_fr305"]
-[ext_resource type="Texture2D" uid="uid://bw5eragxrc56t" path="res://textures/ground_cracks.png" id="3_e5r23"]
+[ext_resource type="Texture2D" uid="uid://bw5eragxrc56t" path="res://textures/masks/ground_cracks.png" id="3_e5r23"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_fr305"]
 render_priority = 0

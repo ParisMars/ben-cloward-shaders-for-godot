@@ -1,3 +1,87 @@
 [gd_scene format=3 uid="uid://b85ckn1pdtt6g"]
 
+[ext_resource type="Shader" uid="uid://c7ekp6hhcxrie" path="res://ep_6/ep_6_vs_lerp.tres" id="1_yfdix"]
+[ext_resource type="Shader" uid="uid://d4cxvxyd1qbfh" path="res://ep_6/ep_6_code_lerp.gdshader" id="2_n6v4t"]
+[ext_resource type="Texture2D" uid="uid://dls3fqbvd0uhn" path="res://textures/colour_grid.png" id="3_m6kn3"]
+[ext_resource type="Texture2D" uid="uid://y81xayptvxv6" path="res://textures/rock_wall/rock_wall_12_diff_2k.png" id="4_hprbq"]
+[ext_resource type="Shader" uid="uid://b8lk14ox6ysx5" path="res://ep_6/ep_6_vs_mask.tres" id="5_hprbq"]
+[ext_resource type="Shader" uid="uid://cymcg4r5n7hc6" path="res://ep_6/ep_6_code_mask.gdshader" id="6_n13w3"]
+[ext_resource type="Texture2D" uid="uid://d4c434da726q3" path="res://textures/masks/exaggerated_droplets.png" id="7_7ar1b"]
+[ext_resource type="Shader" uid="uid://c6nr5dpcanw3d" path="res://ep_6/ep_6_vs_desaturate.tres" id="8_5pbmv"]
+[ext_resource type="Shader" uid="uid://b2vqu5lu3xnr3" path="res://ep_6/ep_6_code_desaturate.gdshader" id="9_f18jf"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_n6v4t"]
+render_priority = 0
+shader = ExtResource("1_yfdix")
+
+[sub_resource type="BoxMesh" id="BoxMesh_gvn7q"]
+lightmap_size_hint = Vector2i(14, 21)
+material = SubResource("ShaderMaterial_n6v4t")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gvn7q"]
+render_priority = 0
+shader = ExtResource("2_n6v4t")
+shader_parameter/weight = 1.0
+shader_parameter/texture_1_sampler = ExtResource("3_m6kn3")
+shader_parameter/texture_2_sampler = ExtResource("4_hprbq")
+
+[sub_resource type="BoxMesh" id="BoxMesh_m6kn3"]
+material = SubResource("ShaderMaterial_gvn7q")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_n13w3"]
+render_priority = 0
+shader = ExtResource("5_hprbq")
+
+[sub_resource type="BoxMesh" id="BoxMesh_7ar1b"]
+material = SubResource("ShaderMaterial_n13w3")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7ar1b"]
+render_priority = 0
+shader = ExtResource("6_n13w3")
+shader_parameter/tex_1_sampler = ExtResource("3_m6kn3")
+shader_parameter/tex_2_sampler = ExtResource("4_hprbq")
+shader_parameter/mask_sampler = ExtResource("7_7ar1b")
+
+[sub_resource type="BoxMesh" id="BoxMesh_5pbmv"]
+material = SubResource("ShaderMaterial_7ar1b")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_f18jf"]
+render_priority = 0
+shader = ExtResource("8_5pbmv")
+
+[sub_resource type="BoxMesh" id="BoxMesh_5mv5o"]
+material = SubResource("ShaderMaterial_f18jf")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5mv5o"]
+render_priority = 0
+shader = ExtResource("9_f18jf")
+shader_parameter/blend_weight = 1.0
+shader_parameter/tex_sampler = ExtResource("3_m6kn3")
+
+[sub_resource type="BoxMesh" id="BoxMesh_v20ui"]
+material = SubResource("ShaderMaterial_5mv5o")
+
 [node name="Ep6" type="Node3D" unique_id=2093428303]
+
+[node name="VsLerpCube" type="MeshInstance3D" parent="." unique_id=474274429]
+mesh = SubResource("BoxMesh_gvn7q")
+
+[node name="CodeLerpCube" type="MeshInstance3D" parent="." unique_id=1682286164]
+visible = false
+mesh = SubResource("BoxMesh_m6kn3")
+
+[node name="VsMaskCube" type="MeshInstance3D" parent="." unique_id=652646854]
+visible = false
+mesh = SubResource("BoxMesh_7ar1b")
+
+[node name="CodeMaskCube" type="MeshInstance3D" parent="." unique_id=1593881885]
+visible = false
+mesh = SubResource("BoxMesh_5pbmv")
+
+[node name="VsDesaturateCube" type="MeshInstance3D" parent="." unique_id=622711738]
+visible = false
+mesh = SubResource("BoxMesh_5mv5o")
+
+[node name="CodeDesaturateCube" type="MeshInstance3D" parent="." unique_id=1086125412]
+visible = false
+mesh = SubResource("BoxMesh_v20ui")
