@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://ccf071cld5e4j"]
 
 [ext_resource type="Shader" uid="uid://bnk5k8wtni62q" path="res://ep_9/ep_9_vs.tres" id="1_st760"]
+[ext_resource type="Shader" uid="uid://c3f5iaxt1bjj3" path="res://ep_9/ep_9_code.gdshader" id="2_ax7db"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ax7db"]
 render_priority = 0
@@ -9,7 +10,18 @@ shader = ExtResource("1_st760")
 [sub_resource type="SphereMesh" id="SphereMesh_ntq6y"]
 material = SubResource("ShaderMaterial_ax7db")
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_st760"]
+render_priority = 0
+shader = ExtResource("2_ax7db")
+
+[sub_resource type="SphereMesh" id="SphereMesh_ax7db"]
+material = SubResource("ShaderMaterial_st760")
+
 [node name="Ep9" type="Node3D" unique_id=1563436804]
 
 [node name="VsSphere" type="MeshInstance3D" parent="." unique_id=1726895304]
 mesh = SubResource("SphereMesh_ntq6y")
+
+[node name="CodeSphere" type="MeshInstance3D" parent="." unique_id=1675332265]
+visible = false
+mesh = SubResource("SphereMesh_ax7db")

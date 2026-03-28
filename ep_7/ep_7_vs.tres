@@ -31,7 +31,7 @@ operator = 2
 linked_parent_graph_frame = 22
 
 [sub_resource type="VisualShaderNodeFrame" id="VisualShaderNodeFrame_d1v4j"]
-size = Vector2(1805, 875)
+size = Vector2(1805.0001, 874.99994)
 title = "Manual Dot Product"
 tint_color_enabled = true
 tint_color = Color(0.19999999, 0.33039212, 0.4980392, 1)
@@ -55,7 +55,7 @@ input_name = "view"
 linked_parent_graph_frame = 67
 
 [sub_resource type="VisualShaderNodeFrame" id="VisualShaderNodeFrame_sr7pm"]
-size = Vector2(2665, 1507)
+size = Vector2(2545, 1463)
 title = "Mask selecting"
 tint_color_enabled = true
 tint_color = Color(0.59375, 0.2913086, 0.2913086, 0.75)
@@ -145,7 +145,7 @@ linked_parent_graph_frame = 67
 function = 31
 
 [sub_resource type="VisualShaderNodeFrame" id="VisualShaderNodeFrame_ec36v"]
-size = Vector2(1085, 356)
+size = Vector2(1085.0001, 356)
 title = "Simple Fresnel"
 attached_nodes = PackedInt32Array(66, 40, 37, 36)
 
@@ -201,7 +201,7 @@ nodes/fragment/55/position = Vector2(-2144, -384)
 nodes/fragment/56/node = SubResource("VisualShaderNodeVectorCompose_xo72t")
 nodes/fragment/56/position = Vector2(-1808, -256)
 nodes/fragment/57/node = SubResource("VisualShaderNodeDotProduct_gw4pk")
-nodes/fragment/57/position = Vector2(-304, -208)
+nodes/fragment/57/position = Vector2(-400, -208)
 nodes/fragment/60/node = SubResource("VisualShaderNodeVectorOp_lavm2")
 nodes/fragment/60/position = Vector2(-1536, -256)
 nodes/fragment/61/node = SubResource("VisualShaderNodeVectorFunc_7f6ir")
@@ -211,9 +211,9 @@ nodes/fragment/62/position = Vector2(-1088, -256)
 nodes/fragment/63/node = SubResource("VisualShaderNodeFloatConstant_1atdd")
 nodes/fragment/63/position = Vector2(-1808, 64)
 nodes/fragment/64/node = SubResource("VisualShaderNodeVec3Constant_2ok7w")
-nodes/fragment/64/position = Vector2(-688, -64)
+nodes/fragment/64/position = Vector2(-784, -64)
 nodes/fragment/65/node = SubResource("VisualShaderNodeFrame_7f6ir")
-nodes/fragment/65/position = Vector2(-720, -256)
+nodes/fragment/65/position = Vector2(-816, -256)
 nodes/fragment/66/node = SubResource("VisualShaderNodeFloatFunc_lavm2")
 nodes/fragment/66/position = Vector2(-32, 624)
 nodes/fragment/67/node = SubResource("VisualShaderNodeFrame_ec36v")

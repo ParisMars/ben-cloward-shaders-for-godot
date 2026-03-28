@@ -23,6 +23,7 @@ config/icon="res://textures/icon.svg"
 folder_colors={
 "res://chromatic_aberration/": "gray",
 "res://custom_shader_nodes/": "gray",
+"res://ep_10/": "pink",
 "res://ep_15_smoothstep/": "pink",
 "res://ep_16_length_and_distance/": "red",
 "res://ep_17_floor_ceil_round/": "orange",

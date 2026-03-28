@@ -1,3 +1,274 @@
 [gd_resource type="VisualShader" format=3 uid="uid://bnk5k8wtni62q"]
 
+[sub_resource type="VisualShaderNodeFloatFunc" id="VisualShaderNodeFloatFunc_2ltdo"]
+linked_parent_graph_frame = 32
+function = 18
+
+[sub_resource type="VisualShaderNodeVectorDecompose" id="VisualShaderNodeVectorDecompose_2ltdo"]
+linked_parent_graph_frame = 32
+
+[sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_4o46k"]
+linked_parent_graph_frame = 30
+input_name = "view"
+
+[sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_csqug"]
+linked_parent_graph_frame = 30
+input_name = "normal"
+
+[sub_resource type="VisualShaderNodeDotProduct" id="VisualShaderNodeDotProduct_bqvyo"]
+linked_parent_graph_frame = 30
+
+[sub_resource type="VisualShaderNodeFloatOp" id="VisualShaderNodeFloatOp_b1d62"]
+default_input_values = [0, 0.0, 1, 3.0]
+linked_parent_graph_frame = 30
+operator = 5
+
+[sub_resource type="VisualShaderNodeFrame" id="VisualShaderNodeFrame_2ruu5"]
+size = Vector2(1439, 316)
+title = "Godot uses forward rendering, not deferred, so we can actually hook up the lighting example Ben gave."
+tint_color = Color(0, 0, 0, 0.75)
+attached_nodes = PackedInt32Array(29)
+
+[sub_resource type="VisualShaderNodeFloatFunc" id="VisualShaderNodeFloatFunc_4o46k"]
+linked_parent_graph_frame = 30
+function = 31
+
+[sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_2ltdo"]
+linked_parent_graph_frame = 32
+input_name = "normal"
+
+[sub_resource type="VisualShaderNodeReroute" id="VisualShaderNodeReroute_2ruu5"]
+linked_parent_graph_frame = 30
+
+[sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_bqvyo"]
+linked_parent_graph_frame = 31
+input_name = "camera_position_world"
+
+[sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_5lies"]
+linked_parent_graph_frame = 31
+input_name = "node_position_world"
+
+[sub_resource type="VisualShaderNodeVectorOp" id="VisualShaderNodeVectorOp_b1d62"]
+linked_parent_graph_frame = 31
+operator = 1
+
+[sub_resource type="VisualShaderNodeVectorLen" id="VisualShaderNodeVectorLen_d7pcn"]
+linked_parent_graph_frame = 31
+
+[sub_resource type="VisualShaderNodeFloatOp" id="VisualShaderNodeFloatOp_2ltdo"]
+default_input_values = [0, 0.0, 1, 3.0]
+linked_parent_graph_frame = 31
+operator = 1
+
+[sub_resource type="VisualShaderNodeFloatOp" id="VisualShaderNodeFloatOp_4o46k"]
+linked_parent_graph_frame = 31
+operator = 3
+
+[sub_resource type="VisualShaderNodeFloatConstant" id="VisualShaderNodeFloatConstant_2ruu5"]
+linked_parent_graph_frame = 31
+constant = 1.0
+
+[sub_resource type="VisualShaderNodeFloatConstant" id="VisualShaderNodeFloatConstant_csqug"]
+linked_parent_graph_frame = 31
+constant = 5.0
+
+[sub_resource type="VisualShaderNodeFrame" id="VisualShaderNodeFrame_csqug"]
+linked_parent_graph_frame = 17
+size = Vector2(400, 225)
+title = "It's in the light shader, found through same menu that you use to switch between frag and vertex shaders."
+
+[sub_resource type="VisualShaderNodeTransformVecMult" id="VisualShaderNodeTransformVecMult_4o46k"]
+operator = 2
+
+[sub_resource type="VisualShaderNodeFrame" id="VisualShaderNodeFrame_2ltdo"]
+size = Vector2(1546.25, 356.00034)
+title = "Fresnel"
+tint_color_enabled = true
+tint_color = Color(0.509375, 0.509375, 0.509375, 0.75)
+attached_nodes = PackedInt32Array(16, 20, 19, 14, 13, 12)
+
+[sub_resource type="VisualShaderNodeFrame" id="VisualShaderNodeFrame_bqvyo"]
+size = Vector2(1926.2501, 510.99997)
+title = "Distance brightening/colouring"
+tint_color_enabled = true
+tint_color = Color(0.21679688, 0.203125, 0.3125, 0.75)
+attached_nodes = PackedInt32Array(23, 28, 27, 26, 25, 24, 22, 21)
+
+[sub_resource type="VisualShaderNodeFrame" id="VisualShaderNodeFrame_5lies"]
+size = Vector2(1446.2501, 667.0001)
+title = "Orientation mask"
+tint_color_enabled = true
+tint_color = Color(0.23708986, 0.38125002, 0.31908095, 0.75)
+attached_nodes = PackedInt32Array(5, 10, 6, 11, 4, 2)
+
+[sub_resource type="VisualShaderNodeFrame" id="VisualShaderNodeFrame_b1d62"]
+size = Vector2(708.99994, 396.00006)
+title = "For directions, use 3x3"
+tint_color_enabled = true
+tint_color = Color(0.19215687, 0.19215687, 0.19215687, 1)
+attached_nodes = PackedInt32Array(35, 36, 34)
+
+[sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_6ugam"]
+linked_parent_graph_frame = 33
+input_name = "normal"
+
+[sub_resource type="VisualShaderNodeTransformVecMult" id="VisualShaderNodeTransformVecMult_sh37q"]
+linked_parent_graph_frame = 33
+operator = 2
+
+[sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_6x5u7"]
+linked_parent_graph_frame = 33
+input_name = "inv_view_matrix"
+
+[sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_w8vvx"]
+linked_parent_graph_frame = 40
+input_name = "vertex"
+
+[sub_resource type="VisualShaderNodeTransformVecMult" id="VisualShaderNodeTransformVecMult_vwitq"]
+linked_parent_graph_frame = 40
+
+[sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_s2f53"]
+linked_parent_graph_frame = 40
+input_name = "inv_view_matrix"
+
+[sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_2ruu5"]
+linked_parent_graph_frame = 32
+input_name = "inv_view_matrix"
+
+[sub_resource type="VisualShaderNodeFrame" id="VisualShaderNodeFrame_d1rgd"]
+size = Vector2(689.00006, 396.00012)
+title = "For positions or coordinates, don't use 3x3"
+tint_color_enabled = true
+tint_color = Color(0.19215687, 0.19215687, 0.19215687, 1)
+attached_nodes = PackedInt32Array(38, 37, 39)
+
+[sub_resource type="VisualShaderNodeFrame" id="VisualShaderNodeFrame_meuai"]
+linked_parent_graph_frame = 42
+size = Vector2(400, 225)
+title = "Here we're going from view space to world space."
+tint_color_enabled = true
+tint_color = Color(0.19062501, 0.19062501, 0.19062501, 1)
+
+[sub_resource type="VisualShaderNodeFrame" id="VisualShaderNodeFrame_becv0"]
+size = Vector2(728.99994, 316)
+title = "This is how you transform from one space to another."
+tint_color_enabled = true
+tint_color = Color(0.19215687, 0.19215687, 0.19215687, 1)
+attached_nodes = PackedInt32Array(41)
+
+[sub_resource type="VisualShaderNodeDotProduct" id="VisualShaderNodeDotProduct_csqug"]
+linked_parent_graph_frame = 32
+
+[sub_resource type="VisualShaderNodeVec3Constant" id="VisualShaderNodeVec3Constant_bqvyo"]
+linked_parent_graph_frame = 32
+constant = Vector3(0, 1, 0)
+
+[sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_b1d62"]
+input_name = "light"
+
+[sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_d7pcn"]
+input_name = "normal"
+
+[sub_resource type="VisualShaderNodeTransformVecMult" id="VisualShaderNodeTransformVecMult_6ugam"]
+operator = 2
+
+[sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_sh37q"]
+input_name = "inv_view_matrix"
+
+[sub_resource type="VisualShaderNodeDotProduct" id="VisualShaderNodeDotProduct_6x5u7"]
+
+[sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_snj2g"]
+input_name = "inv_view_matrix"
+
+[sub_resource type="VisualShaderNodeTransformVecMult" id="VisualShaderNodeTransformVecMult_w8vvx"]
+operator = 2
+
 [resource]
+nodes/fragment/2/node = SubResource("VisualShaderNodeInput_2ltdo")
+nodes/fragment/2/position = Vector2(-1008, 176)
+nodes/fragment/3/node = SubResource("VisualShaderNodeTransformVecMult_4o46k")
+nodes/fragment/3/position = Vector2(-608, 48)
+nodes/fragment/4/node = SubResource("VisualShaderNodeInput_2ruu5")
+nodes/fragment/4/position = Vector2(-976, -16)
+nodes/fragment/5/node = SubResource("VisualShaderNodeDotProduct_csqug")
+nodes/fragment/5/position = Vector2(-336, 224)
+nodes/fragment/6/node = SubResource("VisualShaderNodeVec3Constant_bqvyo")
+nodes/fragment/6/position = Vector2(-752, 320)
+nodes/fragment/10/node = SubResource("VisualShaderNodeFloatFunc_2ltdo")
+nodes/fragment/10/position = Vector2(-80, 240)
+nodes/fragment/11/node = SubResource("VisualShaderNodeVectorDecompose_2ltdo")
+nodes/fragment/11/position = Vector2(-96, -32)
+nodes/fragment/12/node = SubResource("VisualShaderNodeInput_4o46k")
+nodes/fragment/12/position = Vector2(-1056, 640)
+nodes/fragment/13/node = SubResource("VisualShaderNodeInput_csqug")
+nodes/fragment/13/position = Vector2(-1056, 768)
+nodes/fragment/14/node = SubResource("VisualShaderNodeDotProduct_bqvyo")
+nodes/fragment/14/position = Vector2(-640, 704)
+nodes/fragment/16/node = SubResource("VisualShaderNodeFloatOp_b1d62")
+nodes/fragment/16/position = Vector2(-432, 656)
+nodes/fragment/17/node = SubResource("VisualShaderNodeFrame_2ruu5")
+nodes/fragment/17/position = Vector2(208, -144)
+nodes/fragment/19/node = SubResource("VisualShaderNodeFloatFunc_4o46k")
+nodes/fragment/19/position = Vector2(-48, 736)
+nodes/fragment/20/node = SubResource("VisualShaderNodeReroute_2ruu5")
+nodes/fragment/20/position = Vector2(-160, 672)
+nodes/fragment/21/node = SubResource("VisualShaderNodeInput_bqvyo")
+nodes/fragment/21/position = Vector2(-1264, 1008)
+nodes/fragment/22/node = SubResource("VisualShaderNodeInput_5lies")
+nodes/fragment/22/position = Vector2(-1264, 1136)
+nodes/fragment/23/node = SubResource("VisualShaderNodeVectorOp_b1d62")
+nodes/fragment/23/position = Vector2(-864, 1024)
+nodes/fragment/24/node = SubResource("VisualShaderNodeVectorLen_d7pcn")
+nodes/fragment/24/position = Vector2(-592, 1024)
+nodes/fragment/25/node = SubResource("VisualShaderNodeFloatOp_2ltdo")
+nodes/fragment/25/position = Vector2(-288, 1024)
+nodes/fragment/26/node = SubResource("VisualShaderNodeFloatOp_4o46k")
+nodes/fragment/26/position = Vector2(48, 1040)
+nodes/fragment/27/node = SubResource("VisualShaderNodeFloatConstant_2ruu5")
+nodes/fragment/27/position = Vector2(-608, 1264)
+nodes/fragment/28/node = SubResource("VisualShaderNodeFloatConstant_csqug")
+nodes/fragment/28/position = Vector2(-208, 1248)
+nodes/fragment/29/node = SubResource("VisualShaderNodeFrame_csqug")
+nodes/fragment/29/position = Vector2(240, -96)
+nodes/fragment/30/node = SubResource("VisualShaderNodeFrame_2ltdo")
+nodes/fragment/30/position = Vector2(-1088, 592)
+nodes/fragment/31/node = SubResource("VisualShaderNodeFrame_bqvyo")
+nodes/fragment/31/position = Vector2(-1296, 960)
+nodes/fragment/32/node = SubResource("VisualShaderNodeFrame_5lies")
+nodes/fragment/32/position = Vector2(-1040, -80)
+nodes/fragment/33/node = SubResource("VisualShaderNodeFrame_b1d62")
+nodes/fragment/33/position = Vector2(736, 432)
+nodes/fragment/34/node = SubResource("VisualShaderNodeInput_6ugam")
+nodes/fragment/34/position = Vector2(768, 624)
+nodes/fragment/35/node = SubResource("VisualShaderNodeTransformVecMult_sh37q")
+nodes/fragment/35/position = Vector2(1104, 512)
+nodes/fragment/36/node = SubResource("VisualShaderNodeInput_6x5u7")
+nodes/fragment/36/position = Vector2(784, 464)
+nodes/fragment/37/node = SubResource("VisualShaderNodeInput_w8vvx")
+nodes/fragment/37/position = Vector2(768, 992)
+nodes/fragment/38/node = SubResource("VisualShaderNodeTransformVecMult_vwitq")
+nodes/fragment/38/position = Vector2(1088, 896)
+nodes/fragment/39/node = SubResource("VisualShaderNodeInput_s2f53")
+nodes/fragment/39/position = Vector2(784, 832)
+nodes/fragment/40/node = SubResource("VisualShaderNodeFrame_d1rgd")
+nodes/fragment/40/position = Vector2(720, 784)
+nodes/fragment/41/node = SubResource("VisualShaderNodeFrame_meuai")
+nodes/fragment/41/position = Vector2(768, 176)
+nodes/fragment/42/node = SubResource("VisualShaderNodeFrame_becv0")
+nodes/fragment/42/position = Vector2(736, 112)
+nodes/fragment/connections = PackedInt32Array(6, 0, 5, 1, 2, 0, 3, 1, 4, 0, 3, 0, 3, 0, 5, 0, 5, 0, 10, 0, 3, 0, 11, 0, 13, 0, 14, 1, 12, 0, 14, 0, 14, 0, 16, 0, 16, 0, 20, 0, 20, 0, 19, 0, 21, 0, 23, 0, 22, 0, 23, 1, 23, 0, 24, 0, 24, 0, 25, 0, 25, 0, 26, 0, 27, 0, 25, 1, 28, 0, 26, 1, 34, 0, 35, 1, 36, 0, 35, 0, 39, 0, 38, 0, 37, 0, 38, 1, 20, 0, 0, 0)
+nodes/light/2/node = SubResource("VisualShaderNodeInput_b1d62")
+nodes/light/2/position = Vector2(-544, 128)
+nodes/light/3/node = SubResource("VisualShaderNodeInput_d7pcn")
+nodes/light/3/position = Vector2(-560, 368)
+nodes/light/4/node = SubResource("VisualShaderNodeTransformVecMult_6ugam")
+nodes/light/4/position = Vector2(-224, 256)
+nodes/light/5/node = SubResource("VisualShaderNodeInput_sh37q")
+nodes/light/5/position = Vector2(-528, 256)
+nodes/light/6/node = SubResource("VisualShaderNodeDotProduct_6x5u7")
+nodes/light/6/position = Vector2(152.4, 175)
+nodes/light/7/node = SubResource("VisualShaderNodeInput_snj2g")
+nodes/light/7/position = Vector2(-528, 16)
+nodes/light/8/node = SubResource("VisualShaderNodeTransformVecMult_w8vvx")
+nodes/light/8/position = Vector2(-224, 16)
+nodes/light/connections = PackedInt32Array(3, 0, 4, 1, 5, 0, 4, 0, 4, 0, 6, 1, 7, 0, 8, 0, 2, 0, 8, 1, 8, 0, 6, 0)
