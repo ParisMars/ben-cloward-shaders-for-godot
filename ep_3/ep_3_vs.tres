@@ -4,7 +4,7 @@
 constant = Color(0.035036493, 0.34458992, 0.99999994, 1)
 
 [sub_resource type="VisualShaderNodeFrame" id="VisualShaderNodeFrame_hlpgl"]
-size = Vector2(889.9996, 727.0005)
+size = Vector2(890, 736)
 title = "This node exposes the colour value to the inspector"
 tint_color_enabled = true
 tint_color = Color(0.12407053, 0.11058594, 0.23750001, 0.75)

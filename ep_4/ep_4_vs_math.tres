@@ -47,7 +47,7 @@ attached_nodes = PackedInt32Array(9)
 
 [sub_resource type="VisualShaderNodeFrame" id="VisualShaderNodeFrame_xmqop"]
 linked_parent_graph_frame = 16
-size = Vector2(351.00003, 482.99997)
+size = Vector2(351, 482.99997)
 title = "Built-in noise"
 tint_color_enabled = true
 tint_color = Color(0.46875, 0.27539063, 0.27539063, 0.75)

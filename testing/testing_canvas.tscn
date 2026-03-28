@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://cq3r5pv4p6gu2"]
+
+[ext_resource type="Shader" uid="uid://bb7caqu1g576y" path="res://testing/testing_canvas_code.gdshader" id="1_k0f7p"]
+[ext_resource type="Texture2D" uid="uid://1ynui37sffd" path="res://textures/icon.svg" id="2_alxlp"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ikguu"]
+shader = ExtResource("1_k0f7p")
+
+[node name="TestingCanvas" type="Node2D" unique_id=1671412615]
+
+[node name="Instances" type="Node2D" parent="." unique_id=1193260709]
+position = Vector2(331, 0)
+
+[node name="InstanceOne" type="Sprite2D" parent="Instances" unique_id=2097178459]
+material = SubResource("ShaderMaterial_ikguu")
+instance_shader_parameters/per_instance_colour = Color(0.38551575, 0.7072333, 0.9303009, 1)
+texture = ExtResource("2_alxlp")
+
+[node name="InstanceTwo" type="Sprite2D" parent="Instances" unique_id=1807451959]
+material = SubResource("ShaderMaterial_ikguu")
+instance_shader_parameters/per_instance_colour = Color(0.39090258, 0.7560022, 0.5706732, 1)
+position = Vector2(177, 0)
+texture = ExtResource("2_alxlp")

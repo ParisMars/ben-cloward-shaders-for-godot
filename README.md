@@ -9,3 +9,8 @@ scene tree to see the shader/mesh of your choice.
 
 Have fun,
 Paris, Mars
+
+
+TODO:
+Episode 10. That TBN bullshit. Make sure you can rotate the sphere without
+the thing breaking. And make sure that the normals are correct.

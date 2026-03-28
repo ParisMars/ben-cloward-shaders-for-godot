@@ -1,3 +1,41 @@
 [gd_scene format=3 uid="uid://tmj1jo0ahqr1"]
 
+[ext_resource type="Shader" uid="uid://bwjviri57lkym" path="res://ep_10/ep_10_vs.tres" id="1_141xy"]
+[ext_resource type="Shader" uid="uid://bmu8coka8nwn3" path="res://ep_10/ep_10_code.gdshader" id="2_owy5q"]
+[ext_resource type="Texture2D" uid="uid://dt0piaxd8piu2" path="res://textures/rocky_terrain_2/rocky_terrain_02_diff_2k.png" id="3_76afx"]
+[ext_resource type="Texture2D" uid="uid://crpluxnm3b0rb" path="res://textures/matcap.png" id="3_rn7kv"]
+[ext_resource type="Texture2D" uid="uid://b3xmnyw25hnt1" path="res://textures/rocky_terrain_2/rocky_terrain_02_nor_gl_2k.png" id="4_rn7kv"]
+[ext_resource type="Texture2D" uid="uid://b6fom33p70adj" path="res://textures/rock_wall_2/rock_wall_02_diff_2k.png" id="5_xkaph"]
+[ext_resource type="Texture2D" uid="uid://m85krrtgpsgt" path="res://textures/rock_wall_2/rock_wall_02_nor_gl_2k.png" id="6_k52rq"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_owy5q"]
+render_priority = 0
+shader = ExtResource("1_141xy")
+
+[sub_resource type="SphereMesh" id="SphereMesh_5mirh"]
+material = SubResource("ShaderMaterial_owy5q")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5mirh"]
+render_priority = 0
+shader = ExtResource("2_owy5q")
+shader_parameter/matcap_sampler = ExtResource("3_rn7kv")
+shader_parameter/moss_diff_sampler = ExtResource("3_76afx")
+shader_parameter/moss_nor_sampler = ExtResource("4_rn7kv")
+shader_parameter/rock_diff_sampler = ExtResource("5_xkaph")
+shader_parameter/rock_nor_sampler = ExtResource("6_k52rq")
+shader_parameter/sharpness = 5.0
+
+[sub_resource type="SphereMesh" id="SphereMesh_cq08u"]
+material = SubResource("ShaderMaterial_5mirh")
+
 [node name="Ep10" type="Node3D" unique_id=1243594834]
+
+[node name="VsSphere" type="MeshInstance3D" parent="." unique_id=314225485]
+visible = false
+mesh = SubResource("SphereMesh_5mirh")
+
+[node name="CodeSphere" type="MeshInstance3D" parent="." unique_id=1385179675]
+transform = Transform3D(1, 0, 0, 0, 1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0)
+mesh = SubResource("SphereMesh_cq08u")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1436597690]

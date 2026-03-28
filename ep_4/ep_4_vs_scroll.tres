@@ -12,7 +12,7 @@ tint_color = Color(0.23522824, 0.11425782, 0.36562502, 0.75)
 attached_nodes = PackedInt32Array(10)
 
 [sub_resource type="VisualShaderNodeFrame" id="VisualShaderNodeFrame_nyx01"]
-size = Vector2(705, 317.00003)
+size = Vector2(705, 317)
 title = "This node is specifically for simple UV transformations"
 attached_nodes = PackedInt32Array(9)
 

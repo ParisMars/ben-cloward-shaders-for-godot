@@ -1,0 +1,8 @@
+Search .txt to find all FIXMEs
+
+The fucking TBN bullshit
+- normalise stuff after transformations
+- binormal or bitangent?
+- normal maps are properly hinted
+
+- Start from scratch
