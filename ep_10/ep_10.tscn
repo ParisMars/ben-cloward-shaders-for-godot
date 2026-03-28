@@ -28,6 +28,14 @@ shader_parameter/sharpness = 5.0
 [sub_resource type="SphereMesh" id="SphereMesh_cq08u"]
 material = SubResource("ShaderMaterial_5mirh")
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rn7kv"]
+render_priority = 0
+shader = ExtResource("2_owy5q")
+shader_parameter/sharpness = 5.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_xkaph"]
+material = SubResource("ShaderMaterial_rn7kv")
+
 [node name="Ep10" type="Node3D" unique_id=1243594834]
 
 [node name="VsSphere" type="MeshInstance3D" parent="." unique_id=314225485]
@@ -38,4 +46,6 @@ mesh = SubResource("SphereMesh_5mirh")
 transform = Transform3D(1, 0, 0, 0, 1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0)
 mesh = SubResource("SphereMesh_cq08u")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1436597690]
+[node name="ForVisualisingDirectionVectors" type="MeshInstance3D" parent="." unique_id=1631983895]
+visible = false
+mesh = SubResource("BoxMesh_xkaph")
