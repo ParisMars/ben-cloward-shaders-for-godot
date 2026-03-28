@@ -1,3 +1,36 @@
 [gd_scene format=3 uid="uid://dgbutpfk4dy06"]
 
+[ext_resource type="Shader" uid="uid://b60ts6v6heblm" path="res://ep_11/ep_11_vs.tres" id="1_6iqck"]
+[ext_resource type="Shader" uid="uid://c2ub8nk7hfrsh" path="res://ep_11/ep_11_code.gdshader" id="2_de8fn"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_de8fn"]
+render_priority = 0
+shader = ExtResource("1_6iqck")
+
+[sub_resource type="SphereMesh" id="SphereMesh_u76mp"]
+material = SubResource("ShaderMaterial_de8fn")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_mh0r4"]
+noise_type = 2
+frequency = 0.0255
+fractal_octaves = 1
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_8r1ks"]
+noise = SubResource("FastNoiseLite_mh0r4")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_b0vlj"]
+render_priority = 0
+shader = ExtResource("2_de8fn")
+shader_parameter/voronoi_noise = SubResource("NoiseTexture2D_8r1ks")
+
+[sub_resource type="SphereMesh" id="SphereMesh_ghgee"]
+material = SubResource("ShaderMaterial_b0vlj")
+
 [node name="Ep11" type="Node3D" unique_id=492291797]
+
+[node name="VsSphere" type="MeshInstance3D" parent="." unique_id=194618389]
+mesh = SubResource("SphereMesh_u76mp")
+
+[node name="CodeSphere" type="MeshInstance3D" parent="." unique_id=1414775213]
+visible = false
+mesh = SubResource("SphereMesh_ghgee")

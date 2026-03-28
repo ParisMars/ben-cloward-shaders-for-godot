@@ -15,9 +15,16 @@ void fragment() {
     ALBEDO = matcap;
     
     // Environment blending
-    vec3 T = normalize((INV_VIEW_MATRIX * vec4(TANGENT, 0.0)).xyz);
-    vec3 B = normalize((INV_VIEW_MATRIX * vec4(BINORMAL, 0.0)).xyz);
-    vec3 N = normalize((INV_VIEW_MATRIX * vec4(NORMAL, 0.0)).xyz);
+    // https://godotforums.org/d/27986-custom-normal-map-shader/8
+    // https://www.scratchapixel.com/lessons/mathematics-physics-for-computer-graphics/geometry/transforming-normals.html
+    // https://www.gamedeveloper.com/programming/three-normal-mapping-techniques-explained-for-the-mathematically-uninclined
+    mat4 orthonormal_IVM = transpose(inverse(INV_VIEW_MATRIX));
+    vec3 T = normalize((orthonormal_IVM * vec4(TANGENT, 0.0)).xyz);
+    vec3 B = normalize((orthonormal_IVM * vec4(BINORMAL, 0.0)).xyz);
+    vec3 N = normalize((orthonormal_IVM * vec4(NORMAL, 0.0)).xyz);
+    //vec3 T = normalize((INV_VIEW_MATRIX * vec4(TANGENT, 0.0)).xyz);
+    //vec3 B = normalize((INV_VIEW_MATRIX * vec4(BINORMAL, 0.0)).xyz);
+    //vec3 N = normalize((INV_VIEW_MATRIX * vec4(NORMAL, 0.0)).xyz);
     mat3 TBN = mat3(T, B, N);
     
     vec3 moss_diff = texture(moss_diff_sampler, UV).rgb;
