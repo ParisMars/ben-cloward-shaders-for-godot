@@ -7,9 +7,5 @@ Each ep contains meshes with already applied shaders, and every shader has both
 a code and node (visual shader) version. Toggle the visibility of nodes in the
 scene tree to see the shader/mesh of your choice.
 
-There are some other shaders and things in greyed out folders that are my
-own experimentation and whatever. Browse them if you're curious but they're
-not required to follow the playlist.
-
 Have fun,
-- Paris, Mars
+Paris, Mars

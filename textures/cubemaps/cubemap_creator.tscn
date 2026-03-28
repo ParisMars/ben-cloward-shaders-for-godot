@@ -1,12 +1,6 @@
 [gd_scene format=3 uid="uid://cs0dgko5eb5ud"]
 
 [ext_resource type="Script" uid="uid://cd5bphjd2huib" path="res://textures/cubemaps/cube_map_creator.gd" id="1_qqwox"]
-[ext_resource type="Image" uid="uid://hhaocweks2i1" path="res://textures/cubemaps/slices/cm_farm_road/farm_road_cms_1.png" id="2_egm5d"]
-[ext_resource type="Image" uid="uid://dtg4881g4iwbr" path="res://textures/cubemaps/slices/cm_farm_road/farm_road_cms_2.png" id="3_v01mu"]
-[ext_resource type="Image" uid="uid://d2gxr8cyqcr7v" path="res://textures/cubemaps/slices/cm_farm_road/farm_road_cms_3.png" id="4_scykb"]
-[ext_resource type="Image" uid="uid://cxgrsd5r7blwo" path="res://textures/cubemaps/slices/cm_farm_road/farm_road_cms_4.png" id="5_gxh3m"]
-[ext_resource type="Image" uid="uid://d0sgtsgwcxr5b" path="res://textures/cubemaps/slices/cm_farm_road/farm_road_cms_5.png" id="6_1qoxa"]
-[ext_resource type="Image" uid="uid://dgfot3810jg57" path="res://textures/cubemaps/slices/cm_farm_road/farm_road_cms_6.png" id="7_y2b15"]
 [ext_resource type="Shader" uid="uid://djtug82xjvyub" path="res://textures/cubemaps/sky_shader_vs.tres" id="8_bqdg8"]
 [ext_resource type="Cubemap" uid="uid://dlbtrkmj34o0" path="res://textures/cubemaps/assembled/glass_house.res" id="9_cwq67"]
 [ext_resource type="Shader" uid="uid://ca3uoss0rhlq5" path="res://textures/cubemaps/cubemap_reflect_refract.gdshader" id="10_xv8mp"]
@@ -51,7 +45,6 @@ material = SubResource("ShaderMaterial_ih7hb")
 
 [node name="CubemapCreator" type="Node3D" unique_id=320216431]
 script = ExtResource("1_qqwox")
-images = Array[Image]([ExtResource("2_egm5d"), ExtResource("3_v01mu"), ExtResource("4_scykb"), ExtResource("5_gxh3m"), ExtResource("6_1qoxa"), ExtResource("7_y2b15")])
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1943994655]
 environment = SubResource("Environment_xv8mp")

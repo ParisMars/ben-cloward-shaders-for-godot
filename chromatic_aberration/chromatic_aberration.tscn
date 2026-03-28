@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://dlgefe8yc6ecq"]
+
+[ext_resource type="Shader" uid="uid://bpsg0id2jd3li" path="res://chromatic_aberration/chromatic_aberration.gdshader" id="1_j23tx"]
+[ext_resource type="Texture2D" uid="uid://1ynui37sffd" path="res://textures/icon.svg" id="2_7egbq"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_j23tx"]
+cellular_return_type = 4
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_7egbq"]
+noise = SubResource("FastNoiseLite_j23tx")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_a8qfo"]
+shader = ExtResource("1_j23tx")
+shader_parameter/channel_uv_offset = 1.0
+shader_parameter/noise_sampler = SubResource("NoiseTexture2D_7egbq")
+shader_parameter/tex_sampler = ExtResource("2_7egbq")
+
+[node name="ChromaticAberration" type="Node2D" unique_id=744684915]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=884214570]
+material = SubResource("ShaderMaterial_a8qfo")
+texture = ExtResource("2_7egbq")

@@ -1,80 +1,15 @@
-[gd_scene load_steps=17 format=3 uid="uid://ccf071cld5e4j"]
+[gd_scene format=3 uid="uid://ccf071cld5e4j"]
 
-[ext_resource type="Shader" uid="uid://cs4flraj5rbfr" path="res://ep_9/ep_9_top_white.tres" id="1_st760"]
-[ext_resource type="Shader" uid="uid://db8f42vdokr1s" path="res://ep_9/ep_9_top_white.gdshader" id="2_ax7db"]
-[ext_resource type="Shader" uid="uid://bo2pk7xfm6sth" path="res://ep_9/camera_and_normal.tres" id="3_ntq6y"]
-[ext_resource type="Shader" uid="uid://degqvw2b4pmrn" path="res://ep_9/camera_and_normal.gdshader" id="4_wd3qy"]
+[ext_resource type="Shader" uid="uid://bnk5k8wtni62q" path="res://ep_9/ep_9_vs.tres" id="1_st760"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_0xm2m"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ax7db"]
 render_priority = 0
 shader = ExtResource("1_st760")
 
-[sub_resource type="BoxMesh" id="BoxMesh_h2yge"]
-material = SubResource("ShaderMaterial_0xm2m")
+[sub_resource type="SphereMesh" id="SphereMesh_ntq6y"]
+material = SubResource("ShaderMaterial_ax7db")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_h2yge"]
-render_priority = 0
-shader = ExtResource("1_st760")
+[node name="Ep9" type="Node3D" unique_id=1563436804]
 
-[sub_resource type="SphereMesh" id="SphereMesh_1bvp3"]
-material = SubResource("ShaderMaterial_h2yge")
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_ig7tw"]
-render_priority = 0
-shader = ExtResource("1_st760")
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_0xm2m"]
-material = SubResource("ShaderMaterial_ig7tw")
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_ntq6y"]
-render_priority = 0
-shader = ExtResource("2_ax7db")
-
-[sub_resource type="SphereMesh" id="SphereMesh_wd3qy"]
-material = SubResource("ShaderMaterial_ntq6y")
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_wd3qy"]
-render_priority = 0
-shader = ExtResource("3_ntq6y")
-shader_parameter/EffectStartDistance = 1.850000087875
-shader_parameter/EffectStretch = 1.0
-
-[sub_resource type="SphereMesh" id="SphereMesh_avsuj"]
-material = SubResource("ShaderMaterial_wd3qy")
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_avsuj"]
-render_priority = 0
-shader = ExtResource("4_wd3qy")
-shader_parameter/effect_start_distance = 2.30000003427276
-shader_parameter/effect_stretch = 1.10000001639132
-
-[sub_resource type="SphereMesh" id="SphereMesh_5gxgs"]
-material = SubResource("ShaderMaterial_avsuj")
-
-[node name="Ep9" type="Node3D"]
-
-[node name="Box" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.96592593, 0.12940955, 0.22414392, -0.25000003, 0.24236245, 0.9374223, 0.06698732, -0.96151644, 0.26645654, -1.5, 0, 0)
-mesh = SubResource("BoxMesh_h2yge")
-skeleton = NodePath("../..")
-
-[node name="Sphere" type="MeshInstance3D" parent="."]
-mesh = SubResource("SphereMesh_1bvp3")
-skeleton = NodePath("../..")
-
-[node name="Capsule" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.9659258, 0.25881904, 0, -0.25881904, 0.9659258, 1.5, 0, 0)
-mesh = SubResource("CapsuleMesh_0xm2m")
-skeleton = NodePath("../..")
-
-[node name="SphereCode" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 1)
-mesh = SubResource("SphereMesh_wd3qy")
-
-[node name="CameraAndNormal" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
-mesh = SubResource("SphereMesh_avsuj")
-
-[node name="CameraAndNormalCode" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
-mesh = SubResource("SphereMesh_5gxgs")
+[node name="VsSphere" type="MeshInstance3D" parent="." unique_id=1726895304]
+mesh = SubResource("SphereMesh_ntq6y")

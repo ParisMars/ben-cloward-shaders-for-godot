@@ -42,8 +42,8 @@ visible = false
 mesh = SubResource("SphereMesh_j7coo")
 
 [node name="CodeSphere" type="MeshInstance3D" parent="." unique_id=770568145]
-visible = false
 mesh = SubResource("SphereMesh_x45mj")
 
 [node name="CustomTriplanarNode" type="MeshInstance3D" parent="." unique_id=1121026928]
+visible = false
 mesh = SubResource("SphereMesh_sdhy6")

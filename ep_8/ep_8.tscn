@@ -1,15 +1,29 @@
 [gd_scene format=3 uid="uid://dep6yfjrl5hsn"]
 
 [ext_resource type="Shader" uid="uid://ep87ck6vw06w" path="res://ep_8/ep_8_vs.tres" id="1_q0ffw"]
+[ext_resource type="Shader" uid="uid://d1wv6ksqx5s1e" path="res://ep_8/ep_8_code.gdshader" id="2_882bd"]
+[ext_resource type="Texture2D" uid="uid://dls3fqbvd0uhn" path="res://textures/colour_grid.png" id="3_1fcpd"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_882bd"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_q0ffw"]
 render_priority = 0
 shader = ExtResource("1_q0ffw")
 
-[sub_resource type="SphereMesh" id="SphereMesh_5oth2"]
-material = SubResource("ShaderMaterial_882bd")
+[sub_resource type="BoxMesh" id="BoxMesh_882bd"]
+material = SubResource("ShaderMaterial_q0ffw")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1fcpd"]
+render_priority = 0
+shader = ExtResource("2_882bd")
+shader_parameter/tex_sampler = ExtResource("3_1fcpd")
+
+[sub_resource type="BoxMesh" id="BoxMesh_kqwi6"]
+material = SubResource("ShaderMaterial_1fcpd")
 
 [node name="Ep8" type="Node3D" unique_id=781380462]
 
-[node name="VsSphere" type="MeshInstance3D" parent="." unique_id=1512962882]
-mesh = SubResource("SphereMesh_5oth2")
+[node name="VsCube" type="MeshInstance3D" parent="." unique_id=1615807396]
+mesh = SubResource("BoxMesh_882bd")
+
+[node name="CodeCube" type="MeshInstance3D" parent="." unique_id=1142513031]
+visible = false
+mesh = SubResource("BoxMesh_kqwi6")
