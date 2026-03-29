@@ -1,6 +1,6 @@
 [gd_resource type="VisualShader" format=3 uid="uid://dhae3rn02byb3"]
 
-[ext_resource type="Texture2D" uid="uid://dtxjpsckdwvsf" path="res://ep_28_triplanar_projection/rocky_terrain/rocky_terrain_diff_2k.png" id="1_v2j6c"]
+[ext_resource type="Texture2D" uid="uid://dtxjpsckdwvsf" path="res://textures/rocky_terrain/rocky_terrain_diff_2k.png" id="1_v2j6c"]
 
 [sub_resource type="VisualShaderNodeVectorCompose" id="VisualShaderNodeVectorCompose_5tsoo"]
 op_type = 0

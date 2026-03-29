@@ -21,7 +21,7 @@ input_name = "inv_view_matrix"
 function = 18
 
 [sub_resource type="VisualShaderNodeFrame" id="VisualShaderNodeFrame_1y82x"]
-size = Vector2(518, 916.00024)
+size = Vector2(518, 916)
 title = "There are vector versions of all of these"
 tint_color_enabled = true
 tint_color = Color(0.16161135, 0.20937502, 0.19235922, 0.75)

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://hq44y4mk0jsx"]
 
 [ext_resource type="Shader" uid="uid://bbxsyv8x388jo" path="res://reflection_and_refraction_code/reflection_and_refraction_code.gdshader" id="1_dvccr"]
-[ext_resource type="Cubemap" uid="uid://nghlul6donhs" path="res://ep_24/cube_map_textures/cubemap.res" id="2_nvk7b"]
+[ext_resource type="Cubemap" uid="uid://nghlul6donhs" path="res://textures/cubemaps/assembled/cubemap.res" id="2_nvk7b"]
 [ext_resource type="Shader" uid="uid://bxm730pgcsenx" path="res://textures/cubemaps/sky_shader_code.gdshader" id="3_xae0r"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_k0qa6"]

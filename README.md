@@ -12,5 +12,8 @@ Paris, Mars
 
 
 TODO:
-Episode 10. That TBN bullshit. Make sure you can rotate the sphere without
-the thing breaking. And make sure that the normals are correct.
+FIXMEs -- filter by .txt to find fixmes
+
+Cleanse your reddit and anything else
+
+Get rid or any unnecessary folders, textures, and files. Review project.
