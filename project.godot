@@ -46,6 +46,7 @@ folder_colors={
 "res://ep_8/": "blue",
 "res://ep_9/": "purple",
 "res://reflection_and_refraction_code/": "gray",
+"res://screen_reading/": "gray",
 "res://shader_performance/": "gray",
 "res://testing/": "gray",
 "res://textures/": "gray",

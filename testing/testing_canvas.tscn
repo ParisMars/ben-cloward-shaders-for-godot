@@ -9,7 +9,6 @@ shader = ExtResource("1_k0f7p")
 [node name="TestingCanvas" type="Node2D" unique_id=1671412615]
 
 [node name="Instances" type="Node2D" parent="." unique_id=1193260709]
-position = Vector2(331, 0)
 
 [node name="InstanceOne" type="Sprite2D" parent="Instances" unique_id=2097178459]
 material = SubResource("ShaderMaterial_ikguu")

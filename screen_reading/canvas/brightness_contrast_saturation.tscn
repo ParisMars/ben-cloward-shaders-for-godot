@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://c4ogqdibe6pti"]
+
+[ext_resource type="Texture2D" uid="uid://1ynui37sffd" path="res://textures/icon.svg" id="1_tnrua"]
+[ext_resource type="Texture2D" uid="uid://crpluxnm3b0rb" path="res://textures/matcap.png" id="2_wlugg"]
+[ext_resource type="Texture2D" uid="uid://dls3fqbvd0uhn" path="res://textures/colour_grid.png" id="3_dh4mb"]
+[ext_resource type="Texture2D" uid="uid://y81xayptvxv6" path="res://textures/rock_wall/rock_wall_12_diff_2k.png" id="4_dh4mb"]
+[ext_resource type="Shader" uid="uid://d4csp15nsj4ph" path="res://screen_reading/canvas/brightness_contrast_saturation.gdshader" id="5_ne0a8"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yk3xw"]
+shader = ExtResource("5_ne0a8")
+shader_parameter/amount = 2.0
+
+[node name="BrightnessContrast" type="Node2D" unique_id=1069007918]
+
+[node name="Stones" type="Sprite2D" parent="." unique_id=1512887846]
+position = Vector2(-105, -673)
+texture = ExtResource("4_dh4mb")
+
+[node name="ColourGrid" type="Sprite2D" parent="." unique_id=887126344]
+position = Vector2(40, 801)
+texture = ExtResource("3_dh4mb")
+
+[node name="Matcap" type="Sprite2D" parent="." unique_id=1219586671]
+position = Vector2(933, 474)
+texture = ExtResource("2_wlugg")
+
+[node name="GodotIcon" type="Sprite2D" parent="." unique_id=551189059]
+position = Vector2(316, 131)
+texture = ExtResource("1_tnrua")
+
+[node name="ScreenReader" type="Sprite2D" parent="." unique_id=1929756797]
+material = SubResource("ShaderMaterial_yk3xw")
+position = Vector2(589, 352)
+scale = Vector2(4.7499995, 4.7499995)
+texture = ExtResource("1_tnrua")

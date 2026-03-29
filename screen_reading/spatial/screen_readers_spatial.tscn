@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://4n1yk8wibj7s"]
+
+[ext_resource type="Shader" uid="uid://dwcrmgdr6q7mj" path="res://screen_reading/spatial/pixelate_spatial.gdshader" id="1_2y2a0"]
+[ext_resource type="Shader" uid="uid://qsqey2pwko7b" path="res://screen_reading/spatial/chromatic_abberation_spatial.gdshader" id="2_e1yqy"]
+[ext_resource type="Shader" uid="uid://rwfb7nny7lyl" path="res://screen_reading/spatial/depth_texture.gdshader" id="3_tf7ln"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_0hymt"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_homxx"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_2y2a0"]
+material = SubResource("StandardMaterial3D_homxx")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tf7ln"]
+transparency = 1
+
+[sub_resource type="BoxMesh" id="BoxMesh_jqcmb"]
+material = SubResource("StandardMaterial3D_tf7ln")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_e1yqy"]
+render_priority = 0
+shader = ExtResource("1_2y2a0")
+shader_parameter/pix = 32.0
+
+[sub_resource type="QuadMesh" id="QuadMesh_qqbom"]
+material = SubResource("ShaderMaterial_e1yqy")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qqbom"]
+render_priority = 0
+shader = ExtResource("2_e1yqy")
+shader_parameter/offset = 0.010000000475
+
+[sub_resource type="QuadMesh" id="QuadMesh_urdsi"]
+material = SubResource("ShaderMaterial_qqbom")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jqcmb"]
+render_priority = 0
+shader = ExtResource("3_tf7ln")
+
+[sub_resource type="QuadMesh" id="QuadMesh_spxii"]
+material = SubResource("ShaderMaterial_jqcmb")
+
+[node name="ScreenReadersSpatial" type="Node3D" unique_id=2145697012]
+
+[node name="Sphere" type="MeshInstance3D" parent="." unique_id=614409623]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.65153253, 0, -0.6561123)
+mesh = SubResource("SphereMesh_0hymt")
+
+[node name="Box" type="MeshInstance3D" parent="." unique_id=1150870121]
+transform = Transform3D(0.6481598, 0, -0.76150435, 0, 1, 0, 0.76150435, 0, 0.6481598, 1.0288129, 0, -2.251084)
+mesh = SubResource("BoxMesh_2y2a0")
+
+[node name="BoxWithTransparency" type="MeshInstance3D" parent="." unique_id=1757375525]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.1093066)
+mesh = SubResource("BoxMesh_jqcmb")
+
+[node name="ScreenReader" type="MeshInstance3D" parent="." unique_id=1898471897]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4886753, 0.0039910227, 0.3538813)
+mesh = SubResource("QuadMesh_qqbom")
+
+[node name="ScreenReader2" type="MeshInstance3D" parent="." unique_id=990282650]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.26066864, 0, 0)
+mesh = SubResource("QuadMesh_urdsi")
+
+[node name="DepthTexture" type="MeshInstance3D" parent="." unique_id=635389845]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2475429, 0, 0.26744258)
+mesh = SubResource("QuadMesh_spxii")
