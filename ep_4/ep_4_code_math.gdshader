@@ -8,9 +8,9 @@ uniform sampler2D noise_sampler;
 void fragment() {
     vec3 noise = texture(noise_sampler, UV).rgb;
     vec3 multi_coloured_noise = vec3(
-        noise.r,
-        texture(noise_sampler, UV + vec2(0.3)).r,  // Just some random offsets
-        texture(noise_sampler, UV - vec2(0.15, 0.8)).r
+            noise.r,
+            texture(noise_sampler, UV + vec2(0.3)).r,  // Just some random offsets
+            texture(noise_sampler, UV - vec2(0.15, 0.8)).r
     );
 
     // Uncomment these lines one by one, from top to bottom, to see each

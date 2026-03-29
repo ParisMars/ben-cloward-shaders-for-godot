@@ -10,8 +10,8 @@ void fragment() {
     vec2 base_normal_map = texture(nm_sampler, UV).rg;
     vec2 detail_normal_map = texture(nm_sampler, UV * 4.0).rg;
     vec2 blended_normal_map = vec2(
-        overlay(base_normal_map.r, detail_normal_map.r),
-        overlay(base_normal_map.g, detail_normal_map.g)
+            overlay(base_normal_map.r, detail_normal_map.r),
+            overlay(base_normal_map.g, detail_normal_map.g)
     );
 
     NORMAL_MAP = vec3(blended_normal_map, 0.0);

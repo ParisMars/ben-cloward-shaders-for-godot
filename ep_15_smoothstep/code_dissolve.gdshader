@@ -20,7 +20,7 @@ void fragment() {
     float sizzle_mask = big_mask - small_mask;
     float shield_fresnel;
     if (invert_coverage) {
-        shield_fresnel = 1.0 - fresnel(NORMAL, VIEW, (1.0 - shield_coverage) * 8.0);
+            shield_fresnel = 1.0 - fresnel(NORMAL, VIEW, (1.0 - shield_coverage) * 8.0);
     }
     else {
         shield_fresnel = fresnel(NORMAL, VIEW, (1.0 - shield_coverage) * 8.0);

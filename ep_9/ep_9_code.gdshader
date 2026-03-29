@@ -21,7 +21,7 @@ void fragment() {
     
     // Distance mask
     ALBEDO = vec3(
-        (length(CAMERA_POSITION_WORLD - NODE_POSITION_WORLD) - 1.0) / 5.0
+            (length(CAMERA_POSITION_WORLD - NODE_POSITION_WORLD) - 1.0) / 5.0
     );
 }
 

@@ -8,6 +8,8 @@ depending on what per-instance information is passed, different functions can
 be called. Although it would probably be cleaner to just have separate shaders
 for for meaningfully distinct effects.
 "There is a practical maximum limit of 16 instance uniforms per shader."
+
+Creating a new sprite, without duplicating, achieves the same result.
 */
 
 instance uniform vec4 per_instance_colour : source_color;

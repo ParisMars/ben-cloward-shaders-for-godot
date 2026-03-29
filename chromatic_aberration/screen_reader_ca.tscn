@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://brdiukmvyjuw7"]
+
+[ext_resource type="Texture2D" uid="uid://1ynui37sffd" path="res://textures/icon.svg" id="1_ggmhe"]
+[ext_resource type="Shader" uid="uid://b6f28ugj7ldf7" path="res://chromatic_aberration/screen_reader_ca.gdshader" id="1_rx3cm"]
+[ext_resource type="Shader" uid="uid://cid1skxfy0gt2" path="res://chromatic_aberration/mipmap_vis.gdshader" id="2_vtows"]
+[ext_resource type="Texture2D" uid="uid://dls3fqbvd0uhn" path="res://textures/colour_grid.png" id="3_4c754"]
+[ext_resource type="Texture2D" uid="uid://y81xayptvxv6" path="res://textures/rock_wall/rock_wall_12_diff_2k.png" id="4_4c754"]
+[ext_resource type="Shader" uid="uid://3dsh6cteamdh" path="res://chromatic_aberration/blur.gdshader" id="6_kce7y"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kce7y"]
+shader = ExtResource("2_vtows")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vtows"]
+shader = ExtResource("1_rx3cm")
+shader_parameter/brighten_amount = 0.4630000219925
+shader_parameter/darken_amount = 0.4910000233225
+shader_parameter/ca_offset = 0.005
+shader_parameter/filter_mode = 2
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_kce7y"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_5423b"]
+noise = SubResource("FastNoiseLite_kce7y")
+seamless = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5423b"]
+shader = ExtResource("6_kce7y")
+shader_parameter/intensity = 0.1
+shader_parameter/noise_sampler = SubResource("NoiseTexture2D_5423b")
+
+[node name="ScreenReaderCa" type="Node2D" unique_id=1262751671]
+
+[node name="GodotIcon" type="Sprite2D" parent="." unique_id=458905583]
+position = Vector2(152, 105)
+texture = ExtResource("1_ggmhe")
+
+[node name="ColourGrid" type="Sprite2D" parent="." unique_id=1636877234]
+texture_filter = 4
+material = SubResource("ShaderMaterial_kce7y")
+position = Vector2(1174, 509)
+texture = ExtResource("3_4c754")
+
+[node name="Stones" type="Sprite2D" parent="." unique_id=436146313]
+position = Vector2(-304, 1361)
+texture = ExtResource("4_4c754")
+
+[node name="ScreenReader" type="Sprite2D" parent="." unique_id=1958881309]
+material = SubResource("ShaderMaterial_vtows")
+position = Vector2(528, 464)
+scale = Vector2(6.7500005, 6.7500005)
+texture = ExtResource("1_ggmhe")
+
+[node name="Blur" type="Sprite2D" parent="." unique_id=340265499]
+material = SubResource("ShaderMaterial_5423b")
+position = Vector2(920, 538)
+texture = ExtResource("3_4c754")

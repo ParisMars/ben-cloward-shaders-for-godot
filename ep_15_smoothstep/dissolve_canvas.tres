@@ -68,7 +68,7 @@ linked_parent_graph_frame = 32
 linked_parent_graph_frame = 32
 
 [sub_resource type="VisualShaderNodeFrame" id="VisualShaderNodeFrame_aibkp"]
-size = Vector2(2185, 1061)
+size = Vector2(2146.25, 1061)
 title = "Regular Step"
 tint_color_enabled = true
 tint_color = Color(0.25506166, 0.23197268, 0.69375, 0.45882353)
@@ -95,7 +95,7 @@ default_input_values = [0, 0.0, 1, 0.04]
 linked_parent_graph_frame = 38
 
 [sub_resource type="VisualShaderNodeFrame" id="VisualShaderNodeFrame_44td5"]
-size = Vector2(2165, 1303)
+size = Vector2(2126.25, 1303.0001)
 title = "Smoothstep"
 tint_color_enabled = true
 tint_color = Color(0.878125, 0.5942951, 0.20032224, 0.5686275)

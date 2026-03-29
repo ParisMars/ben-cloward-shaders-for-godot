@@ -10,8 +10,8 @@ void fragment() {
     
     // With a matrix
     mat2 rotation_matrix = mat2(
-        vec2(cos(angle), -sin(angle)),
-        vec2(sin(angle), cos(angle))
+            vec2(cos(angle), -sin(angle)),
+            vec2(sin(angle), cos(angle))
     );
     uv *= rotation_matrix;
     
