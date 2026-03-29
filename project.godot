@@ -26,6 +26,8 @@ folder_colors={
 "res://ep_10/": "pink",
 "res://ep_11/": "red",
 "res://ep_12/": "orange",
+"res://ep_13/": "yellow",
+"res://ep_14/": "green",
 "res://ep_15_smoothstep/": "pink",
 "res://ep_16_length_and_distance/": "red",
 "res://ep_17_floor_ceil_round/": "orange",

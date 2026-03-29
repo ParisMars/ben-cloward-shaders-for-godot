@@ -82,21 +82,21 @@ linked_parent_graph_frame = 32
 operator = 2
 
 [sub_resource type="VisualShaderNodeFrame" id="VisualShaderNodeFrame_2ltdo"]
-size = Vector2(1585, 356.00003)
+size = Vector2(1585, 356)
 title = "Fresnel mask"
 tint_color_enabled = true
 tint_color = Color(0.509375, 0.509375, 0.509375, 0.75)
 attached_nodes = PackedInt32Array(16, 20, 19, 14, 13, 12)
 
 [sub_resource type="VisualShaderNodeFrame" id="VisualShaderNodeFrame_bqvyo"]
-size = Vector2(1965, 510.99997)
+size = Vector2(1965.0001, 511.00003)
 title = "Distance mask"
 tint_color_enabled = true
 tint_color = Color(0.21679688, 0.203125, 0.3125, 0.75)
 attached_nodes = PackedInt32Array(23, 28, 27, 26, 25, 24, 22, 21)
 
 [sub_resource type="VisualShaderNodeFrame" id="VisualShaderNodeFrame_5lies"]
-size = Vector2(1985, 667)
+size = Vector2(1985.0001, 667)
 title = "Orientation mask"
 tint_color_enabled = true
 tint_color = Color(0.23708986, 0.38125002, 0.31908095, 0.75)
@@ -164,7 +164,7 @@ linked_parent_graph_frame = 45
 linked_parent_graph_frame = 45
 
 [sub_resource type="VisualShaderNodeFrame" id="VisualShaderNodeFrame_d7pcn"]
-size = Vector2(668.99994, 415.99997)
+size = Vector2(669, 416)
 title = "Related built-ins"
 tint_color_enabled = true
 tint_color = Color(0.23112726, 0.20414062, 0.4875, 1)

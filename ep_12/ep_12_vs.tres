@@ -1,0 +1,119 @@
+[gd_resource type="VisualShader" format=3 uid="uid://bq50duegic2su"]
+
+[ext_resource type="Texture2D" uid="uid://6a5cxjjocmw" path="res://ep_12/rock_wall_12_nor_gl_2k.png" id="1_e34jp"]
+[ext_resource type="Texture2D" uid="uid://dk6mb3ybe5syq" path="res://textures/rock_wall/rock_wall_12_nor_gl_2k.png" id="2_fqxe4"]
+
+[sub_resource type="VisualShaderNodeVectorCompose" id="VisualShaderNodeVectorCompose_ipolc"]
+op_type = 0
+
+[sub_resource type="VisualShaderNodeColorOp" id="VisualShaderNodeColorOp_e34jp"]
+operator = 4
+
+[sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_fqxe4"]
+expanded_output_ports = [0]
+linked_parent_graph_frame = 15
+texture = ExtResource("1_e34jp")
+
+[sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_sx5m1"]
+expanded_output_ports = [0]
+linked_parent_graph_frame = 15
+texture = ExtResource("1_e34jp")
+
+[sub_resource type="VisualShaderNodeFrame" id="VisualShaderNodeFrame_6awxy"]
+size = Vector2(958, 987)
+title = "Don't set to normal unless you want Godot to throw away the blue channel"
+tint_color_enabled = true
+tint_color = Color(0.26276317, 0.23192385, 0.584375, 0.75)
+attached_nodes = PackedInt32Array(14, 13)
+
+[sub_resource type="VisualShaderNodeUVFunc" id="VisualShaderNodeUVFunc_e34jp"]
+function = 1
+
+[sub_resource type="VisualShaderNodeFloatConstant" id="VisualShaderNodeFloatConstant_fqxe4"]
+constant = 4.0
+
+[sub_resource type="VisualShaderNodeVectorCompose" id="VisualShaderNodeVectorCompose_e34jp"]
+op_type = 0
+
+[sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_e34jp"]
+expanded_output_ports = [0]
+texture = ExtResource("2_fqxe4")
+texture_type = 2
+
+[sub_resource type="VisualShaderNodeVectorCompose" id="VisualShaderNodeVectorCompose_fqxe4"]
+op_type = 0
+
+[sub_resource type="VisualShaderNodeVectorOp" id="VisualShaderNodeVectorOp_dged8"]
+default_input_values = [0, Vector2(0, 0), 1, Vector2(0, 0)]
+expanded_output_ports = [0]
+op_type = 0
+
+[sub_resource type="VisualShaderNodeVectorCompose" id="VisualShaderNodeVectorCompose_6awxy"]
+default_input_values = [0, 0.0, 1, 0.0, 2, 1.0]
+
+[sub_resource type="VisualShaderNodeFrame" id="VisualShaderNodeFrame_e34jp"]
+size = Vector2(400, 225)
+title = "Broken, but maybe you can fix it?"
+tint_color_enabled = true
+tint_color = Color(0.21568628, 0.19215687, 0.45490196, 1)
+
+[sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_dged8"]
+expanded_output_ports = [0]
+texture = ExtResource("2_fqxe4")
+texture_type = 2
+
+[sub_resource type="VisualShaderNodeFloatConstant" id="VisualShaderNodeFloatConstant_sx5m1"]
+constant = 0.1
+
+[sub_resource type="VisualShaderNodeFloatConstant" id="VisualShaderNodeFloatConstant_6awxy"]
+constant = 0.5
+
+[sub_resource type="VisualShaderNodeUVFunc" id="VisualShaderNodeUVFunc_fqxe4"]
+function = 1
+
+[sub_resource type="VisualShaderNodeFloatConstant" id="VisualShaderNodeFloatConstant_dged8"]
+constant = 4.0
+
+[sub_resource type="VisualShaderNodeVectorCompose" id="VisualShaderNodeVectorCompose_sx5m1"]
+op_type = 0
+
+[resource]
+nodes/fragment/2/node = SubResource("VisualShaderNodeTexture_e34jp")
+nodes/fragment/2/position = Vector2(-832, 480)
+nodes/fragment/3/node = SubResource("VisualShaderNodeTexture_dged8")
+nodes/fragment/3/position = Vector2(-848, 48)
+nodes/fragment/4/node = SubResource("VisualShaderNodeFloatConstant_sx5m1")
+nodes/fragment/4/position = Vector2(144, 160)
+nodes/fragment/5/node = SubResource("VisualShaderNodeFloatConstant_6awxy")
+nodes/fragment/5/position = Vector2(144, 272)
+nodes/fragment/7/node = SubResource("VisualShaderNodeUVFunc_fqxe4")
+nodes/fragment/7/position = Vector2(-1104, 608)
+nodes/fragment/8/node = SubResource("VisualShaderNodeFloatConstant_dged8")
+nodes/fragment/8/position = Vector2(-1328, 624)
+nodes/fragment/9/node = SubResource("VisualShaderNodeVectorCompose_sx5m1")
+nodes/fragment/9/position = Vector2(-544, 624)
+nodes/fragment/10/node = SubResource("VisualShaderNodeVectorCompose_ipolc")
+nodes/fragment/10/position = Vector2(-560, 208)
+nodes/fragment/12/node = SubResource("VisualShaderNodeColorOp_e34jp")
+nodes/fragment/12/position = Vector2(-240, 432)
+nodes/fragment/13/node = SubResource("VisualShaderNodeTexture_fqxe4")
+nodes/fragment/13/position = Vector2(-1568, 944)
+nodes/fragment/14/node = SubResource("VisualShaderNodeTexture_sx5m1")
+nodes/fragment/14/position = Vector2(-1552, 1312)
+nodes/fragment/15/node = SubResource("VisualShaderNodeFrame_6awxy")
+nodes/fragment/15/position = Vector2(-1392, 871.2)
+nodes/fragment/16/node = SubResource("VisualShaderNodeUVFunc_e34jp")
+nodes/fragment/16/position = Vector2(-1888, 1424)
+nodes/fragment/17/node = SubResource("VisualShaderNodeFloatConstant_fqxe4")
+nodes/fragment/17/position = Vector2(-2176, 1488)
+nodes/fragment/19/node = SubResource("VisualShaderNodeVectorCompose_e34jp")
+nodes/fragment/19/position = Vector2(-784, 1072)
+nodes/fragment/20/node = SubResource("VisualShaderNodeVectorCompose_fqxe4")
+nodes/fragment/20/position = Vector2(-752, 1440)
+nodes/fragment/21/node = SubResource("VisualShaderNodeVectorOp_dged8")
+nodes/fragment/21/position = Vector2(-528, 1216)
+nodes/fragment/22/node = SubResource("VisualShaderNodeVectorCompose_6awxy")
+nodes/fragment/22/position = Vector2(-304, 1216)
+nodes/fragment/23/node = SubResource("VisualShaderNodeFrame_e34jp")
+nodes/fragment/23/position = Vector2(-544, 976)
+nodes/fragment/connections = PackedInt32Array(5, 0, 0, 3, 7, 0, 2, 0, 8, 0, 7, 1, 2, 1, 9, 0, 3, 1, 10, 0, 2, 2, 9, 1, 3, 2, 10, 1, 10, 0, 12, 0, 9, 0, 12, 1, 16, 0, 14, 0, 17, 0, 16, 1, 13, 1, 19, 0, 13, 2, 19, 1, 14, 1, 20, 0, 14, 2, 20, 1, 19, 0, 21, 0, 20, 0, 21, 1, 21, 2, 22, 1, 21, 1, 22, 0, 4, 0, 0, 0, 12, 0, 0, 9)

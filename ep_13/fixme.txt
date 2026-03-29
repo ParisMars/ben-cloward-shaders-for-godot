@@ -1,0 +1,5 @@
+https://learnopengl.com/Advanced-Lighting/Normal-Mapping
+
+Do this stuff at the end.
+Make a detail map.
+Reconstruct the normal blah, blah.

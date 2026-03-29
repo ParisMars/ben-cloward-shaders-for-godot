@@ -39,11 +39,11 @@ material = SubResource("ShaderMaterial_rn7kv")
 [node name="Ep10" type="Node3D" unique_id=1243594834]
 
 [node name="VsSphere" type="MeshInstance3D" parent="." unique_id=314225485]
-visible = false
 mesh = SubResource("SphereMesh_5mirh")
 
 [node name="CodeSphere" type="MeshInstance3D" parent="." unique_id=1385179675]
 transform = Transform3D(1, 0, 0, 0, 1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0)
+visible = false
 mesh = SubResource("SphereMesh_cq08u")
 
 [node name="ForVisualisingDirectionVectors" type="MeshInstance3D" parent="." unique_id=1631983895]

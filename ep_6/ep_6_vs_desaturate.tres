@@ -20,7 +20,7 @@ op_type = 3
 constant = 1.0
 
 [sub_resource type="VisualShaderNodeFrame" id="VisualShaderNodeFrame_o0aag"]
-size = Vector2(862, 227.00002)
+size = Vector2(527, 227.00002)
 title = "Some magic numbers from GIMP's documentation on desaturation"
 tint_color_enabled = true
 tint_color = Color(0.17500001, 0.17423439, 0.16734377, 0.75)

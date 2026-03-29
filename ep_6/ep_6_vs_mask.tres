@@ -17,8 +17,8 @@ expanded_output_ports = [0]
 texture = ExtResource("3_xrf7k")
 
 [sub_resource type="VisualShaderNodeMix" id="VisualShaderNodeMix_oy3d5"]
-default_input_values = [0, Vector3(0, 0, 0), 1, Vector3(1, 1, 1), 2, Vector3(0.5, 0.5, 0.5)]
-op_type = 3
+default_input_values = [0, Vector3(0, 0, 0), 1, Vector3(1, 1, 1), 2, 0.5]
+op_type = 4
 
 [resource]
 nodes/fragment/2/node = SubResource("VisualShaderNodeTexture_vcoog")
@@ -27,6 +27,6 @@ nodes/fragment/3/node = SubResource("VisualShaderNodeTexture_pfu7m")
 nodes/fragment/3/position = Vector2(-320, 384)
 nodes/fragment/4/node = SubResource("VisualShaderNodeTexture_fxgqp")
 nodes/fragment/4/position = Vector2(-320, 736)
-nodes/fragment/5/node = SubResource("VisualShaderNodeMix_oy3d5")
-nodes/fragment/5/position = Vector2(48, 368)
-nodes/fragment/connections = PackedInt32Array(2, 0, 5, 0, 3, 0, 5, 1, 4, 1, 5, 2, 5, 0, 0, 0)
+nodes/fragment/6/node = SubResource("VisualShaderNodeMix_oy3d5")
+nodes/fragment/6/position = Vector2(48, 448)
+nodes/fragment/connections = PackedInt32Array(2, 0, 6, 0, 3, 0, 6, 1, 4, 1, 6, 2, 6, 0, 0, 0)

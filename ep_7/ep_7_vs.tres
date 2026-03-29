@@ -31,7 +31,7 @@ operator = 2
 linked_parent_graph_frame = 22
 
 [sub_resource type="VisualShaderNodeFrame" id="VisualShaderNodeFrame_d1v4j"]
-size = Vector2(1805.0001, 874.99994)
+size = Vector2(1805, 875)
 title = "Manual Dot Product"
 tint_color_enabled = true
 tint_color = Color(0.19999999, 0.33039212, 0.4980392, 1)
@@ -145,7 +145,7 @@ linked_parent_graph_frame = 67
 function = 31
 
 [sub_resource type="VisualShaderNodeFrame" id="VisualShaderNodeFrame_ec36v"]
-size = Vector2(1085.0001, 356)
+size = Vector2(1085, 356)
 title = "Simple Fresnel"
 attached_nodes = PackedInt32Array(66, 40, 37, 36)
 

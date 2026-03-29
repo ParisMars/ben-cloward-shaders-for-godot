@@ -1,3 +1,29 @@
 [gd_scene format=3 uid="uid://djfnynk8x3s3h"]
 
+[ext_resource type="Shader" uid="uid://bq50duegic2su" path="res://ep_12/ep_12_vs.tres" id="1_vvhjl"]
+[ext_resource type="Shader" uid="uid://b20w6mwprfjx7" path="res://ep_12/ep_12_code.gdshader" id="2_842yg"]
+[ext_resource type="Texture2D" uid="uid://dk6mb3ybe5syq" path="res://textures/rock_wall/rock_wall_12_nor_gl_2k.png" id="3_it58i"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_842yg"]
+render_priority = 0
+shader = ExtResource("1_vvhjl")
+
+[sub_resource type="SphereMesh" id="SphereMesh_it58i"]
+material = SubResource("ShaderMaterial_842yg")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_it58i"]
+render_priority = 0
+shader = ExtResource("2_842yg")
+shader_parameter/nm_sampler = ExtResource("3_it58i")
+
+[sub_resource type="SphereMesh" id="SphereMesh_eviri"]
+material = SubResource("ShaderMaterial_it58i")
+
 [node name="Ep12" type="Node3D" unique_id=1950999407]
+
+[node name="VsSphere" type="MeshInstance3D" parent="." unique_id=762546869]
+mesh = SubResource("SphereMesh_it58i")
+
+[node name="CodeSphere" type="MeshInstance3D" parent="." unique_id=515448799]
+visible = false
+mesh = SubResource("SphereMesh_eviri")
